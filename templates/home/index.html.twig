@@ -1,0 +1,352 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mutuelle Santé - Protégez votre santé
+{% endblock %} 
+ 
+ 
+
+{% block body %}
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <div class="scrolling-text">
+                <span>Quelle que soient votre activité et vos antécédents d'assurances, nous assurerons votre véhicule au meilleur tarif.</span>
+            </div>
+            <div class="phone-number">
+                <span class="phone-icon"><i class="fas fa-phone text-lg lg:text-2xl text-dark"></i></span>
+                <span>01.82.83.48.00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+     
+
+    <!-- Hero Section avec Formulaire -->
+    <section class="hero-with-form">
+        <div class="hero-container">
+            <div class="hero-content-left">
+                <h1>Assurance pour véhicule professionnel</h1>
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Conducteur professionnel" class="hero-image">
+            </div>
+
+            <!-- Formulaire de devis -->
+            <div class="quote-form-container" id="contactForm">
+                <div class="form-title">
+                    Complétez ce formulaire pour obtenir un tarif
+                </div>
+                
+                <form id="quoteForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nom..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="Prénom..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="Raison sociale...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="Activité..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Démarrage d'activité</option>
+                            <option value="moins-1an">Moins d'1 an</option>
+                            <option value="1-3ans">1 à 3 ans</option>
+                            <option value="3-5ans">3 à 5 ans</option>
+                            <option value="plus-5ans">Plus de 5 ans</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Véhicule assuré actuellement</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="Code Postal..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" placeholder="Email..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" placeholder="Téléphone..." required>
+                    </div>
+                    
+                    <div class="privacy-text">
+                        En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adapté à votre recherche.
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Comparer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professionals Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Une Assurance Adaptée à tous les Professionnels</h2>
+            <p class="section-subtitle">Chaque métier a ses propres exigences. C'est pourquoi notre assurance véhicule pro couvre l'ensemble de vos besoins, quel que soit votre secteur d'activité ou la taille de votre flotte.</p>
+            
+            <div class="professionals-grid">
+                <div class="professional-card">
+                    <div class="icon">🔨</div>
+                    <h3>Artisans & BTP</h3>
+                    <p>Utilitaires, fourgons, camionnettes bennes... Vos outils de chantier sont entre de bonnes mains.</p>
+                </div>
+                <div class="professional-card">
+                    <div class="icon">💼</div>
+                    <h3>Commerciaux & Prof. Libérales</h3>
+                    <p>Berlines de fonction, véhicules de société... Roulez l'esprit tranquille lors de vos déplacements.</p>
+                </div>
+                <div class="professional-card">
+                    <div class="icon">🚚</div>
+                    <h3>Transport & Logistique</h3>
+                    <p>Poids lourds, remorques, véhicules frigorifiques... Assurez la continuité de votre chaîne logistique.</p>
+                </div>
+                <div class="professional-card">
+                    <div class="icon">🏥</div>
+                    <h3>Service à la Personne & Santé</h3>
+                    <p>Véhicules légers pour les visites à domicile, ambulances... Votre mobilité est notre priorité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir notre assurance véhicule pro ?</h2>
+            <p class="section-subtitle">Plus qu'une Assurance, un Partenaire pour Votre Mobilité</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="check">✅</div>
+                    <h3>Réponse Rapide & Devis en Ligne</h3>
+                    <p>Ne perdez pas de temps. Obtenez une proposition claire et compétitive rapidement depuis votre mobile.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="check">✅</div>
+                    <h3>Des Garanties Essentielles Incluses</h3>
+                    <p>Responsabilité Civile, Défense Pénale et Recours incluses dans toutes nos formules.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="check">✅</div>
+                    <h3>Options sur-mesure</h3>
+                    <p>Vol, Incendie, Bris de glace, Dommages tous accidents, perte financière... Personnalisez votre contrat selon l'usage réel de vos véhicules.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="check">✅</div>
+                    <h3>Assistance 24/7</h3>
+                    <p>Un pépin sur la route ? Notre service d'assistance est à vos côtés jour et nuit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Section -->
+    <section id="garanties">
+        <div class="container">
+            <h2 class="section-title">Nos garanties en détail</h2>
+            <p class="section-subtitle">Maîtrisez votre budget en choisissant les garanties qui comptent vraiment pour vous.</p>
+            
+            <div class="guarantees-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-header">
+                        <h3>Tiers Simple</h3>
+                        <p>Idéal pour les véhicules plus anciens ou à faible valeur.</p>
+                    </div>
+                    <ul class="guarantee-list">
+                        <li>Responsabilité Civile</li>
+                        <li>Protection du conducteur</li>
+                        <li>Assistance</li>
+                    </ul>
+                </div>
+
+                <div class="guarantee-card">
+                    <div class="guarantee-header">
+                        <h3>Tiers Étendu</h3>
+                        <p>Le meilleur compromis entre protection et budget.</p>
+                    </div>
+                    <ul class="guarantee-list">
+                        <li>Inclus : Tiers Simple</li>
+                        <li>+ Bris de Glace</li>
+                        <li>+ Vol & Incendie</li>
+                        <li>+ Catastrophes Naturelles</li>
+                    </ul>
+                </div>
+
+                <div class="guarantee-card premium">
+                    <div class="guarantee-header">
+                        <h3>Tous Risques</h3>
+                        <p>La tranquillité d'esprit absolue pour vos véhicules neufs ou stratégiques.</p>
+                    </div>
+                    <ul class="guarantee-list">
+                        <li>Inclus Tiers Étendu</li>
+                        <li>+ Dommages Tous Accidents</li>
+                        <li>+ Vandalisme</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; background: var(--light); padding: 2rem; border-radius: 15px;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Options Recommandées :</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <strong>Garantie Perte d'Exploitation</strong>
+                        <p style="color: var(--gray); margin-top: 0.5rem;">Pour compenser l'impact financier de l'immobilisation de votre véhicule.</p>
+                    </div>
+                    <div>
+                        <strong>Véhicule de Remplacement</strong>
+                        <p style="color: var(--gray); margin-top: 0.5rem;">Pour ne jamais interrompre votre activité.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps" id="comment">
+        <div class="container">
+            <h2 class="section-title">Comment ça Marche ?</h2>
+            <p class="section-subtitle">Votre Devis d'Assurance Véhicule Pro en 3 Étapes Simples</p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Cliquez & Décrivez</h3>
+                    <p>Remplissez notre formulaire en 2 minutes avec les informations sur votre activité et votre véhicule.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Comparez & Choisissez</h3>
+                    <p>Recevez instantanément notre meilleure proposition tarifaire et personnalisez vos options.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Signez & Roulez</h3>
+                    <p>Acceptez le devis en ligne et recevez votre mémo par email pour prendre la route en toute sérénité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quelle est la différence entre une assurance auto personnelle et une assurance véhicule pro ?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        La différence est cruciale. Une assurance auto personnelle couvre principalement les déplacements privés (domicile-travail, loisirs). L'assurance véhicule pro est spécifiquement conçue pour couvrir les risques liés à votre activité : transport de marchandises ou de matériel, tournées commerciales, visites de chantiers, etc. Elle inclut des garanties adaptées (comme la couverture du matériel transporté) et protège votre entreprise en cas de sinistre pendant un usage professionnel, ce qui n'est pas le cas d'un contrat personnel.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Dois-je assurer un véhicule à mon nom ou au nom de mon entreprise ?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        Si le véhicule a été acheté par votre entreprise (et que la carte grise est à son nom), il doit obligatoirement être assuré au nom de l'entreprise. Si le véhicule vous appartient mais que vous l'utilisez pour votre activité (en tant qu'indépendant par exemple), vous devez au minimum souscrire une extension de garantie "usage professionnel" sur votre contrat personnel, mais l'idéal reste un contrat pro dédié pour une couverture optimale.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Mes salariés sont-ils couverts s'ils conduisent le véhicule de l'entreprise ?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        Oui, absolument. Nos contrats d'assurance véhicule pro sont conçus pour couvrir les déplacements effectués par le dirigeant ainsi que par tous les employés autorisés à conduire le véhicule dans le cadre de leurs fonctions. Il n'y a pas de conducteur désigné unique, ce qui offre une flexibilité totale à votre organisation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Que se passe-t-il si mon utilitaire est en panne ou accidenté ?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        C'est là que l'assistance professionnelle fait toute la différence. Nos contrats incluent une assistance 0 km 24/7. En cas de panne ou d'accident, nous organisons le dépannage ou le remorquage de votre véhicule. Selon les options choisies, nous mettons à votre disposition un véhicule de remplacement de catégorie équivalente (un autre utilitaire, par exemple) pour que vous puissiez continuer votre activité sans interruption.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Le matériel et les marchandises dans mon fourgon sont-ils assurés ?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        L'assurance de base (Responsabilité Civile, Dommages) couvre le véhicule lui-même. Pour protéger votre outillage, vos équipements ou vos marchandises, il est indispensable de souscrire une garantie optionnelle "matériels et marchandises transportés". Cette garantie vous indemnise en cas de vol ou de détérioration de votre chargement suite à un accident.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="contact">
+        <div class="container">
+            <h2>Prêt à Protéger Votre Outil de Travail ?</h2>
+            <p>Ne laissez pas un imprévu routier freiner votre business. Obtenez dès maintenant une offre claire, compétitive et sans engagement pour votre assurance véhicule pro.</p>
+            <a href="#contactForm" class="cta-button">Obtenir Mon Tarif Personnalisé</a>
+        </div>
+    </section>
+
+   
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+                
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    toggle.textContent = '−';
+                } else {
+                    answer.style.display = 'none';
+                    toggle.textContent = '+';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre demande ! Nous vous contacterons très prochainement.');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+ {% endblock %}
+ 
