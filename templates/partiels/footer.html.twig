@@ -1,7 +1,82 @@
- <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Assurance Véhicule Pro. Tous droits réservés.</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">www.assurance-vehicule-pro.fr</p>
+{# FOOTER - THÈME SOMBRE NOIR/BLEU #}
+<footer class="bg-footercolor via-slate-800 to-blue-900 text-white mt-8 lg:mt-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-10 lg:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            
+            {# Colonne 1 : À propos #}
+            <div>
+                <h3 class="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 flex items-center">
+                    <i class="fas fa-university mr-3 text-blue-400"></i>
+                    <span class="text-white">Aksam Assurance</span>
+                </h3>
+                <p class="text-gray-300 text-sm lg:text-base leading-relaxed">
+                    Entreprise soumise au contrôle de l'ACPR
+                </p>
+            </div>
+
+            {# Colonne 2 : Liens utiles #}
+            <div>
+                <h3 class="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-white">Liens utiles</h3>
+                <ul class="space-y-3 text-base lg:text-lg">
+                    <li>
+                        <a href="{{ path('app_utilitaire') }}" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right mr-2 text-blue-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Assurance utilitaire
+                        </a>
+                    </li>
+                     <li>
+                        <a href="{{ path('app_poidslourd') }}" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right mr-2 text-blue-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Assurance poids lourds
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_mention') }}" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right mr-2 text-blue-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Mentions légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_politique') }}" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right mr-2 text-blue-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Politique de confidentialité
+                        </a>
+                    </li>
+                   
+                    
+                </ul>
+            </div>
+
+            {# Colonne 3 : Contact #}
+            <div>
+                <h3 class="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-white">Contact</h3>
+                <ul class="space-y-3 text-gray-300 text-base lg:text-lg">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mr-3 text-blue-400 mt-1"></i>
+                        <span>10 rue de Penthièvre<br>75008 Paris</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone mr-3 text-blue-400"></i>
+                        <a href="tel:0182834800" class="hover:text-blue-400 transition-colors">01.82.83.48.00</a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                        <a href="mailto:contact@aksam-assurances.fr" class="hover:text-blue-400 transition-colors break-all">contact@aksam-assurances.fr</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </footer>
+
+        {# Ligne de séparation #}
+        <div class="border-t border-gray-700 mt-8 lg:mt-12 pt-8 lg:pt-10">
+            <div class="text-center">
+                <p class="text-gray-400 text-sm lg:text-base">
+                    © 2021 Copyright: Aksam Assurance. Tous droits réservés.
+                </p>
+                <p class="text-gray-500 text-sm mt-2">
+                    www.assurance-vehicule-pro.fr
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,352 +1,718 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Mutuelle Santé - Protégez votre santé
-{% endblock %} 
- 
- 
+{% block title %}
+	Assurance Véhicule Pro | Devis en Ligne pour Pros, Artisans & PME
+
+{% endblock %}
 
 {% block body %}
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <div class="banner-content">
-            <div class="scrolling-text">
-                <span>Quelle que soient votre activité et vos antécédents d'assurances, nous assurerons votre véhicule au meilleur tarif.</span>
+	<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
+		<!-- Background decoration -->
+		{# <div class="hidden lg:flex absolute top-4 left-4 lg:top-10 lg:left-10 floating-animation">
+					<i class="fas fa-truck text-blue-600 text-3xl lg:text-6xl opacity-30"></i>
+				</div>
+		
+				<div class="hidden lg:flex absolute bottom-4 right-4 lg:bottom-10 lg:right-10 floating-animation" style="animation-delay: -2s;">
+					<i class="fas fa-truck text-blue-700 text-4xl lg:text-8xl opacity-25"></i>
+				</div> #}
+
+			<div class="w-full mx-auto px-4 lg:px-40 relative z-10"> <div
+				class="flex flex-col lg:flex-row gap-1 lg:gap-2 items-stretch">
+
+				<!-- Image Section - 70% -->
+				<div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
+					<div class="relative h-full min-h-[300px] lg:min-h-[600px]">
+						<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-3xl shadow-2xl overflow-hidden">
+							<img src="{{ asset('public/images/assurance-vehicule-pro.jpg') }}" alt="Conducteur professionnel" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy"/>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form Section - 30% -->
+				<div class="order-1 lg:order-2 slide-in-right flex-1 lg:flex-[3]">
+					<div class="bg-surface rounded-xl lg:rounded-3xl shadow-2xl p-4 lg:p-6 card-hover border border-gray-100 h-full">
+						<div
+							class="text-center mb-4 lg:mb-12">
+							<div class="w-12 h-12 lg:w-14 lg:h-14 rounded-xl mx-auto mb-3 flex items-center justify-center">
+								 <i class="fas fa-calculator text-lg lg:text-2xl text-accentchamp"></i>
+							 </div>
+							<h2 class="text-base lg:text-2xl font-bold text-gradient mb-2 lg:mb-3 leading-tight">Complétez ce formulaire pour obtenir un devis</h2>
+							{# <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
+						</div>
+
+
+						<!-- Nom -->
+						{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3'}}) }}
+
+						
+
+						<!-- Raison sociale -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-building text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.raison) }}
+							</div>
+							{{ form_errors(form.raison) }}
+						</div>
+
+						<!-- Activité -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-briefcase text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.activite) }}
+							</div>
+							{{ form_errors(form.activite) }}
+						</div>
+						<!-- Activité -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-briefcase text-accentchamp text-sm"></i>
+								</span>
+								<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
+								<option value="" selected="selected">Type véhicule </option>
+								<option value="">+3T5</option>
+								<option value="">-3T5</option>
+								</select>
+							</div>
+							
+						</div>
+
+
+						<!-- Véhicule assuré -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-shield-alt text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.assurer) }}
+							</div>
+							{{ form_errors(form.assurer) }}
+						</div>
+
+						<!-- Code Postal -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-map-marker-alt text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.codePostale) }}
+							</div>
+							{{ form_errors(form.codePostale) }}
+						</div>
+						<!-- Nom -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-user text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.nom) }}
+							</div>
+							{{ form_errors(form.nom) }}
+						</div>
+
+						<!-- Prénom -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-user-tag text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.lastname) }}
+							</div>
+							{{ form_errors(form.lastname) }}
+						</div>
+
+						<!-- Email -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-envelope text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.email) }}
+							</div>
+							{{ form_errors(form.email) }}
+						</div>
+
+						<!-- Téléphone -->
+						<div class="form-group">
+							<div class="flex">
+								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+									<i class="fas fa-phone text-accentchamp text-sm"></i>
+								</span>
+								{{ form_widget(form.tele) }}
+							</div>
+							{{ form_errors(form.tele) }}
+						</div>
+
+						<!-- Consent -->
+						<div class="bg-white rounded-lg border border-blue-200 p-1.5 mt-2">
+							<span class="text-xs text-gray-600 leading-tight block text-justify">
+								En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adaptées à votre recherche.
+							</span>
+						</div>
+
+						<!-- Bouton -->
+						<button type="submit" class="w-full bg-accent text-white font-bold py-3 px-4 rounded-lg text-sm lg:text-base pulse-animation shadow-lg hover:shadow-2xl transition-all duration-300 mt-3">
+							<i class="fas fa-calculator mr-2"></i>
+							Comparer 
+						</button>
+
+						{{ form_end(form) }}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Professionals Section -->
+	<section class="py-8 lg:py-20 bg-surface">
+		<div class="container mx-auto px-2 lg:px-4">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-8 lg:mb-16">
+					<h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6 leading-tight">Une Assurance Adaptée à tous les Professionnels</h2>
+					{# <div class="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
+					<p class="text-gray-600 mt-4 max-w-3xl mx-auto">Chaque métier a ses propres exigences. C'est pourquoi notre assurance véhicule pro couvre l'ensemble de vos besoins.</p>
+				</div>
+
+				<!-- Feature Cards -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+					<!-- Card 1 -->
+					<div class="bg-surface rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<div class="flex flex-row items-start gap-3 lg:gap-6">
+							<div class="p-2 lg:p-4 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-2xl shadow-lg self-start flex-shrink-0">
+								<i class="fas fa-hammer text-white text-lg lg:text-2xl"></i>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-base lg:text-2xl font-bold text-gradient mb-3 lg:mb-4">Artisans & BTP</h3>
+								<p class="text-gray-700 text-sm lg:text-base">
+									<a href="{{ path('app_utilitaire') }}" class="text-blue-600 underline decoration-blue-600 decoration-2 hover:text-blue-700 hover:decoration-blue-700 transition-all font-semibold">
+										Utilitaires
+									</a>, fourgons, camionnettes bennes... Vos outils de chantier sont entre de bonnes mains.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="bg-surface rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<div class="flex flex-row items-start gap-3 lg:gap-6">
+							<div class="p-2 lg:p-4 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-2xl shadow-lg self-start flex-shrink-0">
+								<i class="fas fa-briefcase text-white text-lg lg:text-2xl"></i>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-base lg:text-2xl font-bold text-gradient mb-3 lg:mb-4">Commerciaux & Prof. Libérales</h3>
+								<p class="text-gray-700 text-sm lg:text-base">Berlines de fonction, véhicules de société... Roulez l'esprit tranquille lors de vos déplacements.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="bg-surface rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<div class="flex flex-row items-start gap-3 lg:gap-6">
+							<div class="p-2 lg:p-4 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-2xl shadow-lg self-start flex-shrink-0">
+								<i class="fas fa-truck text-white text-lg lg:text-2xl"></i>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-base lg:text-2xl font-bold text-gradient mb-3 lg:mb-4">Transport & Logistique</h3>
+								<p class="text-gray-700 text-sm lg:text-base">
+									<a href="{{ path('app_poidslourd') }}" class="text-blue-600 underline decoration-blue-600 decoration-2 hover:text-blue-700 hover:decoration-blue-700 transition-all font-semibold">
+										Poids lourds</a>, remorques, véhicules frigorifiques... Assurez la continuité de votre chaîne logistique.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 4 -->
+					<div class="bg-surface rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<div class="flex flex-row items-start gap-3 lg:gap-6">
+							<div class="p-2 lg:p-4 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-2xl shadow-lg self-start flex-shrink-0">
+								<i class="fas fa-heartbeat text-white text-lg lg:text-2xl"></i>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-base lg:text-2xl font-bold text-gradient mb-3 lg:mb-4">Service à la Personne & Santé</h3>
+								<p class="text-gray-700 text-sm lg:text-base">Véhicules légers pour les visites à domicile, ambulances... Votre mobilité est notre priorité.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<!-- Features Section - VERSION CORRIGÉE -->
+	<section class="py-8 lg:py-20 bg-light">
+		<div class="container mx-auto px-2 lg:px-4">
+			<div
+				class="max-w-6xl mx-auto">
+
+				<!-- Titre de la section -->
+				<div class="text-center mb-8 lg:mb-16">
+					<h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6 leading-tight">Pourquoi choisir notre assurance véhicule pro ?</h2>
+					{# <div class="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
+				</div>
+
+				<!-- Grid de cartes -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6">
+
+					<!-- Card 1 : Réponse Rapide -->
+					<div class="bg-surface rounded-xl p-4 lg:p-6 shadow-lg card-hover border border-gray-100">
+						<div class="flex flex-row items-start gap-3">
+							<div class="text-green-500 text-xl lg:text-2xl flex-shrink-0">✅</div>
+							<div class="flex-1 min-w-0">
+								<h3 class="font-bold text-dark mb-1 lg:mb-2 text-sm lg:text-lg leading-tight">Réponse Rapide & Devis en Ligne</h3>
+								<p class="text-gray-600 text-xs lg:text-sm leading-snug">Ne perdez pas de temps. Obtenez une proposition claire et compétitive rapidement.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 2 : Garanties Essentielles -->
+					<div class="bg-surface rounded-xl p-4 lg:p-6 shadow-lg card-hover border border-gray-100">
+						<div class="flex flex-row items-start gap-3">
+							<div class="text-green-500 text-xl lg:text-2xl flex-shrink-0">✅</div>
+							<div class="flex-1 min-w-0">
+								<h3 class="font-bold text-dark mb-1 lg:mb-2 text-sm lg:text-lg leading-tight">Garanties Essentielles Incluses</h3>
+								<p class="text-gray-600 text-xs lg:text-sm leading-snug">Responsabilité Civile, Défense Pénale et Recours incluses dans toutes nos formules.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 3 : Options sur-mesure -->
+					<div class="bg-surface rounded-xl p-4 lg:p-6 shadow-lg card-hover border border-gray-100">
+						<div class="flex flex-row items-start gap-3">
+							<div class="text-green-500 text-xl lg:text-2xl flex-shrink-0">✅</div>
+							<div class="flex-1 min-w-0">
+								<h3 class="font-bold text-dark mb-1 lg:mb-2 text-sm lg:text-lg leading-tight">Options sur-mesure</h3>
+								<p class="text-gray-600 text-xs lg:text-sm leading-snug">Vol, Incendie, Bris de glace, Dommages tous accidents... Personnalisez votre contrat.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 4 : Assistance 24/7 -->
+					<div class="bg-surface rounded-xl p-4 lg:p-6 shadow-lg card-hover border border-gray-100">
+						<div class="flex flex-row items-start gap-3">
+							<div class="text-green-500 text-xl lg:text-2xl flex-shrink-0">✅</div>
+							<div class="flex-1 min-w-0">
+								<h3 class="font-bold text-dark mb-1 lg:mb-2 text-sm lg:text-lg leading-tight">Assistance 24/7</h3>
+								<p class="text-gray-600 text-xs lg:text-sm leading-snug">Un pépin sur la route ? Notre service d'assistance est à vos côtés jour et nuit.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- SECTION GARANTIES -->
+	<section id="garanties" class="py-12 lg:py-20 bg-light">
+		<div class="container mx-auto px-4">
+			<div
+				class="max-w-6xl mx-auto">
+				<!-- Titre -->
+				<div class="text-center mb-8 lg:mb-16">
+					<h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Nos garanties en détail</h2>
+					{# <div class="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
+					<p class="text-gray-600 mt-4 max-w-3xl mx-auto">Maîtrisez votre budget en choisissant les garanties qui comptent vraiment pour vous.</p>
+				</div>
+
+				<!-- Grid de garanties -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12"> 
+
+					<!-- Card 1 : Tiers Simple -->
+						<div
+						class="bg-surface rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-xl border border-gray-100 card-hover"> <!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-4 mb-4">
+							<div class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+								<i class="fas fa-shield-alt text-blue-600 text-xl lg:text-2xl"></i>
+							</div>
+							<h3 class="text-lg lg:text-2xl font-bold text-gradient">Tiers Simple</h3>
+						</div>
+						<!-- Description et liste -->
+						<p class="text-gray-600 text-sm mb-6">Idéal pour les véhicules plus anciens ou à faible valeur.</p>
+						<ul class="space-y-3">
+							<li class="flex items-center gap-2">
+								<i class="fas fa-check text-green-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Responsabilité Civile</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-check text-green-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Protection du conducteur</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-check text-green-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Assistance</span>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Card 2 : Tiers Étendu -->
+					<div
+						class="bg-surface rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-4 mb-4">
+							<div class="w-12 h-12 lg:w-14 lg:h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+								<i class="fas fa-shield text-green-600 text-xl lg:text-2xl"></i>
+							</div>
+							<h3 class="text-lg lg:text-2xl font-bold text-gradient">Tiers Étendu</h3>
+						</div>
+						<!-- Description et liste -->
+						<p class="text-gray-600 text-sm mb-6">Le meilleur compromis entre protection et budget.</p>
+						<ul class="space-y-3">
+							<li class="flex items-center gap-2">
+								<i class="fas fa-check text-green-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Inclus : Tiers Simple</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-plus text-blue-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Bris de Glace</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-plus text-blue-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Vol & Incendie</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-plus text-blue-500 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm">Catastrophes Naturelles</span>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Card 3 : Tous Risques (Premium) -->
+					<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-xl border-2 border-blue-300 card-hover relative overflow-hidden">
+						<div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+							RECOMMANDÉ
+						</div>
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-4 mb-4">
+							<div class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+								<i class="fas fa-star text-white text-xl lg:text-2xl"></i>
+							</div>
+							<h3 class="text-lg lg:text-2xl font-bold text-blue-600">Tous Risques</h3>
+						</div>
+						<!-- Description et liste -->
+						<p class="text-gray-700 text-sm font-medium mb-6">La tranquillité d'esprit absolue pour vos véhicules neufs ou stratégiques.</p>
+						<ul class="space-y-3">
+							<li class="flex items-center gap-2">
+								<i class="fas fa-check text-green-600 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm font-medium">Inclus Tiers Étendu</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-plus text-blue-600 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm font-medium">Dommages Tous Accidents</span>
+							</li>
+							<li class="flex items-center gap-2">
+								<i class="fas fa-plus text-blue-600 flex-shrink-0"></i>
+								<span class="text-gray-700 text-sm font-medium">Vandalisme</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Options Recommandées -->
+			<div class="bg-blue-50 rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-blue-200">
+				<h3 class="text-xl lg:text-2xl font-bold text-blue-600 mb-6">Options Recommandées :</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="bg-white rounded-xl p-5 shadow-md">
+						<div class="flex items-start gap-3">
+							<div class="p-2 bg-orange-100 rounded-lg flex-shrink-0">
+								<i class="fas fa-chart-line text-orange-600 text-lg"></i>
+							</div>
+							<div>
+								<h4 class="font-bold text-gray-900 mb-2">Garantie Perte d'Exploitation</h4>
+								<p class="text-gray-600 text-sm">Pour compenser l'impact financier de l'immobilisation de votre véhicule.</p>
+							</div>
+						</div>
+					</div>
+					<div class="bg-white rounded-xl p-5 shadow-md">
+						<div class="flex items-start gap-3">
+							<div class="p-2 bg-purple-100 rounded-lg flex-shrink-0">
+								<i class="fas fa-car text-purple-600 text-lg"></i>
+							</div>
+							<div>
+								<h4 class="font-bold text-gray-900 mb-2">Véhicule de Remplacement</h4>
+								<p class="text-gray-600 text-sm">Pour ne jamais interrompre votre activité.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SECTION COMMENT ÇA MARCHE -->
+<section id="comment" class="py-12 lg:py-20 bg-surface">
+	<div class="container mx-auto px-4">
+		<div
+			class="max-w-6xl mx-auto">
+			<!-- Titre -->
+			<div class="text-center mb-8 lg:mb-16">
+				<h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Comment ça Marche ?</h2>
+				{# <div class="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
+				<p class="text-gray-600 mt-4 max-w-3xl mx-auto">Votre Devis d'Assurance Véhicule Pro en 3 Étapes Simples</p>
+			</div>
+
+			<!-- Steps -->
+			<div
+				class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+				<!-- Step 1 -->
+				<div class="bg-surface rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-xl border border-gray-100 card-hover text-center relative">
+					<div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-full flex items-center justify-center text-2xl lg:text-3xl font-bold shadow-lg">
+							1
+						</div>
+					</div>
+					<div class="mt-8">
+						{# <div class="w-16 h-16 bg-blue-100 rounded-xl mx-auto mb-4 flex items-center justify-center">
+							<i class="fas fa-mouse-pointer text-blue-600 text-2xl"></i>
+						</div> #}
+						<h3 class="text-xl lg:text-2xl font-bold text-gradient mb-3">Cliquez & Décrivez</h3>
+						<p class="text-gray-600 text-sm">Remplissez notre formulaire en 2 minutes avec les informations sur votre activité et votre véhicule.</p>
+					</div>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="bg-surface rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-xl border border-gray-100 card-hover text-center relative">
+					<div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-full flex items-center justify-center text-2xl lg:text-3xl font-bold shadow-lg">
+							2
+						</div>
+					</div>
+					<div class="mt-8">
+						{# <div class="w-16 h-16 bg-green-100 rounded-xl mx-auto mb-4 flex items-center justify-center">
+							<i class="fas fa-balance-scale text-green-600 text-2xl"></i>
+						</div> #}
+						<h3 class="text-xl lg:text-2xl font-bold text-gradient mb-3">Comparez & Choisissez</h3>
+						<p class="text-gray-600 text-sm">Recevez instantanément notre meilleure proposition tarifaire et personnalisez vos options.</p>
+					</div>
+				</div>
+
+				<!-- Step 3 -->
+				<div class="bg-surface rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-xl border border-gray-100 card-hover text-center relative">
+					<div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-full flex items-center justify-center text-2xl lg:text-3xl font-bold shadow-lg">
+							3
+						</div>
+					</div>
+					<div class="mt-8">
+						{# <div class="w-16 h-16 bg-orange-100 rounded-xl mx-auto mb-4 flex items-center justify-center">
+							<i class="fas fa-truck text-orange-600 text-2xl"></i>
+						</div> #}
+						<h3 class="text-xl lg:text-2xl font-bold text-gradient mb-3">Signez & Roulez</h3>
+						<p class="text-gray-600 text-sm">Acceptez le devis en ligne et recevez votre attestation par email pour prendre la route en toute sérénité.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SECTION FAQ -->
+<section id="faq" class="py-12 lg:py-20 bg-light">
+	<div class="container mx-auto px-4">
+		<div
+			class="max-w-4xl mx-auto">
+			<!-- Titre -->
+			<div class="text-center mb-8 lg:mb-16">
+				<h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Questions Fréquentes</h2>
+				{# <div class="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
+			</div>
+
+			<!-- FAQ Items -->
+			<div
+				class="space-y-4">
+
+				<!-- FAQ 1 -->
+				<div class="bg-surface rounded-xl lg:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+					<button class="faq-question w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+						<span class="text-base lg:text-lg font-semibold text-gray-900 pr-4">Quelle est la différence entre une assurance auto personnelle et une assurance véhicule pro ?</span>
+						<span class="faq-toggle text-2xl text-blue-600 font-bold flex-shrink-0">+</span>
+					</button>
+					<div class="faq-answer hidden px-6 pb-5 text-gray-700 text-sm lg:text-base leading-relaxed">
+						La différence est cruciale. Une assurance auto personnelle couvre principalement les déplacements privés (domicile-travail, loisirs). L'assurance véhicule pro est spécifiquement conçue pour couvrir les risques liés à votre activité : transport de marchandises ou de matériel, tournées commerciales, visites de chantiers, etc. Elle inclut des garanties adaptées (comme la couverture du matériel transporté) et protège votre entreprise en cas de sinistre pendant un usage professionnel, ce qui n'est pas le cas d'un contrat personnel.
+					</div>
+				</div>
+
+				<!-- FAQ 2 -->
+				<div class="bg-surface rounded-xl lg:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+					<button class="faq-question w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+						<span class="text-base lg:text-lg font-semibold text-gray-900 pr-4">Dois-je assurer un véhicule à mon nom ou au nom de mon entreprise ?</span>
+						<span class="faq-toggle text-2xl text-blue-600 font-bold flex-shrink-0">+</span>
+					</button>
+					<div class="faq-answer hidden px-6 pb-5 text-gray-700 text-sm lg:text-base leading-relaxed">
+						Si le véhicule a été acheté par votre entreprise (et que la carte grise est à son nom), il doit obligatoirement être assuré au nom de l'entreprise. Si le véhicule vous appartient mais que vous l'utilisez pour votre activité (en tant qu'indépendant par exemple), vous devez au minimum souscrire une extension de garantie "usage professionnel" sur votre contrat personnel, mais l'idéal reste un contrat pro dédié pour une couverture optimale.
+					</div>
+				</div>
+
+				<!-- FAQ 3 -->
+				<div class="bg-surface rounded-xl lg:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+					<button class="faq-question w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+						<span class="text-base lg:text-lg font-semibold text-gray-900 pr-4">Mes salariés sont-ils couverts s'ils conduisent le véhicule de l'entreprise ?</span>
+						<span class="faq-toggle text-2xl text-blue-600 font-bold flex-shrink-0">+</span>
+					</button>
+					<div class="faq-answer hidden px-6 pb-5 text-gray-700 text-sm lg:text-base leading-relaxed">
+						Oui, absolument. Nos contrats d'assurance véhicule pro sont conçus pour couvrir les déplacements effectués par le dirigeant ainsi que par tous les employés autorisés à conduire le véhicule dans le cadre de leurs fonctions. Il n'y a pas de conducteur désigné unique, ce qui offre une flexibilité totale à votre organisation.
+					</div>
+				</div>
+
+				<!-- FAQ 4 -->
+				<div class="bg-surface rounded-xl lg:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+					<button class="faq-question w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+						<span class="text-base lg:text-lg font-semibold text-gray-900 pr-4">Que se passe-t-il si mon utilitaire est en panne ou accidenté ?</span>
+						<span class="faq-toggle text-2xl text-blue-600 font-bold flex-shrink-0">+</span>
+					</button>
+					<div class="faq-answer hidden px-6 pb-5 text-gray-700 text-sm lg:text-base leading-relaxed">
+						C'est là que l'assistance professionnelle fait toute la différence. Nos contrats incluent une assistance 0 km 24/7. En cas de panne ou d'accident, nous organisons le dépannage ou le remorquage de votre véhicule. Selon les options choisies, nous mettons à votre disposition un véhicule de remplacement de catégorie équivalente (un autre utilitaire, par exemple) pour que vous puissiez continuer votre activité sans interruption.
+					</div>
+				</div>
+
+				<!-- FAQ 5 -->
+				<div class="bg-surface rounded-xl lg:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+					<button class="faq-question w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+						<span class="text-base lg:text-lg font-semibold text-gray-900 pr-4">Le matériel et les marchandises dans mon fourgon sont-ils assurés ?</span>
+						<span class="faq-toggle text-2xl text-blue-600 font-bold flex-shrink-0">+</span>
+					</button>
+					<div class="faq-answer hidden px-6 pb-5 text-gray-700 text-sm lg:text-base leading-relaxed">
+						L'assurance de base (Responsabilité Civile, Dommages) couvre le véhicule lui-même. Pour protéger votre outillage, vos équipements ou vos marchandises, il est indispensable de souscrire une garantie optionnelle "matériels et marchandises transportés". Cette garantie vous indemnise en cas de vol ou de détérioration de votre chargement suite à un accident.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-8 lg:py-20 bg-gradient-to-r from-blue-400 to-blue-600">
+	<div class="container mx-auto px-4 text-center">
+		<div class="max-w-3xl mx-auto">
+			<div class="w-12 h-12 lg:w-20 lg:h-20 bg-white/20 rounded-2xl lg:rounded-3xl mx-auto mb-6 lg:mb-8 flex items-center justify-center">
+				<i class="fas fa-calculator text-2xl lg:text-4xl text-white"></i>
+			</div>
+			<h2 class="text-2xl lg:text-5xl font-bold mb-4 lg:mb-8 text-white">Prêt à Protéger Votre Outil de Travail ?</h2>
+			<p class="text-base lg:text-xl mb-8 lg:mb-10 text-white/95 leading-relaxed px-4">
+				Ne laissez pas un imprévu routier freiner votre business. Obtenez dès maintenant une offre claire, compétitive et sans engagement pour votre assurance véhicule pro.
+			</p>
+			<a href="#contactForm" class="inline-block bg-white text-blue-600 font-bold py-4 lg:py-5 px-8 lg:px-12 rounded-xl lg:rounded-2xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl text-base lg:text-lg">
+				<i class="fas fa-arrow-up mr-2"></i>
+				Obtenir Mon Tarif Personnalisé
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- JAVASCRIPT POUR FAQ -->
+<script>
+	document.querySelectorAll('.faq-question').forEach(button => {
+button.addEventListener('click', () => {
+const answer = button.nextElementSibling;
+const toggle = button.querySelector('.faq-toggle');
+
+// Toggle answer
+answer.classList.toggle('hidden');
+
+// Change + to -
+toggle.textContent = answer.classList.contains('hidden') ? '+' : '−';
+});
+});
+</script>
+<script>
+	// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+});
+});
+</script>
+
+<!-- Cookie Scripts -->
+{# Cookie banner + CONSENT UPDATE -> GTM écoutera l'event 'consent_update' #}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (document.cookie.indexOf('aksamPerformance') < 0) {
+        const banner = document.createElement('div');
+        banner.innerHTML = `
+          <div class="fixed bottom-6 left-6 right-6 bg-surface p-6 rounded-2xl shadow-2xl z-50 max-w-md mx-auto border border-primary/20">
+            <div class="flex items-start space-x-4">
+              <div class="p-2 bg-blue-100 rounded-xl">
+                <i class="fas fa-cookie-bite text-yellow-500 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-dark mb-2">Cookies et confidentialité</h4>
+                <p class="text-sm text-gray-600 mb-4">www.assurance-vehicule-pro.fr utilise des cookies pour vous offrir le meilleur service.</p>
+                <div class="flex space-x-2">
+                  <button id="acceptCookiesBtn" class="bg-gradient-to-r from-blue-400 to-blue-500 text-dark px-4 py-2 rounded-xl text-sm font-medium transition-all hover:scale-105 shadow-md">
+                    <i class="fas fa-check mr-1"></i>J'accepte
+                  </button>
+                  <button id="rejectCookiesBtn" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm transition-all hover:bg-gray-300">
+                    Refuser
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="phone-number">
-                <span class="phone-icon"><i class="fas fa-phone text-lg lg:text-2xl text-dark"></i></span>
-                <span>01.82.83.48.00</span>
-            </div>
-        </div>
-    </div>
+          </div>`;
+        document.body.appendChild(banner);
 
-    <!-- Header -->
-     
+        document.getElementById('acceptCookiesBtn')?.addEventListener('click', ()=>{
+          const expiryDate = new Date(); expiryDate.setMonth(expiryDate.getMonth() + 1);
+          document.cookie = 'aksamPerformance=1; path=/; expires=' + expiryDate.toGMTString();
 
-    <!-- Hero Section avec Formulaire -->
-    <section class="hero-with-form">
-        <div class="hero-container">
-            <div class="hero-content-left">
-                <h1>Assurance pour véhicule professionnel</h1>
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Conducteur professionnel" class="hero-image">
-            </div>
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'consent_update',
+            ad_storage: 'granted',
+            analytics_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted'
+          });
 
-            <!-- Formulaire de devis -->
-            <div class="quote-form-container" id="contactForm">
-                <div class="form-title">
-                    Complétez ce formulaire pour obtenir un tarif
-                </div>
-                
-                <form id="quoteForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nom..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" placeholder="Prénom..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" placeholder="Raison sociale...">
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" placeholder="Activité..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Démarrage d'activité</option>
-                            <option value="moins-1an">Moins d'1 an</option>
-                            <option value="1-3ans">1 à 3 ans</option>
-                            <option value="3-5ans">3 à 5 ans</option>
-                            <option value="plus-5ans">Plus de 5 ans</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Véhicule assuré actuellement</option>
-                            <option value="oui">Oui</option>
-                            <option value="non">Non</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" placeholder="Code Postal..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" placeholder="Email..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" placeholder="Téléphone..." required>
-                    </div>
-                    
-                    <div class="privacy-text">
-                        En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adapté à votre recherche.
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Comparer</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professionals Section -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Une Assurance Adaptée à tous les Professionnels</h2>
-            <p class="section-subtitle">Chaque métier a ses propres exigences. C'est pourquoi notre assurance véhicule pro couvre l'ensemble de vos besoins, quel que soit votre secteur d'activité ou la taille de votre flotte.</p>
-            
-            <div class="professionals-grid">
-                <div class="professional-card">
-                    <div class="icon">🔨</div>
-                    <h3>Artisans & BTP</h3>
-                    <p>Utilitaires, fourgons, camionnettes bennes... Vos outils de chantier sont entre de bonnes mains.</p>
-                </div>
-                <div class="professional-card">
-                    <div class="icon">💼</div>
-                    <h3>Commerciaux & Prof. Libérales</h3>
-                    <p>Berlines de fonction, véhicules de société... Roulez l'esprit tranquille lors de vos déplacements.</p>
-                </div>
-                <div class="professional-card">
-                    <div class="icon">🚚</div>
-                    <h3>Transport & Logistique</h3>
-                    <p>Poids lourds, remorques, véhicules frigorifiques... Assurez la continuité de votre chaîne logistique.</p>
-                </div>
-                <div class="professional-card">
-                    <div class="icon">🏥</div>
-                    <h3>Service à la Personne & Santé</h3>
-                    <p>Véhicules légers pour les visites à domicile, ambulances... Votre mobilité est notre priorité.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Pourquoi choisir notre assurance véhicule pro ?</h2>
-            <p class="section-subtitle">Plus qu'une Assurance, un Partenaire pour Votre Mobilité</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="check">✅</div>
-                    <h3>Réponse Rapide & Devis en Ligne</h3>
-                    <p>Ne perdez pas de temps. Obtenez une proposition claire et compétitive rapidement depuis votre mobile.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="check">✅</div>
-                    <h3>Des Garanties Essentielles Incluses</h3>
-                    <p>Responsabilité Civile, Défense Pénale et Recours incluses dans toutes nos formules.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="check">✅</div>
-                    <h3>Options sur-mesure</h3>
-                    <p>Vol, Incendie, Bris de glace, Dommages tous accidents, perte financière... Personnalisez votre contrat selon l'usage réel de vos véhicules.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="check">✅</div>
-                    <h3>Assistance 24/7</h3>
-                    <p>Un pépin sur la route ? Notre service d'assistance est à vos côtés jour et nuit.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantees Section -->
-    <section id="garanties">
-        <div class="container">
-            <h2 class="section-title">Nos garanties en détail</h2>
-            <p class="section-subtitle">Maîtrisez votre budget en choisissant les garanties qui comptent vraiment pour vous.</p>
-            
-            <div class="guarantees-grid">
-                <div class="guarantee-card">
-                    <div class="guarantee-header">
-                        <h3>Tiers Simple</h3>
-                        <p>Idéal pour les véhicules plus anciens ou à faible valeur.</p>
-                    </div>
-                    <ul class="guarantee-list">
-                        <li>Responsabilité Civile</li>
-                        <li>Protection du conducteur</li>
-                        <li>Assistance</li>
-                    </ul>
-                </div>
-
-                <div class="guarantee-card">
-                    <div class="guarantee-header">
-                        <h3>Tiers Étendu</h3>
-                        <p>Le meilleur compromis entre protection et budget.</p>
-                    </div>
-                    <ul class="guarantee-list">
-                        <li>Inclus : Tiers Simple</li>
-                        <li>+ Bris de Glace</li>
-                        <li>+ Vol & Incendie</li>
-                        <li>+ Catastrophes Naturelles</li>
-                    </ul>
-                </div>
-
-                <div class="guarantee-card premium">
-                    <div class="guarantee-header">
-                        <h3>Tous Risques</h3>
-                        <p>La tranquillité d'esprit absolue pour vos véhicules neufs ou stratégiques.</p>
-                    </div>
-                    <ul class="guarantee-list">
-                        <li>Inclus Tiers Étendu</li>
-                        <li>+ Dommages Tous Accidents</li>
-                        <li>+ Vandalisme</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="margin-top: 3rem; background: var(--light); padding: 2rem; border-radius: 15px;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Options Recommandées :</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <strong>Garantie Perte d'Exploitation</strong>
-                        <p style="color: var(--gray); margin-top: 0.5rem;">Pour compenser l'impact financier de l'immobilisation de votre véhicule.</p>
-                    </div>
-                    <div>
-                        <strong>Véhicule de Remplacement</strong>
-                        <p style="color: var(--gray); margin-top: 0.5rem;">Pour ne jamais interrompre votre activité.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Steps Section -->
-    <section class="steps" id="comment">
-        <div class="container">
-            <h2 class="section-title">Comment ça Marche ?</h2>
-            <p class="section-subtitle">Votre Devis d'Assurance Véhicule Pro en 3 Étapes Simples</p>
-            
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Cliquez & Décrivez</h3>
-                    <p>Remplissez notre formulaire en 2 minutes avec les informations sur votre activité et votre véhicule.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Comparez & Choisissez</h3>
-                    <p>Recevez instantanément notre meilleure proposition tarifaire et personnalisez vos options.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Signez & Roulez</h3>
-                    <p>Acceptez le devis en ligne et recevez votre mémo par email pour prendre la route en toute sérénité.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2 class="section-title">Questions Fréquentes</h2>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Quelle est la différence entre une assurance auto personnelle et une assurance véhicule pro ?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        La différence est cruciale. Une assurance auto personnelle couvre principalement les déplacements privés (domicile-travail, loisirs). L'assurance véhicule pro est spécifiquement conçue pour couvrir les risques liés à votre activité : transport de marchandises ou de matériel, tournées commerciales, visites de chantiers, etc. Elle inclut des garanties adaptées (comme la couverture du matériel transporté) et protège votre entreprise en cas de sinistre pendant un usage professionnel, ce qui n'est pas le cas d'un contrat personnel.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Dois-je assurer un véhicule à mon nom ou au nom de mon entreprise ?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        Si le véhicule a été acheté par votre entreprise (et que la carte grise est à son nom), il doit obligatoirement être assuré au nom de l'entreprise. Si le véhicule vous appartient mais que vous l'utilisez pour votre activité (en tant qu'indépendant par exemple), vous devez au minimum souscrire une extension de garantie "usage professionnel" sur votre contrat personnel, mais l'idéal reste un contrat pro dédié pour une couverture optimale.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Mes salariés sont-ils couverts s'ils conduisent le véhicule de l'entreprise ?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        Oui, absolument. Nos contrats d'assurance véhicule pro sont conçus pour couvrir les déplacements effectués par le dirigeant ainsi que par tous les employés autorisés à conduire le véhicule dans le cadre de leurs fonctions. Il n'y a pas de conducteur désigné unique, ce qui offre une flexibilité totale à votre organisation.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Que se passe-t-il si mon utilitaire est en panne ou accidenté ?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        C'est là que l'assistance professionnelle fait toute la différence. Nos contrats incluent une assistance 0 km 24/7. En cas de panne ou d'accident, nous organisons le dépannage ou le remorquage de votre véhicule. Selon les options choisies, nous mettons à votre disposition un véhicule de remplacement de catégorie équivalente (un autre utilitaire, par exemple) pour que vous puissiez continuer votre activité sans interruption.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Le matériel et les marchandises dans mon fourgon sont-ils assurés ?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer" style="display: none;">
-                        L'assurance de base (Responsabilité Civile, Dommages) couvre le véhicule lui-même. Pour protéger votre outillage, vos équipements ou vos marchandises, il est indispensable de souscrire une garantie optionnelle "matériels et marchandises transportés". Cette garantie vous indemnise en cas de vol ou de détérioration de votre chargement suite à un accident.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="cta-final" id="contact">
-        <div class="container">
-            <h2>Prêt à Protéger Votre Outil de Travail ?</h2>
-            <p>Ne laissez pas un imprévu routier freiner votre business. Obtenez dès maintenant une offre claire, compétitive et sans engagement pour votre assurance véhicule pro.</p>
-            <a href="#contactForm" class="cta-button">Obtenir Mon Tarif Personnalisé</a>
-        </div>
-    </section>
-
-   
-
-    <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const toggle = question.querySelector('.faq-toggle');
-                
-                if (answer.style.display === 'none' || answer.style.display === '') {
-                    answer.style.display = 'block';
-                    toggle.textContent = '−';
-                } else {
-                    answer.style.display = 'none';
-                    toggle.textContent = '+';
-                }
-            });
+          document.querySelector('.fixed.bottom-6')?.remove();
         });
 
-        // Form submission
-        document.getElementById('quoteForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Merci pour votre demande ! Nous vous contacterons très prochainement.');
+        document.getElementById('rejectCookiesBtn')?.addEventListener('click', ()=>{
+          document.querySelector('.fixed.bottom-6')?.remove();
         });
+      }
+    });
+  </script>
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
- {% endblock %}
- 
+  
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+	{
+																																																																																																																																																																																																																																																																																																																																																																																		        "@context": "http://schema.org",
+																																																																																																																																																																																																																																																																																																																																																																																		        "@type": "LocalBusiness",
+																																																																																																																																																																																																																																																																																																																																																																																		        "name": "Aksam Assurance",
+																																																																																																																																																																																																																																																																																																																																																																																		        "image": "assets/img/favicon.png",
+																																																																																																																																																																																																																																																																																																																																																																																		        "telephone": "01 82 83 48 00",
+																																																																																																																																																																																																																																																																																																																																																																																		        "address": {
+																																																																																																																																																																																																																																																																																																																																																																																		            "@type": "PostalAddress",
+																																																																																																																																																																																																																																																																																																																																																																																		            "streetAddress": "10 rue de Penthièvre",
+																																																																																																																																																																																																																																																																																																																																																																																		            "addressCountry": "FR",
+																																																																																																																																																																																																																																																																																																																																																																																		            "addressLocality": "PARIS",
+																																																																																																																																																																																																																																																																																																																																																																																		            "postalCode": "75008"
+																																																																																																																																																																																																																																																																																																																																																																																		        },
+																																																																																																																																																																																																																																																																																																																																																																																		        "url": "https://www.assurance-vehicule-pro.fr",
+																																																																																																																																																																																																																																																																																																																																																																																		        "priceRange": "€€",
+																																																																																																																																																																																																																																																																																																																																																																																		        "openingHours": "Mo-Fr 09:00-18:00",
+																																																																																																																																																																																																																																																																																																																																																																																		        "contactPoint": {
+																																																																																																																																																																																																																																																																																																																																																																																		            "@type": "ContactPoint",
+																																																																																																																																																																																																																																																																																																																																																																																		            "telephone": "+33 1 82 83 48 00",
+																																																																																																																																																																																																																																																																																																																																																																																		            "contactType": "Customer Service",
+																																																																																																																																																																																																																																																																																																																																																																																		            "availableLanguage": ["French", "English"]
+																																																																																																																																																																																																																																																																																																																																																																																		        }
+																																																																																																																																																																																																																																																																																																																																																																																		    }
+</script>{% endblock %}

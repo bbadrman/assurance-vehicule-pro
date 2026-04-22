@@ -1,0 +1,378 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales - Assurance Taxi
+{% endblock %}
+
+{% block body %}
+	{% for message in app.flashes('success') %}
+		<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+			{{ message }}
+		</div>
+	{% endfor %}
+
+
+	<!-- Hero Section -->
+
+	<section
+		class="py-8 lg:py-6 bg-gradient-to-br from-light via-surfaceHover to-light hero-pattern relative overflow-hidden">
+		<!-- Background decoration -->
+		<div class="absolute inset-0 scanlines-bg opacity-30"></div>
+		<div class="absolute top-5 left-5 floating-animation">
+			<i class="fas fa-gavel text-yellow-600 text-4xl opacity-30"></i>
+		</div>
+		<div class="absolute bottom-5 right-5 floating-animation" style="animation-delay: -2s;">
+			<i class="fas fa-balance-scale text-yellow-700 text-5xl opacity-25"></i>
+		</div>
+
+		<div class="container mx-auto px-4 relative z-10">
+			<div class="text-center">
+				<div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+					<i class="fas fa-file-contract text-2xl text-dark"></i>
+				</div>
+				<h1 class="text-4xl lg:text-3xl font-bold text-gradient mb-4">Mentions légales</h1>
+				<div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full"></div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Content Section -->
+	<section class="py-12 lg:py-20 bg-surface">
+	<div class="container mx-auto px-4">
+		<div class="max-w-6xl mx-auto">
+			<div class="fade-in">
+
+				<!-- Conditions juridiques -->
+				<div class="bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 rounded-2xl lg:rounded-3xl p-4 lg:p-10 mb-8 lg:mb-16 border border-primary/10">
+					<!-- Titre avec icône sur la même ligne -->
+					<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+						<div class="p-2.5 lg:p-4 bg-primary/10 rounded-xl lg:rounded-2xl flex-shrink-0">
+							<i class="fas fa-info-circle text-lg lg:text-3xl text-gradient"></i>
+						</div>
+						<h2 class="text-lg lg:text-3xl font-bold text-dark">Conditions juridiques</h2>
+					</div>
+					<!-- Paragraphe en dessous -->
+					<div class="pl-0 lg:pl-16">
+						<p class="text-gray-700 text-sm lg:text-lg leading-relaxed">
+							En envoyant un courrier électronique à la société ou en accédant et/ou utilisant le Site Internet www.aksam-assurances.fr, chaque personne physique (ci-après « l'Utilisateur ») déclare et garantit qu'elle a pris préalablement connaissances des présentes conditions juridiques, c'est-à-dire des informations légales, des règles applicables à la protection des données à caractère personnelles et des conditions d'utilisation et qu'elle en accepte les termes et conditions sans réserve, modification ou restriction.
+						</p>
+					</div>
+				</div>
+
+				<!-- Mentions légales -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-20">
+					<!-- Éditeur -->
+					<div class="bg-surface rounded-2xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+							<div class="p-2.5 lg:p-4 bg-gradient-to-r from-blue-200 to-blue-400 rounded-xl lg:rounded-2xl shadow-lg flex-shrink-0">
+								<i class="fas fa-building text-white text-base lg:text-2xl"></i>
+							</div>
+							<h3 class="text-base lg:text-2xl font-bold text-blue-600">Éditeur</h3>
+						</div>
+						<!-- Contenu en dessous -->
+						<div>
+							<p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3 lg:mb-4">
+								Le site www.assurance-vehicule-pro.fr est édité par la société
+								<strong>AKSAM ASSURANCES</strong>
+								SARL AU au capital de 10.000 €
+							</p>
+							<div class="p-3 lg:p-4 bg-blue-50 rounded-xl lg:rounded-2xl border border-blue-200">
+								<ul class="space-y-1.5 lg:space-y-2 text-xs lg:text-sm text-gray-600">
+									<li><strong>Siège social :</strong> 10 Rue de Penthièvre 75008 Paris</li>
+									<li><strong>SIRET :</strong> 84065346300033</li>
+									<li><strong>R.C.S Paris :</strong> 840 653 463</li>
+									<li><strong>ORIAS :</strong> 180 074 24</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- Hébergeur -->
+					<div class="bg-surface rounded-2xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+							<div class="p-2.5 lg:p-4 bg-gradient-to-r from-blue-200 to-blue-400 rounded-xl lg:rounded-2xl shadow-lg flex-shrink-0">
+								<i class="fas fa-server text-white text-base lg:text-2xl"></i>
+							</div>
+							<h3 class="text-base lg:text-2xl font-bold text-gradient">Hébergeur</h3>
+						</div>
+						<!-- Contenu en dessous -->
+						<div>
+							<p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3 lg:mb-4">
+								Le présent Site est hébergé par la société NAMECHEAP.
+							</p>
+							<div class="p-3 lg:p-4 bg-blue-50 rounded-xl lg:rounded-2xl border border-blue-200 mb-4 lg:mb-6">
+								<p class="text-xs lg:text-sm text-gray-600">
+									<strong>Adresse :</strong> EU Data Center, Amsterdam, Netherlands.
+								</p>
+							</div>
+							<div>
+								<h4 class="text-base lg:text-lg font-bold text-gradient mb-2 lg:mb-3">Liens hypertextes</h4>
+								<p class="text-gray-700 text-xs lg:text-sm leading-relaxed">
+									Leur contenu et/ou les documents accessibles à partir des liens hypertextes publiés sur le Site Web ne sauraient engager la responsabilité de la société.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Cookies Section -->
+				<div class="bg-gradient-to-br from-light to-surfaceHover rounded-2xl lg:rounded-3xl p-6 lg:p-10 mb-8 lg:mb-16 border border-gray-100 relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full -mr-20 -mt-20"></div>
+					<div class="relative">
+						<div class="text-center mb-6 lg:mb-10">
+							<h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-3 lg:mb-6">Utilisation des cookies</h2>
+							<p class="text-gray-700 text-sm lg:text-lg max-w-4xl mx-auto px-2">
+								Nous utilisons différents types de cookies pour améliorer votre expérience sur notre site.
+							</p>
+						</div>
+
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+							<div class="bg-surface rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-lg border border-primary/10">
+								<div class="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4">
+									<span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 lg:w-12 lg:h-12 flex items-center justify-center text-base lg:text-xl font-bold shadow-lg flex-shrink-0">1</span>
+									<h3 class="text-sm lg:text-xl font-bold text-gradient">Cookies fonctionnels</h3>
+								</div>
+								<p class="text-gray-600 leading-relaxed text-xs lg:text-sm">
+									Permettent au site de se souvenir des choix que vous faites et d'améliorer votre navigation. Durée de vie courte, maximum 13 mois.
+								</p>
+							</div>
+
+							<div class="bg-surface rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-lg border border-secondary/10">
+								<div class="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4">
+									<span class="bg-green-100 text-green-600 rounded-full w-8 h-8 lg:w-12 lg:h-12 flex items-center justify-center text-base lg:text-xl font-bold shadow-lg flex-shrink-0">2</span>
+									<h3 class="text-sm lg:text-xl font-bold text-gradient">Cookies statistiques</h3>
+								</div>
+								<p class="text-gray-600 leading-relaxed text-xs lg:text-sm">
+									Collectent des informations pour étudier la navigation : nombre de visites, pages visitées, provenance des visiteurs, etc.
+								</p>
+							</div>
+
+							<div class="bg-surface rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-lg border border-accent/10">
+								<div class="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4">
+									<span class="bg-orange-100 text-orange-600 rounded-full w-8 h-8 lg:w-12 lg:h-12 flex items-center justify-center text-base lg:text-xl font-bold shadow-lg flex-shrink-0">3</span>
+									<h3 class="text-sm lg:text-xl font-bold text-gradient">Cookies sociaux</h3>
+								</div>
+								<p class="text-gray-600 leading-relaxed text-xs lg:text-sm">
+									Permettent le partage de contenus sur les réseaux sociaux comme LinkedIn, Viadeo et autres.
+								</p>
+							</div>
+						</div>
+
+						<div class="mt-6 lg:mt-10 p-4 lg:p-6 bg-blue-50 rounded-xl lg:rounded-2xl border border-blue-200">
+							<h4 class="text-base lg:text-lg font-bold text-gradient mb-3 lg:mb-4">Configuration des cookies</h4>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-4">
+								<ul class="space-y-2">
+									<li class="flex items-center gap-2">
+										<i class="fas fa-check text-green-600 text-xs flex-shrink-0"></i>
+										<a href="https://support.mozilla.org" class="text-blue-600 hover:underline text-xs lg:text-sm">Firefox</a>
+									</li>
+									<li class="flex items-center gap-2">
+										<i class="fas fa-check text-green-600 text-xs flex-shrink-0"></i>
+										<a href="http://windows.microsoft.com" class="text-blue-600 hover:underline text-xs lg:text-sm">Internet Explorer</a>
+									</li>
+									<li class="flex items-center gap-2">
+										<i class="fas fa-check text-green-600 text-xs flex-shrink-0"></i>
+										<a href="https://support.google.com" class="text-blue-600 hover:underline text-xs lg:text-sm">Google Chrome</a>
+									</li>
+								</ul>
+								<ul class="space-y-2">
+									<li class="flex items-center gap-2">
+										<i class="fas fa-check text-green-600 text-xs flex-shrink-0"></i>
+										<a href="http://www.commentcamarche.net" class="text-blue-600 hover:underline text-xs lg:text-sm">Safari</a>
+									</li>
+									<li class="flex items-center gap-2">
+										<i class="fas fa-check text-green-600 text-xs flex-shrink-0"></i>
+										<a href="http://help.opera.com" class="text-blue-600 hover:underline text-xs lg:text-sm">Opéra</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Protection des données -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-20">
+					<!-- Protection des données personnelles -->
+					<div class="bg-surface rounded-2xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+							<div class="p-2.5 lg:p-4 bg-gradient-to-r from-blue-200 to-blue-400 rounded-xl lg:rounded-2xl shadow-lg flex-shrink-0">
+								<i class="fas fa-shield-alt text-white text-base lg:text-2xl"></i>
+							</div>
+							<h3 class="text-base lg:text-2xl font-bold text-gradient">Protection des données personnelles</h3>
+						</div>
+						<!-- Contenu en dessous -->
+						<div>
+							<p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3 lg:mb-4">
+								Les informations personnelles recueillies feront l'objet d'un traitement automatisé conformément à la loi française n° 78-17 du 6 janvier 1978.
+							</p>
+							<div class="p-3 lg:p-4 bg-blue-50 rounded-xl lg:rounded-2xl border border-blue-200">
+								<p class="text-xs lg:text-sm text-gray-600">
+									<strong>Contact :</strong><br>
+									AKSAM ASSURANCES<br>
+									10 Rue de Penthièvre 75008 Paris<br>
+									Email: contact@aksam-assurances.fr
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Vos droits -->
+					<div class="bg-surface rounded-2xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+							<div class="p-2.5 lg:p-4 bg-gradient-to-r from-blue-200 to-blue-400 rounded-xl lg:rounded-2xl shadow-lg flex-shrink-0">
+								<i class="fas fa-user-shield text-white text-base lg:text-2xl"></i>
+							</div>
+							<h3 class="text-base lg:text-2xl font-bold text-gradient">Vos droits</h3>
+						</div>
+						<!-- Liste en dessous -->
+						<ul class="space-y-2 lg:space-y-3">
+							<li class="flex items-start gap-2">
+								<div class="p-1 bg-green-100 rounded-full mt-0.5 flex-shrink-0">
+									<i class="fas fa-check text-green-600 text-xs"></i>
+								</div>
+								<span class="text-gray-700 text-xs lg:text-sm">Confirmation du traitement de vos données</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<div class="p-1 bg-green-100 rounded-full mt-0.5 flex-shrink-0">
+									<i class="fas fa-check text-green-600 text-xs"></i>
+								</div>
+								<span class="text-gray-700 text-xs lg:text-sm">Accès à vos données personnelles</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<div class="p-1 bg-green-100 rounded-full mt-0.5 flex-shrink-0">
+									<i class="fas fa-check text-green-600 text-xs"></i>
+								</div>
+								<span class="text-gray-700 text-xs lg:text-sm">Modification et suppression</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<div class="p-1 bg-green-100 rounded-full mt-0.5 flex-shrink-0">
+									<i class="fas fa-check text-green-600 text-xs"></i>
+								</div>
+								<span class="text-gray-700 text-xs lg:text-sm">Opposition au traitement</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Propriété intellectuelle & Réclamations -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-20">
+					<!-- Propriété intellectuelle -->
+					<div class="bg-surface rounded-2xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+							<div class="p-2.5 lg:p-4 bg-gradient-to-r from-blue-200 to-blue-400 rounded-xl lg:rounded-2xl shadow-lg flex-shrink-0">
+								<i class="fas fa-copyright text-white text-base lg:text-2xl"></i>
+							</div>
+							<h3 class="text-base lg:text-2xl font-bold text-gradient">Droit d'auteur et propriété intellectuelle</h3>
+						</div>
+						<!-- Contenu en dessous -->
+						<div>
+							<p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3 lg:mb-4">
+								Le site et son contenu font l'objet d'une protection légale au titre de la propriété littéraire et artistique. Il est interdit de copier ou reproduire tout ou partie du contenu du site.
+							</p>
+							<div class="p-3 bg-red-50 rounded-xl lg:rounded-2xl border border-red-200">
+								<p class="text-xs lg:text-sm text-red-700">
+									<strong>Important :</strong>
+									Le non-respect de ces règles peut engager votre responsabilité civile et pénale.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Réclamations -->
+					<div class="bg-surface rounded-2xl lg:rounded-3xl p-4 lg:p-8 shadow-xl border border-gray-100 card-hover">
+						<!-- Icône + Titre sur la même ligne -->
+						<div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+							<div class="p-2.5 lg:p-4 bg-gradient-to-r from-blue-200 to-blue-400 rounded-xl lg:rounded-2xl shadow-lg flex-shrink-0">
+								<i class="fas fa-exclamation-triangle text-white text-base lg:text-2xl"></i>
+							</div>
+							<h3 class="text-base lg:text-2xl font-bold text-gradient">Réclamations</h3>
+						</div>
+						<!-- Contenu en dessous -->
+						<div>
+							<p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3 lg:mb-4">
+								Pour toute réclamation, contactez-nous :
+							</p>
+							<div class="space-y-3">
+								<div class="p-3 bg-blue-50 rounded-xl lg:rounded-2xl border border-blue-200">
+									<p class="text-xs lg:text-sm text-gray-600 leading-relaxed">
+										<strong>Téléphone :</strong> 01 82 83 48 00<br>
+										<strong>Email :</strong> contact@aksam-assurances.fr<br>
+										<strong>Adresse :</strong> 10 rue de Penthièvre 75008 Paris
+									</p>
+								</div>
+								<div class="p-3 bg-green-50 rounded-xl lg:rounded-2xl border border-green-200">
+									<p class="text-xs lg:text-sm text-green-700 leading-relaxed">
+										<strong>Médiateur :</strong> La Médiation de la consommation PLANÈTE COURTIER<br>
+										Email : mediation@planetecourtier.com
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- CTA Section -->
+				<div class="bg-gradient-to-r from-blue-400 to-blue-500 rounded-2xl lg:rounded-3xl p-6 lg:p-12 text-white text-center relative overflow-hidden">
+					<div class="absolute inset-0 bg-scanlines opacity-10"></div>
+					<div class="relative">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 rounded-xl lg:rounded-2xl mx-auto mb-4 lg:mb-6 flex items-center justify-center">
+							<i class="fas fa-home text-2xl lg:text-3xl text-white"></i>
+						</div>
+						<h2 class="text-2xl lg:text-4xl font-bold mb-3 lg:mb-6 text-white">Retour à l'accueil</h2>
+						<p class="text-sm lg:text-xl mb-6 lg:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed px-2">
+							Découvrez nos offres d'assurance professionnelle et obtenez votre devis personnalisé en quelques clics.
+						</p>
+						<a href="/" class="inline-block bg-white text-blue-600 font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-xl lg:rounded-2xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl text-sm lg:text-base">
+							<i class="fas fa-arrow-left mr-2"></i>
+							Retour à l'accueil
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<!-- Scripts -->
+ <script>
+		// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+});
+});
+	</script>
+
+ 
+	<!-- JSON-LD -->
+	 <script type="application/ld+json">
+			{
+												"@context": "http://schema.org",
+												"@type": "WebPage",
+												"name": "Mentions légales - Assurance vehicule-pro",
+												"description": "Mentions légales et conditions d'utilisation du site Aksam Assurances",
+												"url": "https://www.assurance-vehicule-pro.fr//mentions-legales",
+												"publisher": {
+													"@type": "Organization",
+													"name": "Aksam Assurances",
+													"telephone": "01 82 83 48 00",
+													"address": {
+														"@type": "PostalAddress",
+														"streetAddress": "10 rue de Penthièvre",
+														"addressCountry": "FR",
+														"addressLocality": "PARIS",
+														"postalCode": "75008"
+													}
+												}
+											}
+		</script>
+{% endblock %}
