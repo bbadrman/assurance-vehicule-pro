@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Assurance Véhicule Pro | Devis en Ligne pour Pros, Artisans & PME
-
-{% endblock %}
+{% block title %}Assurance Véhicule Professionnel | Devis en ligne{% endblock %}
+{% block og_title %}Assurance Véhicule Professionnel — Devis en Ligne{% endblock %}
+{% block og_description %}Courtier en assurance véhicule pro : devis en 2 min, +20 compagnies partenaires dont AXA et April. Utilitaires, voitures de société, poids lourds.{% endblock %}
+{% block description %}<meta name="description" content="Courtier en assurance véhicule professionnel : obtenez un devis en 2 min pour votre utilitaire, voiture de société ou poids lourd. +20 compagnies partenaires dont AXA et April.">{% endblock %}
 
 {% block body %}
+	<h1 class="sr-only">Assurance Véhicule Professionnel — Devis en ligne pour Pros, Artisans & PME</h1>
 	<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
 		<!-- Background decoration -->
 		{# <div class="hidden lg:flex absolute top-4 left-4 lg:top-10 lg:left-10 floating-animation">
@@ -23,7 +24,7 @@
 				<div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
 					<div class="relative h-full min-h-[300px] lg:min-h-[600px]">
 						<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-3xl shadow-2xl overflow-hidden">
-							<img src="{{ asset('public/images/assurance-vehicule-pro.jpg') }}" alt="Conducteur professionnel" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy"/>
+							<img src="{{ asset('images/assurance-vehicule-pro.jpg') }}" alt="Conducteur professionnel au volant — assurance véhicule professionnel Aksam" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" fetchpriority="high"/>
 						</div>
 					</div>
 				</div>
@@ -688,31 +689,53 @@ target.scrollIntoView({behavior: 'smooth', block: 'start'});
     });
   </script>
 
-  
-
-<!-- JSON-LD -->
 <script type="application/ld+json">
-	{
-																																																																																																																																																																																																																																																																																																																																																																																		        "@context": "http://schema.org",
-																																																																																																																																																																																																																																																																																																																																																																																		        "@type": "LocalBusiness",
-																																																																																																																																																																																																																																																																																																																																																																																		        "name": "Aksam Assurance",
-																																																																																																																																																																																																																																																																																																																																																																																		        "image": "assets/img/favicon.png",
-																																																																																																																																																																																																																																																																																																																																																																																		        "telephone": "01 82 83 48 00",
-																																																																																																																																																																																																																																																																																																																																																																																		        "address": {
-																																																																																																																																																																																																																																																																																																																																																																																		            "@type": "PostalAddress",
-																																																																																																																																																																																																																																																																																																																																																																																		            "streetAddress": "10 rue de Penthièvre",
-																																																																																																																																																																																																																																																																																																																																																																																		            "addressCountry": "FR",
-																																																																																																																																																																																																																																																																																																																																																																																		            "addressLocality": "PARIS",
-																																																																																																																																																																																																																																																																																																																																																																																		            "postalCode": "75008"
-																																																																																																																																																																																																																																																																																																																																																																																		        },
-																																																																																																																																																																																																																																																																																																																																																																																		        "url": "https://www.assurance-vehicule-pro.fr",
-																																																																																																																																																																																																																																																																																																																																																																																		        "priceRange": "€€",
-																																																																																																																																																																																																																																																																																																																																																																																		        "openingHours": "Mo-Fr 09:00-18:00",
-																																																																																																																																																																																																																																																																																																																																																																																		        "contactPoint": {
-																																																																																																																																																																																																																																																																																																																																																																																		            "@type": "ContactPoint",
-																																																																																																																																																																																																																																																																																																																																																																																		            "telephone": "+33 1 82 83 48 00",
-																																																																																																																																																																																																																																																																																																																																																																																		            "contactType": "Customer Service",
-																																																																																																																																																																																																																																																																																																																																																																																		            "availableLanguage": ["French", "English"]
-																																																																																																																																																																																																																																																																																																																																																																																		        }
-																																																																																																																																																																																																																																																																																																																																																																																		    }
-</script>{% endblock %}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre une assurance auto personnelle et une assurance véhicule pro ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une assurance auto personnelle couvre principalement les déplacements privés. L'assurance véhicule pro est conçue pour couvrir les risques liés à votre activité : transport de marchandises, tournées commerciales, visites de chantiers. Elle protège votre entreprise en cas de sinistre pendant un usage professionnel, ce qui n'est pas le cas d'un contrat personnel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dois-je assurer un véhicule à mon nom ou au nom de mon entreprise ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si le véhicule a été acheté par votre entreprise (carte grise à son nom), il doit être assuré au nom de l'entreprise. Si le véhicule vous appartient mais est utilisé pour votre activité, il est recommandé de souscrire un contrat pro dédié pour une couverture optimale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes salariés sont-ils couverts s'ils conduisent le véhicule de l'entreprise ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Nos contrats d'assurance véhicule pro couvrent le dirigeant ainsi que tous les employés autorisés à conduire le véhicule dans le cadre de leurs fonctions. Il n'y a pas de conducteur désigné unique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si mon utilitaire est en panne ou accidenté ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nos contrats incluent une assistance 0 km 24h/24 et 7j/7. En cas de panne ou d'accident, nous organisons le dépannage ou le remorquage et mettons à votre disposition un véhicule de remplacement de catégorie équivalente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le matériel et les marchandises dans mon fourgon sont-ils assurés ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'assurance de base couvre le véhicule lui-même. Pour protéger votre outillage, équipements ou marchandises, il faut souscrire l'option \"matériels et marchandises transportés\". Elle vous indemnise en cas de vol ou de détérioration suite à un accident."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}

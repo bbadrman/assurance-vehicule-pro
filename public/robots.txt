@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /reponse
+Disallow: /mention-legale
+Disallow: /politique
+
+Sitemap: https://www.assurance-vehicule-pro.fr/sitemap.xml

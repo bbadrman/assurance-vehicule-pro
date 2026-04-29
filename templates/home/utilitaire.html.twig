@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Assurance Utilitaire Professionnel | Devis pour Fourgon & Camionnette
-
-{% endblock %}
+{% block title %}Assurance Utilitaire Pro | Fourgon & Camionnette{% endblock %}
+{% block og_title %}Assurance Utilitaire Professionnel — Devis en Ligne{% endblock %}
+{% block og_description %}Assurance utilitaire professionnelle pour artisans et PME. Garanties vol, contenu pro, assistance 0 km. Devis en ligne rapide.{% endblock %}
 {% block description %}<meta name="description" content="Protégez votre utilitaire avec une assurance professionnelle adaptée aux artisans et PME. Garanties vol, contenu pro (outillage, marchandises), assistance 0km. Obtenez votre devis en ligne.
 		">
 {% endblock %}
 {% block body %}
+	<h1 class="sr-only">Assurance Utilitaire Professionnel — Fourgon, Camionnette & Van pour Artisans</h1>
 	<section
 		class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
 		<!-- Background decoration -->
@@ -26,7 +26,7 @@
 				<div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
 					<div class="relative h-full min-h-[150px] lg:min-h-[400px]">
 						<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
-							<img src="{{ asset('public/images/assurance-utilitaire.jpg') }}" alt="assurance utilitaire" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy"/>
+							<img src="{{ asset('images/assurance-utilitaire.jpg') }}" alt="Fourgon utilitaire pour artisan — assurance utilitaire professionnelle Aksam" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" fetchpriority="high"/>
 						</div>
 					</div>
 				</div>
@@ -395,4 +395,46 @@ target.scrollIntoView({behavior: 'smooth', block: 'start'});
 });
 });
 	</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mon outillage est-il automatiquement couvert en cas de vol dans mon fourgon ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, la couverture de base ne protège pas le contenu. Pour assurer votre matériel, outils et marchandises contre le vol ou la casse, il est indispensable de souscrire l'option \"Garantie du Contenu Professionnel\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si mon utilitaire tombe en panne sur un chantier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avec notre Assistance 0 km, peu importe où vous vous trouvez, nous organisons le dépannage. Selon votre contrat, nous mettons à disposition un véhicule utilitaire de remplacement pour poursuivre votre activité sans interruption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je utiliser mon assurance auto personnelle pour mon usage professionnel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est fortement déconseillé. Un contrat personnel ne couvre généralement pas les déplacements professionnels. En cas d'accident durant votre activité, votre assureur pourrait refuser toute indemnisation. Seule une assurance utilitaire professionnel vous garantit d'être couvert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les aménagements spécifiques de mon utilitaire sont-ils assurés ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nos contrats pros peuvent inclure une garantie des aménagements professionnels. Il est important de déclarer la valeur de ces équipements pour qu'ils soient correctement couverts en cas de sinistre."
+      }
+    }
+  ]
+}
+</script>
+
 {% endblock %}

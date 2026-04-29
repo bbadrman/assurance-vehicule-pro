@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}  Assurance poids lourd professionnel & camion | toutes activités (BTP, Transport...)
-
-{% endblock %} 
+{% block title %}Assurance Poids Lourd Professionnel | Transporteurs & BTP{% endblock %}
+{% block og_title %}Assurance Poids Lourd Professionnel — Devis en Ligne{% endblock %}
+{% block og_description %}Assurance poids lourd sur-mesure pour transporteurs, BTP et logistique. RC Pro, marchandises, assistance 0 km. Devis en ligne.{% endblock %} 
          {% block description %}<meta name="description" content="Protégez votre poids lourds pro, quelle que soit votre activité. Assurance sur-mesure pour transporteurs, BTP, logistique. Devis en ligne : RC Pro, marchandises, assistance 0km.">
 		{% endblock %}
+
+ 
+
 {% block body %}
+	<h1 class="sr-only">Assurance Poids Lourd Professionnel — Transporteurs, BTP & Logistique</h1>
  <!-- Hero Section -->
     <section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
         <div class="hidden lg:flex absolute top-2 left-2 lg:top-5 lg:left-5 floating-animation">
@@ -22,7 +26,7 @@
                 <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
                     <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
                         <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
-                              <img src="{{ asset('public/images/poids-lourd.jpg') }}" alt="assurance-poidslourd" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
+                              <img src="{{ asset('images/poids-lourd.jpg') }}" alt="Camion poids lourd sur autoroute — assurance poids lourd professionnel Aksam" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" fetchpriority="high"/>
                         </div>
                     </div>
                 </div>
@@ -439,8 +443,50 @@
             });
         });
 
-        
+
     </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mon activité est très spécifique, êtes-vous en mesure de m'assurer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Notre force est de proposer des contrats sur-mesure. Nous étudions les risques liés à chaque activité, même les plus spécifiques, pour construire une police d'assurance qui couvre précisément vos besoins, y compris pour les transports hors gabarit ou les matières dangereuses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que couvre exactement la garantie \"marchandises transportées\" ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elle couvre la valeur de la marchandise en cas de destruction lors d'un accident, de vol lors d'une effraction, ou de détérioration due à un événement garanti. Elle est indispensable pour protéger votre responsabilité vis-à-vis de vos clients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je possède une flotte de véhicules mixtes, puis-je tout regrouper ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolument. Nous sommes spécialistes des flottes d'entreprise. Nous pouvons regrouper tous vos véhicules professionnels (poids lourds, utilitaires légers, voitures de société) sous un unique contrat de flotte pour simplifier votre gestion et optimiser vos cotisations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le rapatriement du conducteur est-il inclus ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nos garanties d'assistance incluent des prestations complètes : rapatriement, prise en charge des frais d'hébergement, et mise à disposition d'un chauffeur relais pour terminer la livraison si nécessaire."
+      }
+    }
+  ]
+}
+</script>
+
  {% endblock %}
  
    
