@@ -1,0 +1,446 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assurance pour autocar : devis et tarifs en ligne{% endblock %}
+{% block description %}<meta name="description" content="Trouvez la meilleure assurance pour autocar adaptée à votre activité. Comparez les garanties, obtenez un devis personnalisé et protégez votre flotte rapidement.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="https://assurance-vehicule-pro.fr/assurance-pour-autocar">{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
+    <div class="hidden lg:flex absolute top-2 left-2 lg:top-5 lg:left-5 floating-animation">
+        <i class="fas fa-bus text-blue-600 text-2xl lg:text-4xl opacity-30"></i>
+    </div>
+    <div class="hidden lg:flex absolute bottom-2 right-2 lg:bottom-5 lg:right-5 floating-animation" style="animation-delay: -2s;">
+        <i class="fas fa-shuttle-van text-blue-700 text-3xl lg:text-5xl opacity-25"></i>
+    </div>
+
+    <div class="w-full mx-auto px-4 lg:px-40 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-2 lg:gap-3 items-stretch">
+            
+            <!-- Image Section -->
+            <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
+                <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
+<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
+                            <img src="{{ asset('public/images/poid-lourd.png') }}" alt="assurance autocar" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
+                        </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="order-1 lg:order-2 slide-in-right flex-1 lg:flex-[3]">
+                <div class="bg-surface shadow-2xl p-3 lg:p-4 card-hover border-l border-gray-100 h-full rounded-xl lg:rounded-3xl">
+                    <div class="text-center mb-2 lg:mb-3">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg- rounded-xl mx-auto mb-2 flex items-center justify-center">
+                             
+                              <i class="fas fa-calculator text-lg lg:text-2xl text-accent"></i>
+                        </div>
+                        <h2 class="text-sm lg:text-xl font-bold text-gradient mb-2 leading-tight">Complétez ce formulaire pour obtenir un devis autocar</h2>
+                    </div>
+  
+				{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3'}}) }}
+
+			
+				<!-- Raison sociale -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-building text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.raison) }}
+					</div>
+					{{ form_errors(form.raison) }}
+				</div>
+                     
+                    <!-- Demarage d'activité -->
+                <div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-briefcase text-accentchamp text-sm"></i>
+						</span>
+						<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
+						<option value="" selected="selected">Demarage d'activité </option>
+						<option value="">OUI</option>
+						<option value="">NON</option>
+						</select>
+					</div>
+					
+				</div>
+				<!-- Activité -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-briefcase text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.activite) }}
+					</div>
+					{{ form_errors(form.activite) }}
+				</div>
+
+				<!-- Véhicule assuré -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-shield-alt text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.assurer) }}
+					</div>
+					{{ form_errors(form.assurer) }}
+				</div>
+
+				<!-- Code Postal -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-map-marker-alt text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.codePostale) }}
+					</div>
+					{{ form_errors(form.codePostale) }}
+				</div>
+                    <!-- Nom -->
+                    <div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-user text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.nom) }}
+						</div>
+						{{ form_errors(form.nom) }}
+					</div>
+
+				<!-- Prénom -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-user-tag text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.lastname) }}
+					</div>
+					{{ form_errors(form.lastname) }}
+				</div>
+
+
+				<!-- Email -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-envelope text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.email) }}
+					</div>
+					{{ form_errors(form.email) }}
+				</div>
+
+				<!-- Téléphone -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-phone text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.tele) }}
+					</div>
+					{{ form_errors(form.tele) }}
+				</div>
+
+				<!-- Consent -->
+				<div class="bg-white rounded-lg border border-blue-200 p-1.5 mt-2">
+					<span class="text-xs text-gray-600 leading-tight block text-justify">
+						En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adaptées à votre recherche.
+					</span>
+				</div>
+
+				<!-- Bouton -->
+				<button type="submit" class="w-full bg-accent text-white font-bold py-3 px-4 rounded-lg text-sm lg:text-base pulse-animation shadow-lg hover:shadow-2xl transition-all duration-300 mt-3">
+					<i class="fas fa-calculator mr-2"></i>
+					Comparer 
+				</button>
+
+				{{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Intro Section -->
+<section class="py-8 lg:py-16 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl lg:text-5xl font-bold text-gradient mb-6">Assurance pour autocar</h1>
+            <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-6">L'assurance adaptée aux professionnels du transport collectif</h2>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Transporter des passagers à bord d'un autocar engage une responsabilité considérable. Qu'il s'agisse de lignes régulières, de circuits touristiques ou de transport scolaire, chaque trajet implique une couverture d'assurance à la hauteur des risques réels. En France, l'obligation légale est stricte, les sinistres coûtent cher, et les compagnies d'assurance évaluent ces contrats avec des critères bien précis.
+            </p>
+            <p class="text-accent font-semibold mt-4 text-lg">
+                Nos experts accompagnent les professionnels du transport collectif pour trouver le contrat le plus adapté à leur activité, à leur flotte et à leur budget.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Types d'activités -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Des garanties pour tous les types d'autocar</h2>
+                <p class="text-gray-600 mt-4">Notre expertise nous permet d'assurer tous types d'autocars selon votre activité</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Transport Touristique -->
+                <div class="bg-surface rounded-xl p-6 shadow-xl border border-gray-100 card-hover">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-bus text-white text-lg lg:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm lg:text-base font-bold text-gradient">Transport Touristique</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Circuits touristiques</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Voyages organisés</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Excursions</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Transport haut de gamme</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Transport Scolaire -->
+                <div class="bg-surface rounded-xl p-6 shadow-xl border border-gray-100 card-hover">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-school text-white text-lg lg:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm lg:text-base font-bold text-gradient">Transport Scolaire</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Navettes scolaires</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Transport pédagogique</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Sorties scolaires</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Transport quotidien</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Transport Interurbain -->
+                <div class="bg-surface rounded-xl p-6 shadow-xl border border-gray-100 card-hover">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-route text-white text-lg lg:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm lg:text-base font-bold text-gradient">Transport Interurbain</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Lignes régulières</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Connections inter-régions</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Transport de jour et nuit</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-accent flex-shrink-0"></i>
+                            <span class="text-sm">Longue distance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Guarantees Section -->
+<section class="py-8 lg:py-20 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Des Garanties Essentielles pour le transport collectif</h2>
+                <p class="text-gray-600 mt-4">La protection légale minimale et les garanties complémentaires indispensables</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 : Responsabilité Civile -->
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-shield-alt text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Responsabilité Civile Transport de Voyageurs</h3>
+                            <p class="text-gray-600 text-sm">La base légale obligatoire imposée par l'article L. 3112-1 du Code des transports. Elle couvre les dommages corporels et matériels causés aux passagers et aux tiers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 : Protection des Voyageurs -->
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-user-shield text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Protection des Voyageurs</h3>
+                            <p class="text-gray-600 text-sm">Couverture des préjudices corporels subis à bord par les passagers, avec des plafonds adaptés au transport collectif.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 : Dommages Tous Accidents -->
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-bus-alt text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Dommages Tous Accidents au Véhicule</h3>
+                            <p class="text-gray-600 text-sm">Protection intégrale pour votre autocar contre les chocs, le versement, le vandalisme, même en cas d'accident responsable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 : Assistance -->
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-ambulance text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Assistance Autocar 0 km, 24/7</h3>
+                            <p class="text-gray-600 text-sm">Dépannage spécialisé, remorquage et grutage pour véhicules de grande taille, pour minimiser votre temps d'arrêt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 : Véhicule de Remplacement -->
+            <div class="flex justify-center mt-6">
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400 w-full md:w-1/2">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-exchange-alt text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Véhicule de Remplacement</h3>
+                            <p class="text-gray-600 text-sm">Indispensable pour les activités récurrentes : un véhicule de substitution sous 24-72 heures pour ne pas arrêter votre activité.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8 lg:mb-12">
+                <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-4">Questions Fréquentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Quel est le prix moyen d'une assurance pour autocar en France ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Le prix moyen d'une assurance pour autocar en France se situe entre 3 000 et 12 000 euros par an selon le profil du véhicule et son usage. Un autocar de tourisme longue distance de 55 places avec couverture tous risques et garantie passagers se situe généralement autour de 7 000 à 10 000 euros annuels.
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">L'assurance pour autocar est-elle obligatoire pour les transporteurs professionnels ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Oui, l'assurance pour autocar est une obligation légale absolue pour tout transporteur professionnel en France. L'article L. 3112-1 du Code des transports impose à tout exploitant de transport public routier de voyageurs de justifier d'une assurance couvrant sa responsabilité civile.
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Comment obtenir un devis assurance autocar rapidement ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Pour obtenir un devis rapidement, transmettez les informations essentielles sur votre véhicule et votre activité. Nos experts traitent les demandes en tenant compte du certificat d'immatriculation, de l'usage déclaré et de l'historique de sinistralité.
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Est-ce qu'un auto-entrepreneur peut assurer un autocar ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Un auto-entrepreneur peut assurer un autocar à condition de disposer d'une licence de transport voyageurs valide et d'un permis D en cours de validité. Nos experts connaissent les assureurs acceptant ce profil.
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Peut-on assurer un autocar après une résiliation pour non-paiement ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Il est possible d'assurer un autocar après une résiliation pour non-paiement, mais le marché standard se ferme dans ce cas. Des assureurs spécialisés en risques aggravés acceptent ces profils moyennant une prime majorée.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="py-8 lg:py-20 bg-gradient-to-r from-blue-200 to-blue-400">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="w-10 h-10 lg:w-16 lg:h-16 bg-white/20 rounded-xl mx-auto mb-4 lg:mb-6 flex items-center justify-center">
+                <i class="fas fa-bus text-lg lg:text-3xl text-white"></i>
+            </div>
+            <h2 class="text-xl lg:text-4xl font-bold mb-4 lg:mb-6 text-white">Obtenez votre tarif personnalisé</h2>
+            <p class="text-sm lg:text-xl mb-6 lg:mb-8 text-white/90 leading-relaxed">
+                Ne laissez pas une couverture inadaptée freiner votre entreprise. Obtenez une étude gratuite et un devis compétitif, 100% adapté à votre réalité métier.
+            </p>
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-2xl text-sm lg:text-base">
+                <i class="fas fa-arrow-up mr-2"></i>
+                Demander mon Devis Autocar Pro
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+{% endblock %}
