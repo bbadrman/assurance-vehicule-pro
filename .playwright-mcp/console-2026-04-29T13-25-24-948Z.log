@@ -1,0 +1,16 @@
+[     123ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/assurance-vehicule-pro.jpg:0
+[     143ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/public/js/app.js:0
+[     298ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at https://assurance-vehicule-pro.ddev.site/:1246:39
+[     386ms] [LOG] details: {application: X} @ https://assurance-vehicule-pro.ddev.site/assets/vendor/@hotwired/stimulus/stimulus.index-S4zNcea.js:6
+[     386ms] [LOG] This log comes from assets/app.js - welcome to AssetMapper! 🎉 @ https://assurance-vehicule-pro.ddev.site/assets/app-jgPm2-L.js:9
+[     386ms] [LOG] details: {application: X} @ https://assurance-vehicule-pro.ddev.site/assets/vendor/@hotwired/stimulus/stimulus.index-S4zNcea.js:6
+[     387ms] [LOG] details: {application: X} @ https://assurance-vehicule-pro.ddev.site/assets/vendor/@hotwired/stimulus/stimulus.index-S4zNcea.js:6
+[     396ms] [LOG] details: {application: X} @ https://assurance-vehicule-pro.ddev.site/assets/vendor/@hotwired/stimulus/stimulus.index-S4zNcea.js:6
+[     551ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/public/images/favicon.png:0
+[    4184ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/partenaire/axa.png:0
+[    4189ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/partenaire/sollyzar.png:0
+[    4191ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/partenaire/zephir.png:0
+[    4195ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/partenaire/april.jpg:0
+[    4211ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/partenaire/allianz.png:0
+[    4219ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://assurance-vehicule-pro.ddev.site/images/partenaire/eurodommage.png:0

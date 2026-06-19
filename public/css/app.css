@@ -562,4 +562,114 @@
         html {
             scroll-behavior: smooth;
         }
- 
+
+/* ============================================
+   Partenaires Carousel
+   ============================================ */
+.partenaires-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.partenaires-carousel-wrapper::before,
+.partenaires-carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+.partenaires-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+.partenaires-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+.partenaires-carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+    animation: partenaires-scroll 22s linear infinite;
+}
+.partenaires-carousel-track:hover {
+    animation-play-state: paused;
+}
+.partenaires-logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    padding: 0 1rem;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.partenaires-logo-item:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+.partenaires-logo-item img {
+    max-height: 68px;
+    max-width: 180px;
+    width: auto;
+    object-fit: contain;
+}
+@keyframes partenaires-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   Avis Clients Carousel
+   ============================================ */
+.avis-carousel-outer { position: relative; }
+.avis-carousel-track { display: flex; will-change: transform; }
+.avis-card {
+    flex: 0 0 calc(33.333% - 24px);
+    margin: 0 12px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+@media (max-width: 1023px) {
+    .avis-card { flex: 0 0 calc(50% - 24px); }
+}
+@media (max-width: 639px) {
+    .avis-card { flex: 0 0 calc(100% - 24px); }
+}
+.avis-avatar {
+    width: 2.5rem; height: 2.5rem;
+    border-radius: 50%;
+    background: #16a34a;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.avis-btn-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: #fff; border: 1px solid #e5e7eb;
+    border-radius: 50%; width: 2.25rem; height: 2.25rem;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer; z-index: 10; color: #374151;
+    transition: background 0.2s, color 0.2s;
+}
+.avis-btn-nav:hover { background: #16a34a; color: #fff; }
+.avis-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #d1d5db; cursor: pointer; transition: background 0.3s, transform 0.3s;
+}
+.avis-dot.active { background: #16a34a; transform: scale(1.3); }

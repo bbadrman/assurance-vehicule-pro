@@ -74,7 +74,7 @@
 								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
 									<i class="fas fa-briefcase text-accentchamp text-sm"></i>
 								</span>
-								<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
+								<select id="transport_type" name="type" required="required" class="select-native flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
 								<option value="" selected="selected">Type véhicule </option>
 								<option value="">+3T5</option>
 								<option value="">-3T5</option>
@@ -359,7 +359,7 @@
 						<!-- Icône + Titre sur la même ligne -->
 						<div class="flex items-center gap-4 mb-4">
 							<div class="w-12 h-12 lg:w-14 lg:h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-								<i class="fas fa-shield text-green-600 text-xl lg:text-2xl"></i>
+								<i class="fas fa-shield text-gradient text-xl lg:text-2xl"></i>
 							</div>
 							<h3 class="text-lg lg:text-2xl font-bold text-gradient">Tiers Étendu</h3>
 						</div>
@@ -401,7 +401,7 @@
 						<p class="text-gray-700 text-sm font-medium mb-6">La tranquillité d'esprit absolue pour vos véhicules neufs ou stratégiques.</p>
 						<ul class="space-y-3">
 							<li class="flex items-center gap-2">
-								<i class="fas fa-check text-green-600 flex-shrink-0"></i>
+								<i class="fas fa-check text-gradient flex-shrink-0"></i>
 								<span class="text-gray-700 text-sm font-medium">Inclus Tiers Étendu</span>
 							</li>
 							<li class="flex items-center gap-2">
@@ -490,7 +490,7 @@
 					</div>
 					<div class="mt-8">
 						{# <div class="w-16 h-16 bg-green-100 rounded-xl mx-auto mb-4 flex items-center justify-center">
-							<i class="fas fa-balance-scale text-green-600 text-2xl"></i>
+							<i class="fas fa-balance-scale text-gradient text-2xl"></i>
 						</div> #}
 						<h3 class="text-xl lg:text-2xl font-bold text-gradient mb-3">Comparez & Choisissez</h3>
 						<p class="text-gray-600 text-sm">Recevez instantanément notre meilleure proposition tarifaire et personnalisez vos options.</p>
@@ -608,6 +608,260 @@
 			</a>
 		</div>
 	</div>
+</section>
+
+<!-- partenaire -chiffer clee et avis client -->
+<section class="py-12 lg:py-20 bg-surface"> 
+		<div class="container mx-auto px-4 lg:px-8"> 
+			<!-- Partenaires section -->
+			<div class="mt-10 mb-2 py-8 w-full">
+
+				<h2 class="text-2xl lg:text-3xl font-bold text-gradient mb-4 text-center">Nos compagnies partenaires</h2>
+				<div class="py-12 partenaires-carousel-wrapper">
+					<div
+						class="partenaires-carousel-track">
+						<!-- Logos originaux -->
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/allianz.png') }}" alt="Allianz" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/april.jpg') }}" alt="April" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/axa.png') }}" alt="axa" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/eurodommage.png') }}" alt="Eurodommage" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/sollyzar.png') }}" alt="Sollyzar" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/zephir.png') }}" alt="Zephir" loading="lazy">
+						</div>
+						<!-- Duplication pour boucle infinie -->
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/allianz.png') }}" alt="Allianz" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/april.jpg') }}" alt="April" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/axa.png') }}" alt="axa" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/eurodommage.png') }}" alt="Eurodommage" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/sollyzar.png') }}" alt="Sollyzar" loading="lazy">
+						</div>
+						<div class="partenaires-logo-item">
+							<img src="{{ asset('images/partenaire/zephir.png') }}" alt="Zephir" loading="lazy">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{# Section statistiques #}
+			<div class="mt-8 py-8 mb-2 w-full" id="stats-strip">
+				<h2 class="text-2xl lg:text-3xl font-bold text-gradient mb-4 text-center">Chiffres clés</h2>
+
+				<div class="flex items-center justify-center">
+
+					<div class="flex flex-col items-center flex-1 py-4 px-8">
+						<i class="fas fa-users text-gradient text-2xl mb-2"></i>
+						<div class="flex items-baseline">
+							<span class="stat-number text-4xl font-bold text-dark" data-target="{{ nombreProspects }}">0</span>
+							<span class="text-gradient font-bold text-xl ml-0.5">+</span>
+						</div>
+						<span class="text-xs font-semibold uppercase tracking-widest text-gray-400 mt-1">Prospects</span>
+					</div>
+
+					<div class="w-px h-12 flex-shrink-0 bg-gray-200"></div>
+
+					<div class="flex flex-col items-center flex-1 py-4 px-8">
+						<i class="fas fa-file-invoice text-gradient text-2xl mb-2"></i>
+						<div class="flex items-baseline">
+							<span class="stat-number text-4xl font-bold text-dark" data-target="{{ nombreTarifications }}">0</span>
+							<span class="text-gradient font-bold text-xl ml-0.5">+</span>
+						</div>
+						<span class="text-xs font-semibold uppercase tracking-widest text-gray-400 mt-1">Tarifications</span>
+					</div>
+
+					<div class="w-px h-12 flex-shrink-0 bg-gray-200"></div>
+
+					<div class="flex flex-col items-center flex-1 py-4 px-8">
+						<i class="fas fa-check-circle text-gradient text-2xl mb-2"></i>
+						<div class="flex items-baseline">
+							<span class="stat-number text-4xl font-bold text-dark" data-target="{{ nombreSouscriptions }}">0</span>
+							<span class="text-gradient font-bold text-xl ml-0.5">+</span>
+						</div>
+						<span class="text-xs font-semibold uppercase tracking-widest text-gray-400 mt-1">Souscriptions</span>
+					</div>
+
+				</div>
+			</div>
+
+
+			{# Section Avis Clients #}
+			<div class="mt-10 py-8 mb-2 w-full" id="avis-clients">
+
+				<h2 class="text-2xl lg:text-3xl font-bold text-gradient mb-2 text-center">Avis de nos clients</h2>
+				<p class="text-center text-gray-500 mb-6 text-sm">Ce que disent nos assurés
+				</p>
+
+				<!-- Note globale -->
+				<div class="flex flex-col items-center justify-center mb-10">
+					<div class="flex items-center gap-3">
+						<div class="flex gap-1">
+							<i class="fas fa-star text-yellow-400 text-xl"></i>
+							<i class="fas fa-star text-yellow-400 text-xl"></i>
+							<i class="fas fa-star text-yellow-400 text-xl"></i>
+							<i class="fas fa-star text-yellow-400 text-xl"></i>
+							<i class="fas fa-star-half-alt text-yellow-400 text-xl"></i>
+						</div>
+						<span class="text-3xl font-bold text-dark">4.6</span>
+						<span class="text-gray-400 text-sm">/ 5 &mdash; Basé sur 127 avis</span>
+					</div>
+					<span class="text-gray-400 text-xs mt-2">ne sont pas vérifiés</span>
+				</div>
+
+				<!-- Carousel wrapper -->
+				<div class="avis-carousel-outer relative overflow-hidden px-2">
+					<div
+						class="avis-carousel-track flex transition-transform duration-500 ease-in-out" id="avisTrack">
+
+						<!-- Avis 1 -->
+						<div class="avis-card">
+							<div class="flex gap-1 mb-3">
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+							</div>
+							<p class="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;Artisan plombier, j&rsquo;avais du mal à assurer mon Berlingo avec tout mon outillage à bord. Aksam a proposé une formule tous risques avec couverture du matériel transporté, attestation reçue le lendemain. Impeccable.&rdquo;</p>
+							<div class="mt-4 flex items-center gap-3">
+								<div class="avis-avatar">RB</div>
+								<div>
+									<p class="font-semibold text-dark text-sm">Romain B.</p>
+									<p class="text-gray-400 text-xs">Artisan plombier, Lille</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Avis 2 -->
+						<div class="avis-card">
+							<div class="flex gap-1 mb-3">
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+							</div>
+							<p class="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;Nous avons 3 fourgons de livraison. Aksam a regroupé toute notre flotte sur un seul contrat et nous a fait économiser près de 20&nbsp;% par rapport à nos anciens contrats séparés. Très professionnel.&rdquo;</p>
+							<div class="mt-4 flex items-center gap-3">
+								<div class="avis-avatar">FH</div>
+								<div>
+									<p class="font-semibold text-dark text-sm">Fatima H.</p>
+									<p class="text-gray-400 text-xs">Gérante PME, Lyon</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Avis 3 -->
+						<div class="avis-card">
+							<div class="flex gap-1 mb-3">
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="far fa-star text-yellow-400"></i>
+							</div>
+							<p class="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;Mon véhicule de fonction est au nom de ma société, je ne savais pas comment l&rsquo;assurer. Le conseiller a tout expliqué clairement et trouvé une offre adaptée en moins de 24&nbsp;h. Formulaire très simple.&rdquo;</p>
+							<div class="mt-4 flex items-center gap-3">
+								<div class="avis-avatar">MT</div>
+								<div>
+									<p class="font-semibold text-dark text-sm">Marc T.</p>
+									<p class="text-gray-400 text-xs">Commercial terrain, Paris</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Avis 4 -->
+						<div class="avis-card">
+							<div class="flex gap-1 mb-3">
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+							</div>
+							<p class="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;Chauffeur PL indépendant, je craignais une prime exorbitante. Aksam m&rsquo;a orienté vers un contrat avec RC marchandises incluse à un tarif vraiment compétitif. Je renouvelle sans hésiter.&rdquo;</p>
+							<div class="mt-4 flex items-center gap-3">
+								<div class="avis-avatar">DC</div>
+								<div>
+									<p class="font-semibold text-dark text-sm">David C.</p>
+									<p class="text-gray-400 text-xs">Transporteur PL, Toulouse</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Avis 5 -->
+						<div class="avis-card">
+							<div class="flex gap-1 mb-3">
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star-half-alt text-yellow-400"></i>
+							</div>
+							<p class="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;Nos 5 véhicules légers de service à la personne sont désormais tous couverts via Aksam. Mise en place rapide, interlocuteur dédié et véhicule de remplacement inclus. Je recommande vivement.&rdquo;</p>
+							<div class="mt-4 flex items-center gap-3">
+								<div class="avis-avatar">NK</div>
+								<div>
+									<p class="font-semibold text-dark text-sm">Nadia K.</p>
+									<p class="text-gray-400 text-xs">Directrice, Strasbourg</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Avis 6 -->
+						<div class="avis-card">
+							<div class="flex gap-1 mb-3">
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="fas fa-star text-yellow-400"></i>
+								<i class="far fa-star text-yellow-400"></i>
+								<i class="far fa-star text-yellow-400"></i>
+							</div>
+							<p class="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;Le premier devis pour mon utilitaire benne était au-dessus de mon budget. Après échange avec le conseiller, on a ajusté les garanties et trouvé une offre correcte. Aurait pu être plus rapide.&rdquo;</p>
+							<div class="mt-4 flex items-center gap-3">
+								<div class="avis-avatar">PM</div>
+								<div>
+									<p class="font-semibold text-dark text-sm">Pierre M.</p>
+									<p class="text-gray-400 text-xs">Artisan électricien, Bordeaux</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Boutons navigation -->
+					<button onclick="avisNav(-1)" class="avis-btn-nav left-0" aria-label="Précédent">
+						<i class="fas fa-chevron-left"></i>
+					</button>
+					<button onclick="avisNav(1)" class="avis-btn-nav right-0" aria-label="Suivant">
+						<i class="fas fa-chevron-right"></i>
+					</button>
+				</div>
+
+				<!-- Dots -->
+				<div class="flex justify-center gap-2 mt-6" id="avisDots"></div>
+
+			</div>
+ 
+		</div>
 </section>
 
 <!-- JAVASCRIPT POUR FAQ -->

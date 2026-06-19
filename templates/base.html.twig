@@ -32,19 +32,16 @@
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
-		{% block stylesheets %}
-
-			{# <link rel="stylesheet" href="{{ asset('/css/app.css') }}">  #}
-		{% endblock %}
+		{% block stylesheets %}{% endblock %}
 
 		<!-- Google Fonts -->
 		<link
 		href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-		<!-- Tailwind CSS compilé (43 KB vs 3 MB CDN) -->
+		<!-- CSS compilé : Tailwind + composants custom (46 KB) -->
 		<link rel="stylesheet" href="{{ asset('css/tailwind.min.css') }}">
 
-
+ 
 		{# -------- Consent Mode (default) AVANT GTM -------- #}
 
 
@@ -206,6 +203,122 @@ $("#cookieChoiceInfo").remove();
 
 }
 		</script>
+
+
+		 <!-- calculer par rapport nombre prospects -->
+	<script>
+				(function () {
+function animateCounters() {
+document.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
+var target = parseInt(el.getAttribute('data-target'), 10);
+if (isNaN(target) || target === 0) {
+el.textContent = '0';
+return;
+}
+var duration = 1600;
+var start = null;
+function step(ts) {
+if (! start) 
+start = ts;
+
+var progress = Math.min((ts - start) / duration, 1);
+var ease = 1 - Math.pow(1 - progress, 3);
+el.textContent = Math.floor(ease * target).toLocaleString('fr-FR');
+if (progress < 1) 
+requestAnimationFrame(step);
+ else 
+el.textContent = target.toLocaleString('fr-FR');
+
+}
+requestAnimationFrame(step);
+});
+}
+if ('IntersectionObserver' in window) {
+var obs = new IntersectionObserver(function (entries, o) {
+entries.forEach(function (e) {
+if (e.isIntersecting) {
+animateCounters();
+o.disconnect();
+}
+});
+}, {threshold: 0.3});
+var strip = document.getElementById('stats-strip');
+if (strip) 
+obs.observe(strip);
+
+} else {
+document.addEventListener('DOMContentLoaded', animateCounters);
+}
+})();
+			</script>
+
+		<script>
+			(function() {
+				var track = document.getElementById('avisTrack');
+				var dotsEl = document.getElementById('avisDots');
+				var cards = track ? track.querySelectorAll('.avis-card') : [];
+				var total = cards.length;
+				var current = 0;
+				var perView = 3;
+
+				function getPerView() {
+					if (window.innerWidth < 640) return 1;
+					if (window.innerWidth < 1024) return 2;
+					return 3;
+				}
+
+				function maxIndex() { return Math.max(0, total - perView); }
+
+				function buildDots() {
+					dotsEl.innerHTML = '';
+					var pages = maxIndex() + 1;
+					for (var i = 0; i < pages; i++) {
+						var d = document.createElement('button');
+						d.className = 'avis-dot' + (i === current ? ' active' : '');
+						d.setAttribute('aria-label', 'Page ' + (i+1));
+						(function(idx){ d.onclick = function(){ goTo(idx); }; })(i);
+						dotsEl.appendChild(d);
+					}
+				}
+
+				function goTo(idx) {
+					perView = getPerView();
+					current = Math.max(0, Math.min(idx, maxIndex()));
+					var cardWidth = cards[0] ? cards[0].offsetWidth + 24 : 0;
+					track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+					dotsEl.querySelectorAll('.avis-dot').forEach(function(d, i) {
+						d.classList.toggle('active', i === current);
+					});
+				}
+
+				window.avisNav = function(dir) { goTo(current + dir); };
+
+				function init() {
+					perView = getPerView();
+					buildDots();
+					goTo(0);
+				}
+
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', init);
+				} else {
+					init();
+				}
+
+				var resizeTimer;
+				window.addEventListener('resize', function() {
+					clearTimeout(resizeTimer);
+					resizeTimer = setTimeout(function() { init(); }, 150);
+				});
+
+				// Auto-slide toutes les 5s
+				setInterval(function() {
+					perView = getPerView();
+					goTo(current >= maxIndex() ? 0 : current + 1);
+				}, 5000);
+			})();
+			</script>
+
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

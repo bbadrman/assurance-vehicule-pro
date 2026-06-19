@@ -1,0 +1,503 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]: 
+        - heading "|" [level=1] [ref=e9]: "|"
+      - generic [ref=e10]:
+        - generic [ref=e12]: 
+        - generic [ref=e13]:
+          - generic [ref=e14]: Conseil personnalisé
+          - link "01 82 83 48 00" [ref=e15] [cursor=pointer]:
+            - /url: tel:0182834800
+  - heading "Assurance Véhicule Professionnel — Devis en ligne pour Pros, Artisans & PME" [level=1] [ref=e16]
+  - generic [ref=e19]:
+    - img "Conducteur professionnel au volant — assurance véhicule professionnel Aksam" [ref=e23]
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e28]: 
+        - heading "Complétez ce formulaire pour obtenir un devis" [level=2] [ref=e29]
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - generic [ref=e34]: 
+          - textbox "Raison sociale..." [ref=e35]
+        - generic [ref=e37]:
+          - generic [ref=e39]: 
+          - combobox [ref=e40]:
+            - option "Activité..." [selected]
+            - option "Artisans"
+            - option "BTP & Construction"
+            - option "Commerciaux & professions libérales"
+            - option "Déménagement"
+            - option "Santé & Services à la personne"
+            - option "Transport & Logistique"
+            - option "Autre"
+        - generic [ref=e42]:
+          - generic [ref=e44]: 
+          - combobox [ref=e45]:
+            - option "Type véhicule" [selected]
+            - option "+3T5"
+            - option "-3T5"
+        - generic [ref=e47]:
+          - generic [ref=e49]: 
+          - combobox [ref=e50]:
+            - option "Véhicule assuré actuellement" [selected]
+            - option "Oui"
+            - option "Non"
+        - generic [ref=e52]:
+          - generic [ref=e54]: 
+          - textbox "Code Postal..." [ref=e55]
+        - generic [ref=e57]:
+          - generic [ref=e59]: 
+          - textbox "Nom..." [ref=e60]
+        - generic [ref=e62]:
+          - generic [ref=e64]: 
+          - textbox "Prénom..." [ref=e65]
+        - generic [ref=e67]:
+          - generic [ref=e69]: 
+          - textbox "Email..." [ref=e70]
+        - generic [ref=e72]:
+          - generic [ref=e74]: 
+          - textbox "Téléphone..." [ref=e75]
+        - generic [ref=e77]: En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adaptées à votre recherche.
+        - button " Comparer" [ref=e78] [cursor=pointer]:
+          - generic [ref=e79]: 
+          - text: Comparer
+  - generic [ref=e82]:
+    - generic [ref=e83]:
+      - heading "Une Assurance Adaptée à tous les Professionnels" [level=2] [ref=e84]
+      - paragraph [ref=e85]: Chaque métier a ses propres exigences. C'est pourquoi notre assurance véhicule pro couvre l'ensemble de vos besoins.
+    - generic [ref=e86]:
+      - generic [ref=e88]:
+        - generic [ref=e90]: 
+        - generic [ref=e91]:
+          - heading "Artisans & BTP" [level=3] [ref=e92]
+          - paragraph [ref=e93]:
+            - link "Utilitaires" [ref=e94] [cursor=pointer]:
+              - /url: /utilitaire
+            - text: ", fourgons, camionnettes bennes... Vos outils de chantier sont entre de bonnes mains."
+      - generic [ref=e96]:
+        - generic [ref=e98]: 
+        - generic [ref=e99]:
+          - heading "Commerciaux & Prof. Libérales" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Berlines de fonction, véhicules de société... Roulez l'esprit tranquille lors de vos déplacements.
+      - generic [ref=e103]:
+        - generic [ref=e105]: 
+        - generic [ref=e106]:
+          - heading "Transport & Logistique" [level=3] [ref=e107]
+          - paragraph [ref=e108]:
+            - link "Poids lourds" [ref=e109] [cursor=pointer]:
+              - /url: /poids-lourd
+            - text: ", remorques, véhicules frigorifiques... Assurez la continuité de votre chaîne logistique."
+      - generic [ref=e111]:
+        - generic [ref=e113]: 
+        - generic [ref=e114]:
+          - heading "Service à la Personne & Santé" [level=3] [ref=e115]
+          - paragraph [ref=e116]: Véhicules légers pour les visites à domicile, ambulances... Votre mobilité est notre priorité.
+  - generic [ref=e119]:
+    - heading "Pourquoi choisir notre assurance véhicule pro ?" [level=2] [ref=e121]
+    - generic [ref=e122]:
+      - generic [ref=e124]:
+        - generic [ref=e125]: ✅
+        - generic [ref=e126]:
+          - heading "Réponse Rapide & Devis en Ligne" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Ne perdez pas de temps. Obtenez une proposition claire et compétitive rapidement.
+      - generic [ref=e130]:
+        - generic [ref=e131]: ✅
+        - generic [ref=e132]:
+          - heading "Garanties Essentielles Incluses" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Responsabilité Civile, Défense Pénale et Recours incluses dans toutes nos formules.
+      - generic [ref=e136]:
+        - generic [ref=e137]: ✅
+        - generic [ref=e138]:
+          - heading "Options sur-mesure" [level=3] [ref=e139]
+          - paragraph [ref=e140]: Vol, Incendie, Bris de glace, Dommages tous accidents... Personnalisez votre contrat.
+      - generic [ref=e142]:
+        - generic [ref=e143]: ✅
+        - generic [ref=e144]:
+          - heading "Assistance 24/7" [level=3] [ref=e145]
+          - paragraph [ref=e146]: Un pépin sur la route ? Notre service d'assistance est à vos côtés jour et nuit.
+  - generic [ref=e148]:
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - heading "Nos garanties en détail" [level=2] [ref=e151]
+        - paragraph [ref=e152]: Maîtrisez votre budget en choisissant les garanties qui comptent vraiment pour vous.
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e157]: 
+            - heading "Tiers Simple" [level=3] [ref=e158]
+          - paragraph [ref=e159]: Idéal pour les véhicules plus anciens ou à faible valeur.
+          - list [ref=e160]:
+            - listitem [ref=e161]:
+              - generic [ref=e162]: 
+              - generic [ref=e163]: Responsabilité Civile
+            - listitem [ref=e164]:
+              - generic [ref=e165]: 
+              - generic [ref=e166]: Protection du conducteur
+            - listitem [ref=e167]:
+              - generic [ref=e168]: 
+              - generic [ref=e169]: Assistance
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e173]: 
+            - heading "Tiers Étendu" [level=3] [ref=e174]
+          - paragraph [ref=e175]: Le meilleur compromis entre protection et budget.
+          - list [ref=e176]:
+            - listitem [ref=e177]:
+              - generic [ref=e178]: 
+              - generic [ref=e179]: "Inclus : Tiers Simple"
+            - listitem [ref=e180]:
+              - generic [ref=e181]: +
+              - generic [ref=e182]: Bris de Glace
+            - listitem [ref=e183]:
+              - generic [ref=e184]: +
+              - generic [ref=e185]: Vol & Incendie
+            - listitem [ref=e186]:
+              - generic [ref=e187]: +
+              - generic [ref=e188]: Catastrophes Naturelles
+        - generic [ref=e189]:
+          - generic [ref=e190]: RECOMMANDÉ
+          - generic [ref=e191]:
+            - generic [ref=e193]: 
+            - heading "Tous Risques" [level=3] [ref=e194]
+          - paragraph [ref=e195]: La tranquillité d'esprit absolue pour vos véhicules neufs ou stratégiques.
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - generic [ref=e198]: 
+              - generic [ref=e199]: Inclus Tiers Étendu
+            - listitem [ref=e200]:
+              - generic [ref=e201]: +
+              - generic [ref=e202]: Dommages Tous Accidents
+            - listitem [ref=e203]:
+              - generic [ref=e204]: +
+              - generic [ref=e205]: Vandalisme
+    - generic [ref=e206]:
+      - heading "Options Recommandées :" [level=3] [ref=e207]
+      - generic [ref=e208]:
+        - generic [ref=e210]:
+          - generic [ref=e212]: 
+          - generic [ref=e213]:
+            - heading "Garantie Perte d'Exploitation" [level=4] [ref=e214]
+            - paragraph [ref=e215]: Pour compenser l'impact financier de l'immobilisation de votre véhicule.
+        - generic [ref=e217]:
+          - generic [ref=e219]: 
+          - generic [ref=e220]:
+            - heading "Véhicule de Remplacement" [level=4] [ref=e221]
+            - paragraph [ref=e222]: Pour ne jamais interrompre votre activité.
+  - generic [ref=e225]:
+    - generic [ref=e226]:
+      - heading "Comment ça Marche ?" [level=2] [ref=e227]
+      - paragraph [ref=e228]: Votre Devis d'Assurance Véhicule Pro en 3 Étapes Simples
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - generic [ref=e232]: "1"
+        - generic [ref=e233]:
+          - heading "Cliquez & Décrivez" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Remplissez notre formulaire en 2 minutes avec les informations sur votre activité et votre véhicule.
+      - generic [ref=e236]:
+        - generic [ref=e238]: "2"
+        - generic [ref=e239]:
+          - heading "Comparez & Choisissez" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Recevez instantanément notre meilleure proposition tarifaire et personnalisez vos options.
+      - generic [ref=e242]:
+        - generic [ref=e244]: "3"
+        - generic [ref=e245]:
+          - heading "Signez & Roulez" [level=3] [ref=e246]
+          - paragraph [ref=e247]: Acceptez le devis en ligne et recevez votre attestation par email pour prendre la route en toute sérénité.
+  - generic [ref=e250]:
+    - heading "Questions Fréquentes" [level=2] [ref=e252]
+    - generic [ref=e253]:
+      - button "Quelle est la différence entre une assurance auto personnelle et une assurance véhicule pro ? +" [ref=e255] [cursor=pointer]:
+        - generic [ref=e256]: Quelle est la différence entre une assurance auto personnelle et une assurance véhicule pro ?
+        - generic [ref=e257]: +
+      - button "Dois-je assurer un véhicule à mon nom ou au nom de mon entreprise ? +" [ref=e259] [cursor=pointer]:
+        - generic [ref=e260]: Dois-je assurer un véhicule à mon nom ou au nom de mon entreprise ?
+        - generic [ref=e261]: +
+      - button "Mes salariés sont-ils couverts s'ils conduisent le véhicule de l'entreprise ? +" [ref=e263] [cursor=pointer]:
+        - generic [ref=e264]: Mes salariés sont-ils couverts s'ils conduisent le véhicule de l'entreprise ?
+        - generic [ref=e265]: +
+      - button "Que se passe-t-il si mon utilitaire est en panne ou accidenté ? +" [ref=e267] [cursor=pointer]:
+        - generic [ref=e268]: Que se passe-t-il si mon utilitaire est en panne ou accidenté ?
+        - generic [ref=e269]: +
+      - button "Le matériel et les marchandises dans mon fourgon sont-ils assurés ? +" [ref=e271] [cursor=pointer]:
+        - generic [ref=e272]: Le matériel et les marchandises dans mon fourgon sont-ils assurés ?
+        - generic [ref=e273]: +
+  - generic [ref=e276]:
+    - generic [ref=e278]: 
+    - heading "Prêt à Protéger Votre Outil de Travail ?" [level=2] [ref=e279]
+    - paragraph [ref=e280]: Ne laissez pas un imprévu routier freiner votre business. Obtenez dès maintenant une offre claire, compétitive et sans engagement pour votre assurance véhicule pro.
+    - link " Obtenir Mon Tarif Personnalisé" [ref=e281] [cursor=pointer]:
+      - /url: "#contactForm"
+      - generic [ref=e282]: 
+      - text: Obtenir Mon Tarif Personnalisé
+  - generic [ref=e284]:
+    - generic [ref=e285]:
+      - heading "Nos compagnies partenaires" [level=2] [ref=e286]
+      - generic [ref=e288]:
+        - generic [ref=e289]:
+          - img "Allianz"
+        - generic [ref=e290]:
+          - img "April"
+        - generic [ref=e291]:
+          - img "axa"
+        - generic [ref=e292]:
+          - img "Eurodommage"
+        - generic [ref=e293]:
+          - img "Sollyzar"
+        - generic [ref=e294]:
+          - img "Zephir"
+        - generic [ref=e295]:
+          - img "Allianz"
+        - generic [ref=e296]:
+          - img "April"
+        - generic [ref=e297]:
+          - img "axa"
+        - generic [ref=e298]:
+          - img "Eurodommage"
+        - generic [ref=e299]:
+          - img "Sollyzar"
+        - generic [ref=e300]:
+          - img "Zephir"
+    - generic [ref=e301]:
+      - heading "Chiffres clés" [level=2] [ref=e302]
+      - generic [ref=e303]:
+        - generic [ref=e304]:
+          - generic [ref=e305]: 
+          - generic [ref=e306]:
+            - generic [ref=e307]: "0"
+            - generic [ref=e308]: +
+          - generic [ref=e309]: Prospects
+        - generic [ref=e310]:
+          - generic [ref=e311]: 
+          - generic [ref=e312]:
+            - generic [ref=e313]: "0"
+            - generic [ref=e314]: +
+          - generic [ref=e315]: Tarifications
+        - generic [ref=e316]:
+          - generic [ref=e317]: 
+          - generic [ref=e318]:
+            - generic [ref=e319]: "0"
+            - generic [ref=e320]: +
+          - generic [ref=e321]: Souscriptions
+    - generic [ref=e322]:
+      - heading "Avis de nos clients" [level=2] [ref=e323]
+      - paragraph [ref=e324]: Ce que disent nos assurés
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - generic [ref=e327]:
+            - generic [ref=e328]: 
+            - generic [ref=e329]: 
+            - generic [ref=e330]: 
+            - generic [ref=e331]: 
+            - generic [ref=e332]: 
+          - generic [ref=e333]: "4.6"
+          - generic [ref=e334]: / 5 — Basé sur 127 avis
+        - generic [ref=e335]: ne sont pas vérifiés
+      - generic [ref=e336]:
+        - generic [ref=e337]:
+          - generic [ref=e338]:
+            - generic [ref=e339]:
+              - generic [ref=e340]: 
+              - generic [ref=e341]: 
+              - generic [ref=e342]: 
+              - generic [ref=e343]: 
+              - generic [ref=e344]: 
+            - paragraph [ref=e345]: “Très réactif et professionnel. J’ai obtenu mon devis en moins de 24h. Je recommande vivement Aksam pour l’assurance transport marchandise.”
+            - generic [ref=e346]:
+              - generic [ref=e347]: JD
+              - generic [ref=e348]:
+                - paragraph [ref=e349]: Jean-Pierre D.
+                - paragraph [ref=e350]: Transporteur, Lyon
+          - generic [ref=e351]:
+            - generic [ref=e352]:
+              - generic [ref=e353]: 
+              - generic [ref=e354]: 
+              - generic [ref=e355]: 
+              - generic [ref=e356]: 
+              - generic [ref=e357]: 
+            - paragraph [ref=e358]: “Excellent accompagnement de A à Z. L’équipe a su trouver la meilleure offre pour mon activité de transport frigorifique. Tarifs très compétitifs.”
+            - generic [ref=e359]:
+              - generic [ref=e360]: MB
+              - generic [ref=e361]:
+                - paragraph [ref=e362]: Marie B.
+                - paragraph [ref=e363]: Gérante, Paris
+          - generic [ref=e364]:
+            - generic [ref=e365]:
+              - generic [ref=e366]: 
+              - generic [ref=e367]: 
+              - generic [ref=e368]: 
+              - generic [ref=e369]: 
+              - generic [ref=e370]: 
+            - paragraph [ref=e371]: “Formulaire simple, réponse rapide et conseiller à l’écoute. Mon dossier a été traité en un temps record. Très satisfait de la prise en charge.”
+            - generic [ref=e372]:
+              - generic [ref=e373]: KA
+              - generic [ref=e374]:
+                - paragraph [ref=e375]: Karim A.
+                - paragraph [ref=e376]: Artisan transporteur, Marseille
+          - generic [ref=e377]:
+            - generic [ref=e378]:
+              - generic [ref=e379]: 
+              - generic [ref=e380]: 
+              - generic [ref=e381]: 
+              - generic [ref=e382]: 
+              - generic [ref=e383]: 
+            - paragraph [ref=e384]: “Je cherchais une assurance RC marchandise depuis longtemps. Aksam a trouvé une solution adaptée à mon entreprise en moins de 48h. Je suis pleinement satisfait.”
+            - generic [ref=e385]:
+              - generic [ref=e386]: TP
+              - generic [ref=e387]:
+                - paragraph [ref=e388]: Thomas P.
+                - paragraph [ref=e389]: Chef d’entreprise, Bordeaux
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - generic [ref=e392]: 
+              - generic [ref=e393]: 
+              - generic [ref=e394]: 
+              - generic [ref=e395]: 
+              - generic [ref=e396]: 
+            - paragraph [ref=e397]: “Service client impeccable. La comparaison des offres m’a permis d’économiser significativement sur ma prime annuelle. Merci à toute l’équipe !”
+            - generic [ref=e398]:
+              - generic [ref=e399]: SL
+              - generic [ref=e400]:
+                - paragraph [ref=e401]: Sophie L.
+                - paragraph [ref=e402]: Directrice logistique, Nantes
+          - generic [ref=e403]:
+            - generic [ref=e404]:
+              - generic [ref=e405]: 
+              - generic [ref=e406]: 
+              - generic [ref=e407]: 
+              - generic [ref=e408]: 
+              - generic [ref=e409]: 
+            - paragraph [ref=e410]: Devis plus chère que la ou je suis actuellement, j'ai pas eu le temps d'expliquer quoi que soit que la conseillère avait déjà raccroché.
+            - generic [ref=e411]:
+              - generic [ref=e412]: LK
+              - generic [ref=e413]:
+                - paragraph [ref=e414]: Laurant K.
+                - paragraph [ref=e415]: Transporteur — Lyon
+        - button "Précédent" [ref=e416] [cursor=pointer]:
+          - generic [ref=e417]: 
+        - button "Suivant" [ref=e418] [cursor=pointer]:
+          - generic [ref=e419]: 
+      - generic [ref=e420]:
+        - button "Page 1" [ref=e421] [cursor=pointer]
+        - button "Page 2" [ref=e422] [cursor=pointer]
+        - button "Page 3" [ref=e423] [cursor=pointer]
+        - button "Page 4" [ref=e424] [cursor=pointer]
+  - contentinfo [ref=e425]:
+    - generic [ref=e426]:
+      - generic [ref=e427]:
+        - generic [ref=e428]:
+          - heading " Aksam Assurance" [level=3] [ref=e429]:
+            - generic [ref=e430]: 
+            - generic [ref=e431]: Aksam Assurance
+          - paragraph [ref=e432]: Entreprise soumise au contrôle de l'ACPR
+        - generic [ref=e433]:
+          - heading "Liens utiles" [level=3] [ref=e434]
+          - list [ref=e435]:
+            - listitem [ref=e436]:
+              - link " Assurance utilitaire" [ref=e437] [cursor=pointer]:
+                - /url: /utilitaire
+                - generic [ref=e438]: 
+                - text: Assurance utilitaire
+            - listitem [ref=e439]:
+              - link " Assurance poids lourds" [ref=e440] [cursor=pointer]:
+                - /url: /poids-lourd
+                - generic [ref=e441]: 
+                - text: Assurance poids lourds
+            - listitem [ref=e442]:
+              - link " Mentions légales" [ref=e443] [cursor=pointer]:
+                - /url: /mention-legale
+                - generic [ref=e444]: 
+                - text: Mentions légales
+            - listitem [ref=e445]:
+              - link " Politique de confidentialité" [ref=e446] [cursor=pointer]:
+                - /url: /politique
+                - generic [ref=e447]: 
+                - text: Politique de confidentialité
+        - generic [ref=e448]:
+          - heading "Contact" [level=3] [ref=e449]
+          - list [ref=e450]:
+            - listitem [ref=e451]:
+              - generic [ref=e452]: 
+              - generic [ref=e453]:
+                - text: 10 rue de Penthièvre
+                - text: 75008 Paris
+            - listitem [ref=e454]:
+              - generic [ref=e455]: 
+              - link "01.82.83.48.00" [ref=e456] [cursor=pointer]:
+                - /url: tel:0182834800
+            - listitem [ref=e457]:
+              - generic [ref=e458]: 
+              - link "contact@aksam-assurances.fr" [ref=e459] [cursor=pointer]:
+                - /url: mailto:contact@aksam-assurances.fr
+      - generic [ref=e461]:
+        - paragraph [ref=e462]: "© 2021 Copyright: Aksam Assurance. Tous droits réservés."
+        - paragraph [ref=e463]: www.assurance-vehicule-pro.fr
+  - region "Symfony Web Debug Toolbar" [ref=e464]:
+    - generic [ref=e466]:
+      - link "200 @ app_home" [ref=e468] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=request
+        - generic [ref=e469]:
+          - generic [ref=e470]: "200"
+          - generic [ref=e471]: "@"
+          - generic [ref=e472]: app_home
+      - link "21 ms" [ref=e474] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=time
+        - generic [ref=e475]:
+          - generic [ref=e476]: "21"
+          - generic [ref=e477]: ms
+      - link "4.0 MiB" [ref=e479] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=time
+        - generic [ref=e480]:
+          - generic [ref=e481]: "4.0"
+          - generic [ref=e482]: MiB
+      - link "Cache 1" [ref=e484] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=form
+        - generic [ref=e485]:
+          - img "Cache" [ref=e486]
+          - generic [ref=e492]: "1"
+      - link "Logger 9" [ref=e494] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=logger
+        - generic [ref=e495]:
+          - img "Logger" [ref=e496]
+          - generic [ref=e500]: "9"
+      - link "17" [ref=e502] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=translation
+        - generic [ref=e503]:
+          - img [ref=e504]
+          - generic [ref=e509]: "17"
+      - link "Security n/a" [ref=e511] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=security
+        - generic [ref=e512]:
+          - img "Security" [ref=e513]
+          - generic [ref=e517]: n/a
+      - link "Twig 4 ms" [ref=e519] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=twig
+        - generic [ref=e520]:
+          - img "Twig" [ref=e521]
+          - generic [ref=e525]: "4"
+          - generic [ref=e526]: ms
+      - link "1 in 0.31 ms" [ref=e528] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=db
+        - generic [ref=e529]:
+          - img [ref=e530]
+          - generic [ref=e535]: "1"
+          - generic [ref=e536]: in 0.31 ms
+      - link "Symfony 7.3.4" [ref=e538] [cursor=pointer]:
+        - /url: https://assurance-vehicule-pro.ddev.site/_profiler/188389?panel=config
+        - generic [ref=e539]:
+          - img "Symfony" [ref=e541]
+          - generic [ref=e543]: 7.3.4
+      - button [expanded] [ref=e544] [cursor=pointer]:
+        - generic "Close Toolbar" [ref=e545]:
+          - img [ref=e546]
+  - generic [ref=e551]:
+    - generic [ref=e553]: 
+    - generic [ref=e554]:
+      - heading "Cookies et confidentialité" [level=4] [ref=e555]
+      - paragraph [ref=e556]: www.assurance-vehicule-pro.fr utilise des cookies pour vous offrir le meilleur service.
+      - generic [ref=e557]:
+        - button " J'accepte" [ref=e558] [cursor=pointer]:
+          - generic [ref=e559]: 
+          - text: J'accepte
+        - button "Refuser" [ref=e560] [cursor=pointer]

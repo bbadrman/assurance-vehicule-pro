@@ -18,6 +18,11 @@ final class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
 public function index(Request $request, EntityManagerInterface $entityManager, LoggerInterface $logger): Response
 {
+        $nombreAddProspects    = $entityManager->getRepository(Vehicule::class)->count([]);
+        $nombreProspects = $nombreAddProspects + 4500;
+        $nombreTarifications = (int) round($nombreProspects * 0.90);
+        $nombreSouscriptions = (int) round($nombreProspects * 0.62);
+        
     $vehicule = new Vehicule();
     $form = $this->createForm(VehiculeType::class, $vehicule);
     $form->handleRequest($request);
@@ -94,6 +99,9 @@ public function index(Request $request, EntityManagerInterface $entityManager, L
 
     return $this->render('home/index.html.twig', [
         'form' => $form->createView(),
+        'nombreProspects'     => $nombreProspects,
+        'nombreTarifications' => $nombreTarifications,
+        'nombreSouscriptions' => $nombreSouscriptions,
     ]);
 }
    
