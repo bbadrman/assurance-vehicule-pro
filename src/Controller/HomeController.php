@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route; 
 use Psr\Log\LoggerInterface; 
 
-
-
 final class HomeController extends AbstractController
 {
+    private const API_PROSPECTS_URL = 'https://aksam.azurewebsites.net/api/prospects';
+
     #[Route('/', name: 'app_home')]
     public function index(Request $request, EntityManagerInterface $entityManager, LoggerInterface $logger): Response
     {
@@ -54,7 +54,7 @@ final class HomeController extends AbstractController
                 ];
 
                 // 4. Envoi via cURL
-                $ch = curl_init('https://aksam.azurewebsites.net/api/prospects');
+                $ch = curl_init(self::API_PROSPECTS_URL);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
                 curl_setopt($ch, CURLOPT_POST, true);
@@ -137,7 +137,7 @@ final class HomeController extends AbstractController
                 ];
 
                 // 4. Envoi via cURL
-                $ch = curl_init('https://aksam.azurewebsites.net/api/prospects');
+                $ch = curl_init(self::API_PROSPECTS_URL);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
                 curl_setopt($ch, CURLOPT_POST, true);
@@ -221,7 +221,7 @@ final class HomeController extends AbstractController
                 ];
 
                 // 4. Envoi via cURL
-                $ch = curl_init('https://aksam.azurewebsites.net/api/prospects');
+                $ch = curl_init(self::API_PROSPECTS_URL);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
                 curl_setopt($ch, CURLOPT_POST, true);
@@ -343,7 +343,7 @@ final class HomeController extends AbstractController
                 ];
 
                 // 4. Envoi via cURL
-                $ch = curl_init('https://aksam.azurewebsites.net/api/prospects');
+                $ch = curl_init(self::API_PROSPECTS_URL);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
                 curl_setopt($ch, CURLOPT_POST, true);
