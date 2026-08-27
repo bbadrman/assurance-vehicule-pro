@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Vehicule;
+use App\Validator\NoSpam;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
@@ -24,7 +25,8 @@ class VehiculeType extends AbstractType
                     'class' => 'flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Le nom est requis'])
+                    new Assert\NotBlank(['message' => 'Le nom est requis']),
+                    new NoSpam(),
                 ]
             ])
             ->add('lastname', TextType::class, [
@@ -34,7 +36,8 @@ class VehiculeType extends AbstractType
                     'class' => 'flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Le prénom est requis'])
+                    new Assert\NotBlank(['message' => 'Le prénom est requis']),
+                    new NoSpam(),
                 ]
             ])
             ->add('raison', TextType::class, [
@@ -43,6 +46,9 @@ class VehiculeType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Raison sociale...',
                     'class' => 'flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
+                ],
+                'constraints' => [
+                    new NoSpam(),
                 ]
             ])
             ->add('activite', ChoiceType::class, [
@@ -116,7 +122,8 @@ class VehiculeType extends AbstractType
                     'class' => 'flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Le téléphone est requis'])
+                    new Assert\NotBlank(['message' => 'Le téléphone est requis']),
+                    new NoSpam(),
                 ]
             ]);
     }
