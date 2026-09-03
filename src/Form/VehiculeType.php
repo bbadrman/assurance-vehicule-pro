@@ -26,7 +26,7 @@ class VehiculeType extends AbstractType
                 ],
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Le nom est requis']),
-                    new NoSpam(),
+                    new NoSpam(['alphaOnly' => true]),
                 ]
             ])
             ->add('lastname', TextType::class, [
@@ -37,7 +37,7 @@ class VehiculeType extends AbstractType
                 ],
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Le prénom est requis']),
-                    new NoSpam(),
+                    new NoSpam(['alphaOnly' => true]),
                 ]
             ])
             ->add('raison', TextType::class, [
@@ -48,7 +48,7 @@ class VehiculeType extends AbstractType
                     'class' => 'flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
                 ],
                 'constraints' => [
-                    new NoSpam(),
+                    new NoSpam(['alphaOnly' => true]),
                 ]
             ])
             ->add('activite', ChoiceType::class, [

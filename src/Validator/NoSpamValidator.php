@@ -27,6 +27,8 @@ class NoSpamValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, NoSpam::class);
         }
 
+        $this->violationMessages = [];
+
         if (null === $value || '' === $value) {
             return;
         }
@@ -47,6 +49,7 @@ class NoSpamValidator extends ConstraintValidator
         $this->checkGibberish($value, $constraint);
         $this->checkRepeatedLetters($value, $constraint);
         $this->checkEmojis($value, $constraint);
+        $this->checkSqlInjection($value, $constraint);
 
         if ($constraint->alphaOnly) {
             $this->checkAlphaOnly($value, $constraint);
@@ -127,9 +130,33 @@ class NoSpamValidator extends ConstraintValidator
         }
     }
 
+    private function checkSqlInjection(string $value, NoSpam $constraint): void
+    {
+        $lower = mb_strtolower($value);
+
+        $patterns = [
+            "#'\\s*(or|and)\\s+#i",
+            "#(union)\\s+(select)#i",
+            "#(select|insert|update|delete|drop|create|alter|exec|execute)\\s#i",
+            "#--|/\\*|\\*/#",
+            "#;#",
+            "#`#",
+            "#\\b(or|and)\\b\\s+['\"]?\\d+['\"]?\\s*=\\s*['\"]?\\d+#i",
+            "#\\b(or|and)\\b\\s+['\"][^\"]*['\"]#i",
+        ];
+
+        foreach ($patterns as $pattern) {
+            if (preg_match($pattern, $value)) {
+                $this->addViolationOnce($constraint->messageSqlInjection);
+
+                return;
+            }
+        }
+    }
+
     private function checkAlphaOnly(string $value, NoSpam $constraint): void
     {
-        if (!preg_match('/^[a-zA-Z\s\-\']+$/u', $value)) {
+        if (!preg_match('/^[a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ\s\-\']+$/u', $value)) {
             $this->addViolationOnce($constraint->message);
         }
     }

@@ -13,6 +13,7 @@ class NoSpam extends Constraint
     public const SPAM_DOMAIN = 'spam-domain';
     public const SPAM_PATTERN = 'spam-pattern';
     public const SPAM_EMOJI = 'spam-emoji';
+    public const SPAM_SQL_INJECTION = 'spam-sql-injection';
 
     public array $spamKeywords = [
         'payment',
@@ -71,14 +72,18 @@ class NoSpam extends Constraint
     public string $messageDomain = 'Ce domaine est interdit.';
     public string $messagePattern = 'Contenu suspect détecté.';
     public string $messageEmoji = 'Les emojis ne sont pas autorisés dans ce champ.';
+    public string $messageSqlInjection = 'Des caractères ou un format suspects ont été détectés.';
 
     public string $mode = 'strict';
     public bool $alphaOnly = false;
 
-    public function __construct(mixed $options = null, ?array $groups = null, mixed $payload = null)
-    {
+    public function __construct(
+        mixed $options = null,
+        ?array $groups = null,
+        mixed $payload = null,
+    ) {
         if (is_array($options)) {
-            $allowed = ['message', 'messageUrl', 'messageKeyword', 'messageDomain', 'messagePattern', 'messageEmoji', 'spamKeywords', 'suspiciousDomains', 'spamEmojis', 'mode', 'alphaOnly'];
+            $allowed = ['message', 'messageUrl', 'messageKeyword', 'messageDomain', 'messagePattern', 'messageEmoji', 'messageSqlInjection', 'spamKeywords', 'suspiciousDomains', 'spamEmojis', 'mode', 'alphaOnly'];
             $options = array_intersect_key($options, array_flip($allowed));
         } elseif (is_string($options)) {
             $options = ['message' => $options];
