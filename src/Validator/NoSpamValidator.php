@@ -17,6 +17,7 @@ class NoSpamValidator extends ConstraintValidator
         }
 
         $this->violationMessages[] = $message;
+
         $this->context->buildViolation($message)
             ->addViolation();
     }
@@ -39,62 +40,88 @@ class NoSpamValidator extends ConstraintValidator
 
         $value = (string) $value;
 
-        $keywords = $constraint->spamKeywords;
-        $domains = $constraint->suspiciousDomains;
-
+        // URLs
         $this->checkUrl($value, $constraint);
-        $this->checkDomains($value, $domains, $constraint);
-        $this->checkKeywords($value, $keywords, $constraint);
+
+        // Emojis
+        $this->checkEmojis($value, $constraint);
+
+        // Patterns suspects
         $this->checkPatterns($value, $constraint);
+
+        // Texte répétitif / gibberish
         $this->checkGibberish($value, $constraint);
         $this->checkRepeatedLetters($value, $constraint);
-        $this->checkEmojis($value, $constraint);
+
+        // SQL Injection
         $this->checkSqlInjection($value, $constraint);
 
+        // Vérification lettres uniquement
+        // seulement si alphaOnly = true
         if ($constraint->alphaOnly) {
-            $this->checkAlphaOnly($value, $constraint);
+            $this->checkSpecialCharacters($value, $constraint);
         }
     }
 
     private function checkUrl(string $value, NoSpam $constraint): void
     {
-        if (preg_match('#https?://#i', $value) || preg_match('#www\.#i', $value)) {
+        if (
+            preg_match('#https?://#i', $value) ||
+            preg_match('#www\.#i', $value)
+        ) {
             $this->addViolationOnce($constraint->messageUrl);
         }
     }
 
-    private function checkDomains(string $value, array $domains, NoSpam $constraint): void
-    {
-        $lower = mb_strtolower($value);
-
-        foreach ($domains as $domain) {
-            if (str_contains($lower, mb_strtolower($domain))) {
-                $this->addViolationOnce($constraint->messageDomain);
-
-                return;
-            }
+    private function checkSpecialCharacters(
+        string $value,
+        NoSpam $constraint
+    ): void {
+        /*
+         * Lorsque alphaOnly = true :
+         *
+         * Autorisés :
+         * - lettres anglaises
+         * - lettres françaises accentuées
+         * - espaces
+         *
+         * Interdits :
+         * - chiffres
+         * - $
+         * - +
+         * - -
+         * - /
+         * - =
+         * - @
+         * - .
+         * - _
+         * - '
+         * - "
+         * - emojis
+         * - tous les autres caractères spéciaux
+         */
+        if (
+            preg_match(
+                '/[^a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ\s]/u',
+                $value
+            )
+        ) {
+            $this->addViolationOnce(
+                'Seules les lettres et les espaces sont autorisés dans ce champ.'
+            );
         }
     }
 
-    private function checkKeywords(string $value, array $keywords, NoSpam $constraint): void
-    {
-        $lower = mb_strtolower($value);
-
-        foreach ($keywords as $keyword) {
-            $pattern = '#' . preg_quote($keyword, '#') . '#iu';
-
-            if (preg_match($pattern, $lower)) {
-                $this->context->buildViolation($constraint->messageKeyword)
-                    ->addViolation();
-
-                return;
-            }
-        }
-    }
-
-    private function checkPatterns(string $value, NoSpam $constraint): void
-    {
-        if (preg_match('#([\$\>\|\!\.\,\;\:\-\_ ])\1{4,}#', $value)) {
+    private function checkPatterns(
+        string $value,
+        NoSpam $constraint
+    ): void {
+        if (
+            preg_match(
+                '#([\$\>\|\!\.\,\;\:\-\_ ])\1{4,}#',
+                $value
+            )
+        ) {
             $this->addViolationOnce($constraint->messagePattern);
         }
 
@@ -103,37 +130,67 @@ class NoSpamValidator extends ConstraintValidator
         }
     }
 
-    private function checkGibberish(string $value, NoSpam $constraint): void
-    {
+    private function checkGibberish(
+        string $value,
+        NoSpam $constraint
+    ): void {
         if (!preg_match('#(.)\1{2,}#u', $value)) {
             return;
         }
 
-        $letters = preg_replace('#[^a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ]#u', '', $value);
+        $letters = preg_replace(
+            '#[^a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ]#u',
+            '',
+            $value
+        );
 
-        if ($letters === '' || preg_match('#^([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{3,}$#u', $letters)) {
+        if (
+            $letters === '' ||
+            preg_match(
+                '#^([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{3,}$#u',
+                $letters
+            )
+        ) {
             $this->addViolationOnce($constraint->messagePattern);
         }
     }
 
-    private function checkRepeatedLetters(string $value, NoSpam $constraint): void
-    {
-        if (preg_match('#[a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ]([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{2,}#u', $value)) {
-            $this->addViolationOnce('Séquences de lettres répétées non autorisées (ex: aaaa, pppp).');
+    private function checkRepeatedLetters(
+        string $value,
+        NoSpam $constraint
+    ): void {
+        if (
+            preg_match(
+                '#[a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ]([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{2,}#u',
+                $value
+            )
+        ) {
+            $this->addViolationOnce(
+                'Séquences de lettres répétées non autorisées (ex: aaaa, pppp).'
+            );
         }
     }
 
-    private function checkEmojis(string $value, NoSpam $constraint): void
-    {
-        if (preg_match('/[\x{1F000}-\x{1FAFF}\x{2600}-\x{27BF}\x{1F1E6}-\x{1F1FF}\x{1F200}-\x{1F2FF}\x{1F300}-\x{1F5FF}\x{1F600}-\x{1F64F}\x{1F680}-\x{1F6FF}\x{1F900}-\x{1F9FF}\x{2300}-\x{23FF}\x{2B00}-\x{2BFF}]/u', $value)) {
-            $this->addViolationOnce($constraint->messageEmoji);
+    private function checkEmojis(
+        string $value,
+        NoSpam $constraint
+    ): void {
+        if (
+            preg_match(
+                '/[\x{1F000}-\x{1FAFF}\x{2600}-\x{27BF}\x{1F1E6}-\x{1F1FF}\x{1F200}-\x{1F2FF}\x{1F300}-\x{1F5FF}\x{1F600}-\x{1F64F}\x{1F680}-\x{1F6FF}\x{1F900}-\x{1F9FF}\x{2300}-\x{23FF}\x{2B00}-\x{2BFF}]/u',
+                $value
+            )
+        ) {
+            $this->addViolationOnce(
+                $constraint->messageEmoji
+            );
         }
     }
 
-    private function checkSqlInjection(string $value, NoSpam $constraint): void
-    {
-        $lower = mb_strtolower($value);
-
+    private function checkSqlInjection(
+        string $value,
+        NoSpam $constraint
+    ): void {
         $patterns = [
             "#'\\s*(or|and)\\s+#i",
             "#(union)\\s+(select)#i",
@@ -147,17 +204,12 @@ class NoSpamValidator extends ConstraintValidator
 
         foreach ($patterns as $pattern) {
             if (preg_match($pattern, $value)) {
-                $this->addViolationOnce($constraint->messageSqlInjection);
+                $this->addViolationOnce(
+                    $constraint->messageSqlInjection
+                );
 
                 return;
             }
-        }
-    }
-
-    private function checkAlphaOnly(string $value, NoSpam $constraint): void
-    {
-        if (!preg_match('/^[a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ\s\-\']+$/u', $value)) {
-            $this->addViolationOnce($constraint->message);
         }
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<title>
@@ -9,17 +9,43 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Aksam Assurance">
-		<link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('public/images/favicon.png') }}">
+		<link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('images/favicon.png') }}">
 
-		<link rel="apple-touch-icon" type="icon" href="{{ asset('public/images/logo.png') }}">
+		<link rel="apple-touch-icon" type="icon" href="{{ asset('images/logo.png') }}">
 
 		{% block description %}<meta name="description" content="Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.">
 		{% endblock %}
-		{% block canonical %}{% endblock %}
+
+		<link rel="canonical" href="{{ app.request.schemeAndHttpHost }}{{ app.request.pathInfo }}">
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="fr_FR">
+		<meta property="og:site_name" content="Aksam Assurance">
+		<meta property="og:url" content="{{ app.request.uri }}">
+		<meta property="og:title" content="{% block og_title %}Assurance Véhicule Professionnel | Aksam Assurance{% endblock %}">
+		<meta property="og:description" content="{% block og_description %}Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.{% endblock %}">
+		<meta property="og:image" content="{{ app.request.schemeAndHttpHost }}/images/assurance-vehicule-pro.jpg">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="{% block twitter_title %}Assurance Véhicule Professionnel | Aksam Assurance{% endblock %}">
+		<meta name="twitter:description" content="{% block twitter_description %}Devis en ligne pour pros, artisans & PME. +20 compagnies partenaires.{% endblock %}">
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
 		{% block stylesheets %}
+			<style>
+				.form-group ul,
+				.form-group ul li {
+					color: #ef4444;
+					font-size: 0.875rem;
+				}
+
+				.form-group ul {
+					list-style: none;
+					padding: 0;
+					margin-top: 0.25rem;
+				}
+			</style>
 
 			{# <link rel="stylesheet" href="{{ asset('/css/app.css') }}">  #}
 		{% endblock %}
@@ -28,151 +54,15 @@
 		<link
 		href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-		<!-- Tailwind CSS -->
-		<script src="https://cdn.tailwindcss.com"></script>
-
-		<script>
-			tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#2563eb',
-secondary: '#0ea5e9',
-accent: '#f59e0b',
-accentchamp: '#f09308ff',
-dark: '#1e293b',
-light: '#f8fafc',
-surface: '#ffffff',
-surfaceHover: '#f1f5f9',
-headrecolor: '#3a404c',
-footercolor: '#3a404c'
-},
-fontFamily: {
-sans: ['Plus Jakarta Sans', 'sans-serif']
-}
-}
-}
-}
-		</script>
-
-		<style>
-			@keyframes typing {
-				from {
-					width: 0
-				}
-				to {
-					width: 100%
-				}
-			}
-
-			@keyframes blink {
-				50% {
-					opacity: 0
-				}
-			}
-
-			.typing-text {
-				overflow: hidden;
-				white-space: nowrap;
-				animation: typing 3.5s steps(40, end);
-			}
-
-			.typing-cursor {
-				animation: blink 0.7s infinite;
-			}
-
-			.floating-animation {
-				animation: float 3s ease-in-out infinite;
-			}
-
-			@keyframes float {
-				0,
-				100% {
-					transform: translateY(0px);
-				}
-				50% {
-					transform: translateY(-20px);
-				}
-			}
-
-			.card-hover {
-				transition: all 0.3s ease;
-			}
-
-			.card-hover:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-			}
-
-			.text-gradient {
-				background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-
-			.slide-in-left {
-				animation: slideInLeft 0.8s ease-out;
-			}
-
-			.slide-in-right {
-				animation: slideInRight 0.8s ease-out;
-			}
-
-			@keyframes slideInLeft {
-				from {
-					opacity: 0;
-					transform: translateX(-50px);
-				}
-				to {
-					opacity: 1;
-					transform: translateX(0);
-				}
-			}
-
-			@keyframes slideInRight {
-				from {
-					opacity: 0;
-					transform: translateX(50px);
-				}
-				to {
-					opacity: 1;
-					transform: translateX(0);
-				}
-			}
-
-			.pulse-animation {
-				animation: pulse 2s ease-in-out infinite;
-			}
-
-			.form-group ul,
-			.form-group ul li {
-				color: #ef4444;
-				font-size: 0.875rem;
-			}
-
-			.form-group ul {
-				list-style: none;
-				padding: 0;
-				margin-top: 0.25rem;
-			}
-
-			@keyframes pulse {
-				0,
-				100% {
-					transform: scale(1);
-				}
-				50% {
-					transform: scale(1.05);
-				}
-			}
-		</style>
+		<!-- Tailwind CSS compilé (43 KB vs 3 MB CDN) -->
+		<link rel="stylesheet" href="{{ asset('public/css/tailwind.min.css') }}">
 
 
 		{# -------- Consent Mode (default) AVANT GTM -------- #}
 
 
-		{# -------- Google Tag Manager -------- #}
+		{# -------- Google Tag Manager -------- #} 
+
 		<script>
 			(function (w, d, s, l, i) {
 w[l] = w[l] || [];
@@ -255,14 +145,14 @@ f.parentNode.insertBefore(j, f);
 </script>
 
  <!-- Global site tag (gtag.js) - Google Ads -->
-    <script type="text/plain" data-cookieconsent="marketing" async src="https://www.googletagmanager.com/gtag/js?id=AW-716366483"></script>
+    {# <script type="text/plain" data-cookieconsent="marketing" async src="https://www.googletagmanager.com/gtag/js?id=AW-716366483"></script>
     <script type="text/plain" data-cookieconsent="marketing">
         window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'AW-716366483');
-</script>
+</script> #}
 		 
 		<!-- End Global site tag (gtag.js) - Google Ads -->
 
@@ -305,12 +195,15 @@ window[disableStr] = true;
 			{% block importmap %}
 				{{ importmap('app') }}
 			{% endblock %}
-			<script src="{{ asset('js/app.js') }}"></script>
+			<script src="{{ asset('public/js/app.js') }}"></script>
 
 		{% endblock %}
 
 		<script>
-			document.getElementById("userPref").addEventListener("click", validationUserCookie, false);
+			var userPref = document.getElementById("userPref");
+			if (userPref) {
+				userPref.addEventListener("click", validationUserCookie, false);
+			}
 
 
 function validationUserCookie() {
@@ -330,30 +223,142 @@ $("#cookieChoiceInfo").remove();
 
 }
 		</script>
+
+
+		 <!-- calculer par rapport nombre prospects -->
+	<script>
+				(function () {
+function animateCounters() {
+document.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
+var target = parseInt(el.getAttribute('data-target'), 10);
+if (isNaN(target) || target === 0) {
+el.textContent = '0';
+return;
+}
+var duration = 1600;
+var start = null;
+function step(ts) {
+if (! start) 
+start = ts;
+
+var progress = Math.min((ts - start) / duration, 1);
+var ease = 1 - Math.pow(1 - progress, 3);
+el.textContent = Math.floor(ease * target).toLocaleString('fr-FR');
+if (progress < 1) 
+requestAnimationFrame(step);
+ else 
+el.textContent = target.toLocaleString('fr-FR');
+
+}
+requestAnimationFrame(step);
+});
+}
+if ('IntersectionObserver' in window) {
+var obs = new IntersectionObserver(function (entries, o) {
+entries.forEach(function (e) {
+if (e.isIntersecting) {
+animateCounters();
+o.disconnect();
+}
+});
+}, {threshold: 0.3});
+var strip = document.getElementById('stats-strip');
+if (strip) 
+obs.observe(strip);
+
+} else {
+document.addEventListener('DOMContentLoaded', animateCounters);
+}
+})();
+			</script>
+
+		<script>
+			(function() {
+				var track = document.getElementById('avisTrack');
+				var dotsEl = document.getElementById('avisDots');
+				var cards = track ? track.querySelectorAll('.avis-card') : [];
+				var total = cards.length;
+				var current = 0;
+				var perView = 3;
+
+				function getPerView() {
+					if (window.innerWidth < 640) return 1;
+					if (window.innerWidth < 1024) return 2;
+					return 3;
+				}
+
+				function maxIndex() { return Math.max(0, total - perView); }
+
+				function buildDots() {
+					dotsEl.innerHTML = '';
+					var pages = maxIndex() + 1;
+					for (var i = 0; i < pages; i++) {
+						var d = document.createElement('button');
+						d.className = 'avis-dot' + (i === current ? ' active' : '');
+						d.setAttribute('aria-label', 'Page ' + (i+1));
+						(function(idx){ d.onclick = function(){ goTo(idx); }; })(i);
+						dotsEl.appendChild(d);
+					}
+				}
+
+				function goTo(idx) {
+					perView = getPerView();
+					current = Math.max(0, Math.min(idx, maxIndex()));
+					var cardWidth = cards[0] ? cards[0].offsetWidth + 24 : 0;
+					track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+					dotsEl.querySelectorAll('.avis-dot').forEach(function(d, i) {
+						d.classList.toggle('active', i === current);
+					});
+				}
+
+				window.avisNav = function(dir) { goTo(current + dir); };
+
+				function init() {
+					perView = getPerView();
+					buildDots();
+					goTo(0);
+				}
+
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', init);
+				} else {
+					init();
+				}
+
+				var resizeTimer;
+				window.addEventListener('resize', function () {
+					clearTimeout(resizeTimer);
+					resizeTimer = setTimeout(function () { init(); }, 150);
+				});
+
+				// Auto-slide toutes les 5s
+				setInterval(function () {
+					perView = getPerView();
+					goTo(current >= maxIndex() ? 0 : current + 1);
+				}, 5000);
+			})();
+			</script>
+			
 		<script type="application/ld+json">
-			{
-			            "@context": "http://schema.org",
-			            "@type": "LocalBusiness",
-			            "name": "Aksam Assurance",
-			            "image": "https://www.assurance-vehicule-pro.fr/assets/img/favicon.png",
-			            "telephone": "01 82 83 48 00",
-			            "address": {
-			                "@type": "PostalAddress",
-			                "streetAddress": "10 rue de Penthièvre",
-			                "addressCountry": "FR",
-			                "addressLocality": "PARIS",
-			                "postalCode": "75008"
-			            },
-			            "url": "https://www.assurance-vehicule-pro.fr",
-			            "priceRange": "€€",
-			            "openingHours": "Mo-Fr 09:00-18:00",
-			            "contactPoint": {
-			                "@type": "ContactPoint",
-			                "telephone": "+33 1 82 83 48 00",
-			                "contactType": "Customer Service",
-			                "availableLanguage": ["French", "English"]
-			            }
-			        }
+		{
+			"@context": "https://schema.org",
+			"@type": "InsuranceAgency",
+			"name": "Aksam Assurance",
+			"image": "https://www.assurance-vehicule-pro.fr/images/favicon.png",
+			"telephone": "+33182834800",
+			"email": "contact@aksam-assurances.fr",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "10 rue de Penthièvre",
+				"addressLocality": "Paris",
+				"postalCode": "75008",
+				"addressCountry": "FR"
+			},
+			"url": "https://www.assurance-vehicule-pro.fr",
+			"openingHours": "Mo-Fr 09:00-18:00",
+			"areaServed": "FR",
+			"description": "Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs."
+		}
 		</script>
 
 

@@ -9,67 +9,12 @@ use Symfony\Component\Validator\Constraint;
 class NoSpam extends Constraint
 {
     public const SPAM_URL = 'spam-url';
-    public const SPAM_KEYWORD = 'spam-keyword';
-    public const SPAM_DOMAIN = 'spam-domain';
     public const SPAM_PATTERN = 'spam-pattern';
     public const SPAM_EMOJI = 'spam-emoji';
     public const SPAM_SQL_INJECTION = 'spam-sql-injection';
 
-    public array $spamKeywords = [
-        'payment',
-        'transfer',
-        'balance',
-        'sign in',
-        'earn money',
-        'bitcoin',
-        'crypto',
-        'cripton',
-        'crypton',
-        'wallet',
-        'account verified',
-        'dollar',
-        'usdt',
-        'usdc',
-        'binance',
-        'forex',
-        'trading',
-        'investissement',
-        'gain quotidien',
-        'profit',
-        'return',
-        'passive income',
-    ];
-
-    public array $suspiciousDomains = [
-        'graph.org',
-        't.me',
-        'bit.ly',
-        'tinyurl.com',
-        'tinyurl',
-    ];
-
-    public array $spamEmojis = [
-        '💳',
-        '💵',
-        '📊',
-        '🔥',
-        '💰',
-        '🤑',
-        '💸',
-        '🏦',
-        '📈',
-        '🪙',
-        '💎',
-        '🧧',
-        '💶',
-        '💴',
-        '💱',
-    ];
-
     public string $message = 'Contenu non autorisé.';
     public string $messageUrl = 'Les liens et URLs ne sont pas autorisés.';
-    public string $messageKeyword = 'Ce champ contient des mots interdits associés au spam ou aux arnaques.';
-    public string $messageDomain = 'Ce domaine est interdit.';
     public string $messagePattern = 'Contenu suspect détecté.';
     public string $messageEmoji = 'Les emojis ne sont pas autorisés dans ce champ.';
     public string $messageSqlInjection = 'Des caractères ou un format suspects ont été détectés.';
@@ -83,8 +28,20 @@ class NoSpam extends Constraint
         mixed $payload = null,
     ) {
         if (is_array($options)) {
-            $allowed = ['message', 'messageUrl', 'messageKeyword', 'messageDomain', 'messagePattern', 'messageEmoji', 'messageSqlInjection', 'spamKeywords', 'suspiciousDomains', 'spamEmojis', 'mode', 'alphaOnly'];
-            $options = array_intersect_key($options, array_flip($allowed));
+            $allowed = [
+                'message',
+                'messageUrl',
+                'messagePattern',
+                'messageEmoji',
+                'messageSqlInjection',
+                'mode',
+                'alphaOnly',
+            ];
+
+            $options = array_intersect_key(
+                $options,
+                array_flip($allowed)
+            );
         } elseif (is_string($options)) {
             $options = ['message' => $options];
         } else {
@@ -96,6 +53,6 @@ class NoSpam extends Constraint
 
     public function validatedBy(): string
     {
-        return static::class.'Validator';
+        return static::class . 'Validator';
     }
 }
