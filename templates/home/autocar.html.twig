@@ -55,15 +55,11 @@
                 <div class="form-group">
 					<div class="flex">
 						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
-							<i class="fas fa-briefcase text-accentchamp text-sm"></i>
+							<i class="fas fa-briefcase text-accent text-sm"></i>
 						</span>
-						<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
-						<option value="" selected="selected">Demarage d'activité </option>
-						<option value="">OUI</option>
-						<option value="">NON</option>
-						</select>
+						{{ form_widget(form.activite) }}
 					</div>
-					
+					{{ form_errors(form.activite) }}
 				</div>
 				<!-- Activité -->
 				<div class="form-group">
@@ -411,7 +407,57 @@
     </div>
 </section>
 
-<!-- CTA Final -->
+<!-- FAQ JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quel est le prix moyen d'une assurance pour autocar en France ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le prix moyen d'une assurance pour autocar en France se situe entre 3 000 et 12 000 euros par an selon le profil du véhicule et son usage. Un autocar de tourisme longue distance de 55 places avec couverture tous risques et garantie passagers se situe généralement autour de 7 000 à 10 000 euros annuels. L'ancienneté du véhicule, le kilométrage annuel et le profil des conducteurs font varier cette fourchette de manière significative. Un historique sans sinistre sur cinq ans peut faire baisser la prime de 15 à 25 %."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'assurance pour autocar est-elle obligatoire pour les transporteurs professionnels ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'assurance pour autocar est une obligation légale absolue pour tout transporteur professionnel en France. L'article L. 3112-1 du Code des transports impose à tout exploitant de transport public routier de voyageurs de justifier d'une assurance couvrant sa responsabilité civile. Circuler sans assurance expose l'exploitant à une suspension immédiate de son autorisation d'exploitation et à des poursuites pénales. La responsabilité civile seule ne suffit pas pour une activité complète."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment obtenir un devis assurance autocar rapidement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour obtenir un devis rapidement, transmettez les informations essentielles sur votre véhicule et votre activité. Nos experts traitent les demandes en tenant compte du certificat d'immatriculation, de l'usage déclaré et de l'historique de sinistralité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce qu'un auto-entrepreneur peut assurer un autocar ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un auto-entrepreneur peut assurer un autocar à condition de disposer d'une licence de transport voyageurs valide et d'un permis D en cours de validité. Nos experts connaissent les assureurs acceptant ce profil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on assurer un autocar après une résiliation pour non-paiement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il est possible d'assurer un autocar après une résiliation pour non-paiement, mais le marché standard se ferme dans ce cas. Des assureurs spécialisés en risques aggravés acceptent ces profils moyennant une prime majorée."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FAQ Answer Snippet for Speakable -->
 <section class="py-8 lg:py-20 bg-gradient-to-r from-blue-200 to-blue-400">
     <div class="container mx-auto px-4 text-center">
         <div class="max-w-3xl mx-auto">

@@ -1,0 +1,677 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assurance semi-remorque | Tarif en ligne | Devis rapide{% endblock %}
+
+{% block description %}<meta name="description" content="Assurance semi-remorque pour professionnels du transport et de la logistique. Garanties RC, bris de glace. Comparez les offres adaptées. Tarif en ligne, devis gratuit.">{% endblock %}
+
+{% block canonical %}<link rel="canonical" href="https://assurance-vehicule-pro.fr/semi-remorque">{% endblock %}
+
+{% block og_title %}Assurance semi-remorque | Tarif en ligne | Transport & Logistics{% endblock %}
+
+{% block og_description %}Protégez votre semi-remorque avec une assurance adaptée au transport professionnel. Garanties complètes, comparaison des offres du marché.{% endblock %}
+
+{% block og_url %}<meta property="og:url" content="https://assurance-vehicule-pro.fr/assurance-semi-remorque">{% endblock %}
+
+{% block og_image %}<meta property="og:image" content="https://assurance-vehicule-pro.fr/images/assurance-semi-remorque.jpg">{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
+    <div class="hidden lg:flex absolute top-2 left-2 lg:top-5 lg:left-5 floating-animation">
+        <i class="fas fa-truck-loading text-blue-600 text-2xl lg:text-4xl opacity-30"></i>
+    </div>
+    <div class="hidden lg:flex absolute bottom-2 right-2 lg:bottom-5 lg:right-5 floating-animation" style="animation-delay: -2s;">
+        <i class="fas fa-shipping-fast text-blue-700 text-3xl lg:text-5xl opacity-25"></i>
+    </div>
+
+    <div class="w-full mx-auto px-4 lg:px-40 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-2 lg:gap-3 items-stretch">
+            
+            <!-- Image Section -->
+            <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
+                <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
+                        <img src="{{ asset('images/assurance-semi-remorque.jpg') }}" alt="assurance semi-remorque" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="order-1 lg:order-2 slide-in-right flex-1 lg:flex-[3]">
+                <div class="bg-surface shadow-2xl p-3 lg:p-4 card-hover border-l border-gray-100 h-full rounded-xl lg:rounded-3xl">
+                    <div class="text-center mb-2 lg:mb-3">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg- rounded-xl mx-auto mb-2 flex items-center justify-center">
+                            <i class="fas fa-calculator text-lg lg:text-2xl text-accent"></i>
+                        </div>
+                        <h2 class="text-sm lg:text-xl font-bold text-gradient mb-2 leading-tight">Complétez ce formulaire pour obtenir un devis semi-remorque</h2>
+                    </div>
+
+					{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3', 'data-turbo': 'false'}}) }}
+
+					<!-- Raison sociale -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-building text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.raison) }}
+						</div>
+						{{ form_errors(form.raison) }}
+					</div>
+                    
+                    <!-- Demarage d'activité -->
+                    <div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-briefcase text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.activite) }}
+						</div>
+						{{ form_errors(form.activite) }}
+					</div>
+					<!-- Activité -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-briefcase text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.activite) }}
+						</div>
+						{{ form_errors(form.activite) }}
+					</div>
+
+					<!-- Véhicule assuré -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-shield-alt text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.assurer) }}
+						</div>
+						{{ form_errors(form.assurer) }}
+					</div>
+
+					<!-- Code Postal -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-map-marker-alt text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.codePostale) }}
+						</div>
+						{{ form_errors(form.codePostale) }}
+					</div>
+                    <!-- Nom -->
+                    <div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-user text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.nom) }}
+						</div>
+						{{ form_errors(form.nom) }}
+					</div>
+
+					<!-- Prénom -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-user-tag text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.lastname) }}
+						</div>
+						{{ form_errors(form.lastname) }}
+					</div>
+
+
+					<!-- Email -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-envelope text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.email) }}
+						</div>
+						{{ form_errors(form.email) }}
+					</div>
+
+					<!-- Téléphone -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-phone text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.tele) }}
+						</div>
+						{{ form_errors(form.tele) }}
+					</div>
+
+					<!-- Consent -->
+					<div class="bg-white rounded-lg border border-blue-200 p-1.5 mt-2">
+						<span class="text-xs text-gray-600 leading-tight block text-justify">
+							En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adaptées à votre recherche.
+						</span>
+					</div>
+
+					<!-- Bouton -->
+					<button type="submit" class="w-full bg-accent text-white font-bold py-3 px-4 rounded-lg text-sm lg:text-base pulse-animation shadow-lg hover:shadow-2xl transition-all duration-300 mt-3">
+						<i class="fas fa-calculator mr-2"></i>
+						Comparer 
+					</button>
+
+					{{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction / H1 -->
+<section class="py-8 lg:py-16 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl lg:text-5xl font-bold text-gradient mb-6 text-center">Assurance semi-remorque</h1>
+            <p class="text-gray-700 text-sm lg:text-base leading-relaxed text-center max-w-4xl mx-auto mt-6">
+                <span class="chapeau">Assurance semi-remorque désigne le contrat d'assurance obligatoire et spécifique couvrant les véhicules articulés composés d'un tracteur routier et d'une remorque portée, utilisés dans le cadre du transport professionnel de marchandises. Tout véhicule de ce type circulant sur la voie publique doit être couvert a minima par une garantie de responsabilité civile, conformément à l'article L211-1 du Code des assurances. Au-delà de cette obligation de base, des garanties complémentaires permettent de protéger la marchandise transportée, le véhicule lui-même et les tiers en cas de sinistre.</span>
+            </p>
+            <div class="text-center mt-6">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl text-sm lg:text-base">
+                    <i class="fas fa-calculator mr-2"></i>
+                    Obtenir une couverture adaptée à votre semi-remorque
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section I : Qu'est-ce que l'assurance semi-remorque ? -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Qu'est-ce que l'assurance semi-remorque et à qui s'applique-t-elle ?</h2>
+                <p class="text-gray-600 mt-4">Tout comprendre sur l'assurance spécifique aux ensembles articulés de transport professionnel</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Définition technique et périmètre réglementaire</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Une semi-remorque déterminée ou indéterminé est, au sens du Code de la route (article R311-1), un véhicule conçu pour être attelé à un tracteur routier de manière qu'une partie de son poids et de celui de son chargement soit supportée par ce tracteur. Cette définition technique a une incidence directe sur le régime d'assurance applicable : la remorque et le tracteur peuvent relever de contrats distincts ou d'un contrat unique, selon la configuration choisie.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        La question de l'assurabilité du semi-remorque seul, sans le tracteur tractant, est traitée par la jurisprudence et par les conditions générales des contrats transport. Selon les informations disponibles sur service-public.fr, le propriétaire du véhicule tracteur et le propriétaire de la remorque peuvent être deux entités différentes, ce qui impose une coordination rigoureuse des garanties pour éviter tout vide de couverture.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. Les professionnels concernés par l'assurance semi-remorque</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        L'assurance semi-remorque concerne en premier lieu les entreprises titulaires d'une licence de transport intérieur ou d'une autorisation de transport communautaire, délivrées conformément au règlement (CE) n° 1071/2009. Elle s'applique également aux sous-traitants du transport routier, aux commissionnaires de transport et aux opérateurs de logistique gérant des plateformes de distribution.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Les transporteurs pour compte propre, c'est-à-dire les entreprises qui acheminent leurs propres marchandises avec leurs propres véhicules, sont soumis aux mêmes obligations d'assurance que les transporteurs publics, sans exception. Notre équipe accompagne aussi bien le gérant d'une flotte de 20 unités que le transporteur indépendant exploitant un seul ensemble articulé.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-calculator mr-2"></i>
+                    Comparer les garanties pour votre semi-remorque professionnel
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section II : Garanties -->
+<section class="py-8 lg:py-20 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Quelles garanties couvre l'assurance semi-remorque professionnelle ?</h2>
+                <p class="text-gray-600 mt-4">De la RC obligatoire aux garanties complémentaires essentielles pour le transport</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-shield-alt text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Responsabilité Civile (RC)</h3>
+                            <p class="text-gray-600 text-sm">La garantie de base obligatoire. Elle indemnise les dommages corporels et matériels causés aux tiers lors d'un accident impliquant le véhicule. Article L211-1 du Code des assurances.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-truck-moving text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Dommages au Véhicule</h3>
+                            <p class="text-gray-600 text-sm">Couvre les dommages causés à votre semi-remorque (collision, incendie, vol). Indispensable pour les véhicules neufs ou de grande valeur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-boxes text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Garantie Marchandises Transportées</h3>
+                            <p class="text-gray-600 text-sm">Couvre la valeur de la cargaison en cas de perte, vol ou avarie. Doit être souscrite expressément. Réglementée par les articles L133-1 et suivants du Code de commerce.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-windshield text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Bris de Glace</h3>
+                            <p class="text-gray-600 text-sm">Garantie spécifique aux cabines de poids lourds. Couvre les dommages au pare-brise et aux fenêtres de votre semi-remorque.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl p-6 shadow-lg card-hover border-l-4 border-blue-400">
+                    <div class="flex items-start gap-4 mb-3">
+                        <i class="fas fa-ambulance text-blue-500 text-3xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-2">Assistance 24/7</h3>
+                            <p class="text-gray-600 text-sm">Depannage, remorquage spécialisé et grutage en France comme à l'étranger pour minimiser votre temps d'arrêt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    Vérifier votre obligation légale d'assurance semi-remorque
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section III : Obligation légale -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Quelle est l'obligation légale d'assurance pour un semi-remorque déterminé et non indéterminé ?</h2>
+                <p class="text-gray-600 mt-4">Le cadre légal strict qui s'applique à tous les véhicules de transport routier en France</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">L'article L211-1 du Code des assurances</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        <strong>L'assurance semi-remorque est obligatoire</strong> pour tout véhicule de transport routier en France en vertu de l'article L211-1 du Code des assurances. Cette obligation s'applique à la fois aux semi-remorques déterminés et indéterminés.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        <strong>Un semi-remorque non assuré expose son propriétaire à une amende pouvant atteindre 3 750 EUR</strong> selon l'article L324-2 du Code de la route, ainsi qu'à la confiscation du véhicule. Le défaut d'assurance est contrôlé automatiquement via le Fichier des Véhicules Assurés (FVA), opéré par l'ANTAI.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">Sanctions et contrôles</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        En cas de récidive, les sanctions sont aggravées et peuvent inclure une peine d'emprisonnement jusqu'à 6 mois selon l'article L324-2 du Code de la route. Pour les professionnels du transport, un véhicule non assuré peut également entraîner la suspension ou le retrait de la licence de transport, délivrée par la DREAL. Les informations relatives aux obligations d'assurance des véhicules professionnels sont consultables sur service-public.fr.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">Spécificités pour les flottes et la sous-traitance</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Pour les exploitants de flottes, la souscription d'une police flotte permet d'assurer l'ensemble des véhicules sous un contrat unique. La sous-traitance dans le transport routier soulève une question réglementaire précise : selon les articles L132-8 et L132-9 du Code de commerce, le commissionnaire de transport est garant de la bonne exécution du contrat, y compris pour les sinistres survenus lors des opérations confiées à un sous-traitant.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Choisir la formule adaptée à votre activité logistique
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section IV : Comment choisir -->
+<section class="py-8 lg:py-20 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Comment choisir son assurance semi-remorque selon son activité logistique ?</h2>
+                <p class="text-gray-600 mt-4">Analysez les critères clés pour une couverture optimale</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-light rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Transport national versus transport international</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Pour le transport national, la RC au tiers suffit légalement, mais une couverture dommages au véhicule et marchandises est fortement recommandée. Pour le transport international, la Convention CMR s'applique : elle fixe un régime de responsabilité spécifique pour le transporteur, avec des plafonds d'indemnisation exprimés en droits de tirage spéciaux (DTS). Sans garantie CMR spécifique intégrée dans son contrat d'assurance, un transporteur risque de supporter personnellement la part d'indemnisation excédant les plafonds légaux.
+                    </p>
+                </div>
+
+                <div class="bg-light rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. Adapter les garanties au type de chargement et au statut</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        La nature du chargement est un facteur déterminant pour la tarification et les conditions d'assurance. Les matières dangereuses (transport soumis à l'accord ADR), les denrées périssables, les véhicules de valeur ou les charges exceptionnelles nécessitent des clauses contractuelles spécifiques. L'accord ADR impose des obligations réglementaires strictes qui se répercutent sur les conditions d'assurance. Pour un artisan transporteur indépendant, le choix entre une formule au tiers, intermédiaire ou tous risques doit tenir compte de la valeur résiduelle du semi-remorque, de son ancienneté et du montant des mensualités de crédit-bail.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-file-contract mr-2"></i>
+                    Demander un devis pour votre semi-remorque déterminé ou indéterminé
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section V : Devis -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Comment obtenir un devis d'assurance semi-remorque adapté à sa flotte ?</h2>
+                <p class="text-gray-600 mt-4">Préparez un dossier complet pour une offre précise et comparative</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Les informations indispensables pour un devis précis</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Les assureurs demandent systématiquement les éléments suivants : la carte grise de chaque semi-remorque (PTAC, date de mise en circulation, numéro d'immatriculation), le relevé d'informations délivré par l'assureur précédent conformément à l'article A121-1 du Code des assurances, le numéro SIREN de l'entreprise, la description des marchandises habituellement transportées et le périmètre géographique d'exploitation.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        En cas de résiliation par un assureur précédent, le transporteur peut se tourner vers le Bureau Central de Tarification (BCT), organisme officiel qui contraint tout assureur agréé à assurer un risque qui lui est soumis, garantissant ainsi l'accès à l'assurance obligatoire même en cas d'antécédents de sinistralité élevée.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. Comparer les offres et lire les conditions générales avec attention</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        La comparaison des offres d'assurance semi-remorque ne doit pas se limiter au prix. Les franchises, les plafonds de garantie pour les marchandises, les exclusions liées aux marchandises dangereuses ou aux opérations de chargement/déchargement, et les conditions de mise en jeu de l'assistance sont autant de critères qui différencient profondément les contrats.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Il est recommandé de vérifier que l'assureur est enregistré auprès de l'ORIAS (Organisme pour le Registre des Intermédiaires en Assurance), registre officiel consultable en ligne, et que les intermédiaires présentant l'offre y sont également immatriculés, conformément à l'article L512-1 du Code des assurances.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-truck-loading mr-2"></i>
+                    Demander un devis pour votre semi-remorque
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Devis Section (CRTA) -->
+<section class="py-8 lg:py-20 bg-gradient-to-r from-blue-200 to-blue-400 text-white text-center">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="w-12 h-12 lg:w-20 lg:h-20 bg-white/20 rounded-2xl lg:rounded-3xl mx-auto mb-6 lg:mb-8 flex items-center justify-center">
+                <i class="fas fa-calculator text-2xl lg:text-4xl text-white"></i>
+            </div>
+            <h2 class="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">Déposez votre demande de devis assurance semi-remorque</h2>
+            <p class="text-base lg:text-xl mb-6 lg:mb-8 text-white/95 leading-relaxed px-4">
+                Protéger un semi-remorque, c'est sécuriser une chaîne logistique entière : le véhicule, la cargaison, les tiers et la continuité de l'activité. Nos experts analysent votre situation, vérifient votre conformité aux obligations légales issues de l'article L211-1 du Code des assurances et comparent les offres disponibles sur le marché pour vous proposer la couverture la plus adaptée, qu'il s'agisse d'un seul ensemble articulé ou d'une flotte multi-véhicules.
+            </p>
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-2xl text-sm lg:text-base">
+                <i class="fas fa-arrow-up mr-2"></i>
+                Demandez un devis pour votre semi-remorque et obtenez une comparaison personnalisée des contrats disponibles.
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8 lg:mb-12">
+                <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-4">Questions Fréquentes — Assurance semi-remorque</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">C'est quoi exactement une assurance semi-remorque et en quoi est-elle différente d'une assurance auto classique ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">L'assurance semi-remorque est un contrat spécifique aux véhicules articulés de transport professionnel dont le PTAC dépasse 3,5 tonnes. Elle diffère d'une assurance auto par la nature des risques couverts (marchandises transportées, responsabilité CMR, matières dangereuses) et par les conditions tarifaires propres aux véhicules industriels. Elle peut couvrir le tracteur, la remorque ou l'ensemble articulé dans un contrat unique, selon la configuration choisie. L'article L211-1 du Code des assurances s'applique à tout véhicule terrestre, y compris les poids lourds.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Combien coûte une assurance semi-remorque pour un transporteur indépendant ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Le coût d'une assurance semi-remorque dépend de plusieurs facteurs : ancienneté du véhicule, nature des marchandises, sinistralité des 36 derniers mois et périmètre géographique. La Fédération Française de l'Assurance (FFA) rappelle que la prime est calculée sur la base du risque réel déclaré. Pour un artisan transporteur exploitant un seul ensemble articulé, le niveau de couverture (tiers, intermédiaire ou tous risques) constitue le principal levier d'optimisation du coût. L'article A121-1 du Code des assurances encadre la délivrance du relevé d'informations qui sert de base au calcul de la prime.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">L'assurance semi-remorque est-elle obligatoire en France et quelle loi l'impose ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Oui, l'assurance semi-remorque est obligatoire en France. L'article L211-1 du Code des assurances impose une garantie de responsabilité civile pour tout véhicule terrestre à moteur circulant sur la voie publique. Circuler sans assurance expose le propriétaire à une amende pouvant atteindre 3 750 EUR (article L324-2 du Code de la route) et à la confiscation du véhicule. Le défaut d'assurance est contrôlé automatiquement via le Fichier des Véhicules Assurés, opéré par l'ANTAI.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Mon assureur a résilié mon contrat de poids lourd : puis-je quand même assurer mon semi-remorque ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Oui. En cas de résiliation par un assureur, le transporteur peut saisir le Bureau Central de Tarification (BCT), organisme officiel qui contraint tout assureur agréé à couvrir le risque soumis. Cette procédure est encadrée par les articles L212-1 et suivants du Code des assurances. Une résiliation ne signifie pas l'impossibilité d'assurer le véhicule : elle implique une analyse du dossier et une tarification adaptée au niveau de risque.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Comment déclarer un sinistre sur un semi-remorque en transport international (CMR) ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Un sinistre survenu lors d'un transport international doit être déclaré à l'assureur dans les délais prévus au contrat, généralement sous 5 jours ouvrés pour les dommages apparents. La Convention CMR (article 30) impose au destinataire de formuler ses réserves par écrit dès la réception de la marchandise pour les dommages non apparents, dans un délai de 7 jours. La déclaration de sinistre doit inclure la lettre de voiture CMR, le bon de livraison, les photos et l'évaluation des dommages. L'article L113-2 du Code des assurances fixe les obligations déclaratives générales de l'assuré.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Comment souscrire une assurance semi-remorque pour une flotte de plusieurs véhicules ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">La souscription d'une assurance flotte semi-remorques se fait via une police d'abonnement qui centralise l'ensemble des véhicules sous un contrat unique, avec déclaration des entrées et sorties. Ce dispositif simplifie la gestion administrative et garantit une couverture continue. Notre équipe constitue le dossier complet (cartes grises, relevés d'informations, description d'activité) et compare les offres de plusieurs assureurs spécialisés dans le transport routier.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "C'est quoi exactement une assurance semi-remorque et en quoi est-elle différente d'une assurance auto classique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'assurance semi-remorque est un contrat spécifique aux véhicules articulés de transport professionnel dont le PTAC dépasse 3,5 tonnes. Elle diffère d'une assurance auto par la nature des risques couverts (marchandises transportées, responsabilité CMR, matières dangereuses) et par les conditions tarifaires propres aux véhicules industriels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte une assurance semi-remorque pour un transporteur indépendant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le coût dépend de l'ancienneté du véhicule, de la nature des marchandises, de la sinistralité des 36 derniers mois et du périmètre géographique. Pour un artisan transporteur, le niveau de couverture (tiers, intermédiaire ou tous risques) constitue le principal levier d'optimisation du coût."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'assurance semi-remorque est-elle obligatoire en France et quelle loi l'impose ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'article L211-1 du Code des assurances impose une garantie de responsabilité civile pour tout véhicule terrestre à moteur circulant sur la voie publique. Circuler sans assurance expose le propriétaire à une amende pouvant atteindre 3 750 EUR (article L324-2 du Code de la route) et à la confiscation du véhicule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon assureur a résilié mon contrat de poids lourd : puis-je quand même assurer mon semi-remorque ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. En cas de résiliation, le transporteur peut saisir le Bureau Central de Tarification (BCT), organisme officiel qui contraint tout assureur agréé à couvrir le risque soumis. Cette procédure est encadrée par les articles L212-1 et suivants du Code des assurances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment déclarer un sinistre sur un semi-remorque en transport international (CMR) ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un sinistre en transport international doit être déclaré à l'assureur dans les délais prévus, généralement sous 5 jours ouvrés. La Convention CMR (article 30) impose des réserves écrites pour les dommages non apparents. La déclaration doit inclure la lettre de voiture CMR, le bon de livraison, les photos et l'évaluation des dommages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment souscrire une assurance semi-remorque pour une flotte de plusieurs véhicules ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La souscription d'une assurance flotte se fait via une police d'abonnement centralisant tous les véhicules sous un contrat unique, avec déclaration des entrées et sorties. Notre équipe constitue le dossier complet et compare les offres de plusieurs assureurs spécialisés."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Speakable + Breadcrumb + Organization + Service + WebPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://assurance-vehicule-pro.fr/#organization",
+      "name": "Assurance Véhicule Pro",
+      "url": "https://assurance-vehicule-pro.fr",
+      "logo": "https://assurance-vehicule-pro.fr/images/logo.png",
+      "telephone": "tel:0808660540",
+      "areaServed": "FR",
+      "description": "Spécialiste de l'assurance véhicule professionnel en France, accompagnant les transporteurs routiers et logisticiens dans le choix de leurs garanties.",
+      "knowsAbout": [
+        "assurance semi-remorque",
+        "assurance poids lourd",
+        "assurance transport de marchandises",
+        "assurance flotte véhicules industriels"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://assurance-vehicule-pro.fr/assurance-semi-remorque/#service",
+      "name": "Assurance semi-remorque",
+      "serviceType": "Assurance véhicule professionnel transport routier",
+      "provider": { "@id": "https://assurance-vehicule-pro.fr/#organization" },
+      "areaServed": "FR",
+      "description": "Couverture RC, dommages, marchandises transportées et assistance pour semi-remorques et ensembles articulés utilisés dans le transport routier professionnel.",
+      "url": "https://assurance-vehicule-pro.fr/assurance-semi-remorque"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://assurance-vehicule-pro.fr/assurance-semi-remorque/#webpage",
+      "url": "https://assurance-vehicule-pro.fr/assurance-semi-remorque",
+      "name": "Assurance semi-remorque | Tarif en ligne | Devis rapide",
+      "description": "Assurance semi-remorque pour professionnels du transport et de la logistique. Garanties RC marchandises, bris de glace. Comparez les offres adaptées à votre situation.",
+      "inLanguage": "fr-FR",
+      "isPartOf": { "@id": "https://assurance-vehicule-pro.fr/#organization" },
+      "primaryImageOfPage": "https://assurance-vehicule-pro.fr/images/assurance-semi-remorque.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://assurance-vehicule-pro.fr/acceuil"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Assurance véhicule professionnel",
+          "item": "https://assurance-vehicule-pro.fr/acceuil"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Assurance semi-remorque",
+          "item": "https://assurance-vehicule-pro.fr/assurance-semi-remorque"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- FAQ Answer Snippet for Speakable -->
+<div class="faq-reponse-snippet" style="display:none;">
+<p>L'assurance semi-remorque est obligatoire en France en vertu de l'article L211-1 du Code des assurances. Toute semi-remorque professionnelle circulant sur la voie publique doit être assurée au minimum en responsabilité civile. Cette garantie couvre les dommages causés à des tiers. Au-delà, des garanties complémentaires protègent la marchandise transportée, le véhicule et les occupants. Notre comparateur vous permet d'obtenir un devis personnalisé pour votre flotte de semi-remorques.</p>
+</div>
+
+<script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+        question.addEventListener('click', function() {
+            var answer = this.nextElementSibling;
+            var toggle = this.querySelector('.faq-toggle');
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                toggle.textContent = '-';
+            } else {
+                answer.classList.add('hidden');
+                toggle.textContent = '+';
+            }
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+{% endblock %}

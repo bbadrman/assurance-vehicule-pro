@@ -386,4 +386,156 @@ final class HomeController extends AbstractController
              'form' => $form->createView(),
         ]);
     }
+
+    #[Route('/semi-remorque', name: 'app_semiram')]
+    public function semiram(Request $request, EntityManagerInterface $entityManager, LoggerInterface $logger): Response
+    {
+          $vehicule = new Vehicule();
+        $form = $this->createForm(VehiculeType::class, $vehicule);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                $entityManager->persist($vehicule);
+                $entityManager->flush();
+
+                $this->addFlash('success', 'Votre demande de devis a bien été envoyée !');
+
+                $telephone = $this->formatPhoneNumber($vehicule->getTele());
+                $logger->info('Téléphone formaté:', [
+                    'original' => $vehicule->getTele(),
+                    'formaté' => $telephone
+                ]);
+
+                $data = [
+                    'nom'           => $vehicule->getNom() ?? '',
+                    'prenom'        => $vehicule->getLastname() ?? '',
+                    'phone'         => $telephone ?? '',
+                    'email'         => $vehicule->getEmail() ?? '',
+                    'raisonSociale' => $vehicule->getRaison() ?? '',
+                    'typeProspect'  => "2",
+                    'source'        => "3",
+                    'activites'     => "3",
+                    'url'           => "25",
+                    'product'       => '/api/products/1',
+                ];
+
+                $ch = curl_init(self::API_PROSPECTS_URL);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+
+                $response = curl_exec($ch);
+                $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                $curlError = curl_error($ch);
+                curl_close($ch);
+
+                if ($httpCode >= 200 && $httpCode < 300) {
+                    $logger->info('Données envoyées à l\'API avec succès', [
+                        'status_code' => $httpCode,
+                        'response' => $response
+                    ]);
+                } else {
+                    $this->addFlash('warning', 'Votre demande a été enregistrée, mais un problème est survenu lors de la transmission.');
+                    $logger->error('Erreur lors de l\'envoi à l\'API', [
+                        'status_code' => $httpCode,
+                        'error' => $curlError,
+                        'response' => $response
+                    ]);
+                }
+
+                return $this->redirectToRoute('app_reponse', [], Response::HTTP_SEE_OTHER);
+
+            } catch (\Exception $e) {
+                $this->addFlash('error', 'Une erreur est survenue lors de l\'enregistrement de votre demande.');
+                $logger->error('Erreur lors de l\'enregistrement du formulaire véhicule', [
+                    'message' => $e->getMessage(),
+                    'file' => $e->getFile(),
+                    'trace' => $e->getTraceAsString()
+                ]);
+                return $this->redirectToRoute('app_semiram', [], Response::HTTP_SEE_OTHER);
+            }
+        }
+
+        return $this->render('home/semi-remorque.html.twig', [
+             'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/assurance-tracteur-routier', name: 'app_tracteur')]
+    public function tracteur(Request $request, EntityManagerInterface $entityManager, LoggerInterface $logger): Response
+    {
+          $vehicule = new Vehicule();
+        $form = $this->createForm(VehiculeType::class, $vehicule);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                $entityManager->persist($vehicule);
+                $entityManager->flush();
+
+                $this->addFlash('success', 'Votre demande de devis a bien été envoyée !');
+
+                $telephone = $this->formatPhoneNumber($vehicule->getTele());
+                $logger->info('Téléphone formaté:', [
+                    'original' => $vehicule->getTele(),
+                    'formaté' => $telephone
+                ]);
+
+                $data = [
+                    'nom'           => $vehicule->getNom() ?? '',
+                    'prenom'        => $vehicule->getLastname() ?? '',
+                    'phone'         => $telephone ?? '',
+                    'email'         => $vehicule->getEmail() ?? '',
+                    'raisonSociale' => $vehicule->getRaison() ?? '',
+                    'typeProspect'  => "2",
+                    'source'        => "3",
+                    'activites'     => "3",
+                    'url'           => "26",
+                    'product'       => '/api/products/1',
+                ];
+
+                $ch = curl_init(self::API_PROSPECTS_URL);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+
+                $response = curl_exec($ch);
+                $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                $curlError = curl_error($ch);
+                curl_close($ch);
+
+                if ($httpCode >= 200 && $httpCode < 300) {
+                    $logger->info('Données envoyées à l\'API avec succès', [
+                        'status_code' => $httpCode,
+                        'response' => $response
+                    ]);
+                } else {
+                    $this->addFlash('warning', 'Votre demande a été enregistrée, mais un problème est survenu lors de la transmission.');
+                    $logger->error('Erreur lors de l\'envoi à l\'API', [
+                        'status_code' => $httpCode,
+                        'error' => $curlError,
+                        'response' => $response
+                    ]);
+                }
+
+                return $this->redirectToRoute('app_reponse', [], Response::HTTP_SEE_OTHER);
+
+            } catch (\Exception $e) {
+                $this->addFlash('error', 'Une erreur est survenue lors de l\'enregistrement de votre demande.');
+                $logger->error('Erreur lors de l\'enregistrement du formulaire véhicule', [
+                    'message' => $e->getMessage(),
+                    'file' => $e->getFile(),
+                    'trace' => $e->getTraceAsString()
+                ]);
+                return $this->redirectToRoute('app_tracteur', [], Response::HTTP_SEE_OTHER);
+            }
+        }
+
+        return $this->render('home/tracteur-routier.html.twig', [
+             'form' => $form->createView(),
+        ]);
+    }
 }
