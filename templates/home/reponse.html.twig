@@ -56,6 +56,16 @@
 	</section>
 	<!-- Scripts -->
 
-	 
-	
+	{# Événement de conversion : envoyé une seule fois par soumission (le flash est consommé à la lecture),
+	   donc pas de nouvelle conversion en cas de rafraîchissement ou de retour arrière. #}
+	{% if app.flashes('success') is not empty %}
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				event: 'lead_form_submit',
+				transaction_id: '{{ "now"|date("YmdHis") }}-{{ random(100000, 999999) }}'
+			});
+		</script>
+	{% endif %}
+
 {% endblock %}
