@@ -2,11 +2,11 @@
 
 {% block title %}Assurance Véhicule Professionnel | Devis en ligne{% endblock %}
 {% block og_title %}Assurance Véhicule Professionnel — Devis en Ligne{% endblock %}
-{% block og_description %}Courtier en assurance véhicule pro : devis en 2 min, +20 compagnies partenaires dont AXA et April. Utilitaires, voitures de société, poids lourds.{% endblock %}
-{% block description %}<meta name="description" content="Courtier en assurance véhicule professionnel : obtenez un devis en 2 min pour votre utilitaire, voiture de société ou poids lourd. +20 compagnies partenaires dont AXA et April.">{% endblock %}
+{% block og_description %}Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.{% endblock %}
+{% block description %}<meta name="description" content="Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.">{% endblock %}
+
 
 {% block body %}
-	<h1 class="sr-only">Assurance Véhicule Professionnel — Devis en ligne pour Pros, Artisans & PME</h1>
 	<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
 		<!-- Background decoration -->
 		{# <div class="hidden lg:flex absolute top-4 left-4 lg:top-10 lg:left-10 floating-animation">
@@ -24,7 +24,7 @@
 				<div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
 					<div class="relative h-full min-h-[300px] lg:min-h-[600px]">
 						<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl lg:rounded-3xl shadow-2xl overflow-hidden">
-							<img src="{{ asset('images/assurance-vehicule-pro.jpg') }}" alt="Conducteur professionnel au volant — assurance véhicule professionnel Aksam" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" fetchpriority="high"/>
+							<img src="{{ asset('public/images/assurance-vehicule-pro.jpg') }}" alt="Conducteur professionnel" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy"/>
 						</div>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 
 
 						<!-- Nom -->
-						{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3'}}) }}
+{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3', 'data-turbo': 'false'}}) }}
 
 						
 
@@ -74,7 +74,7 @@
 								<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
 									<i class="fas fa-briefcase text-accentchamp text-sm"></i>
 								</span>
-								<select id="transport_type" name="type" required="required" class="select-native flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+								<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
 								<option value="" selected="selected">Type véhicule </option>
 								<option value="">+3T5</option>
 								<option value="">-3T5</option>
@@ -175,7 +175,7 @@
 		<div class="container mx-auto px-2 lg:px-4">
 			<div class="max-w-6xl mx-auto">
 				<div class="text-center mb-8 lg:mb-16">
-					<h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6 leading-tight">Une Assurance Adaptée à tous les Professionnels</h2>
+					<h1 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6 leading-tight">Une Assurance Véhicule Adaptée à tous les Professionnels</h1>
 					{# <div class="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
 					<p class="text-gray-600 mt-4 max-w-3xl mx-auto">Chaque métier a ses propres exigences. C'est pourquoi notre assurance véhicule pro couvre l'ensemble de vos besoins.</p>
 				</div>
@@ -359,7 +359,7 @@
 						<!-- Icône + Titre sur la même ligne -->
 						<div class="flex items-center gap-4 mb-4">
 							<div class="w-12 h-12 lg:w-14 lg:h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-								<i class="fas fa-shield text-gradient text-xl lg:text-2xl"></i>
+								<i class="fas fa-shield text-green-600 text-xl lg:text-2xl"></i>
 							</div>
 							<h3 class="text-lg lg:text-2xl font-bold text-gradient">Tiers Étendu</h3>
 						</div>
@@ -401,7 +401,7 @@
 						<p class="text-gray-700 text-sm font-medium mb-6">La tranquillité d'esprit absolue pour vos véhicules neufs ou stratégiques.</p>
 						<ul class="space-y-3">
 							<li class="flex items-center gap-2">
-								<i class="fas fa-check text-gradient flex-shrink-0"></i>
+								<i class="fas fa-check text-green-600 flex-shrink-0"></i>
 								<span class="text-gray-700 text-sm font-medium">Inclus Tiers Étendu</span>
 							</li>
 							<li class="flex items-center gap-2">
@@ -490,7 +490,7 @@
 					</div>
 					<div class="mt-8">
 						{# <div class="w-16 h-16 bg-green-100 rounded-xl mx-auto mb-4 flex items-center justify-center">
-							<i class="fas fa-balance-scale text-gradient text-2xl"></i>
+							<i class="fas fa-balance-scale text-green-600 text-2xl"></i>
 						</div> #}
 						<h3 class="text-xl lg:text-2xl font-bold text-gradient mb-3">Comparez & Choisissez</h3>
 						<p class="text-gray-600 text-sm">Recevez instantanément notre meilleure proposition tarifaire et personnalisez vos options.</p>
@@ -614,7 +614,7 @@
 <section class="py-12 lg:py-20 bg-surface"> 
 		<div class="container mx-auto px-4 lg:px-8"> 
 			<!-- Partenaires section -->
-			<div class="mt-10 mb-2 py-8 w-full">
+			<div class="mt-6 py-2 mb-2 w-full"> 
 
 				<h2 class="text-2xl lg:text-3xl font-bold text-gradient mb-4 text-center">Nos compagnies partenaires</h2>
 				<div class="py-12 partenaires-carousel-wrapper">
@@ -622,48 +622,48 @@
 						class="partenaires-carousel-track">
 						<!-- Logos originaux -->
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/allianz.png') }}" alt="Allianz" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/allianz.png') }}" alt="Allianz" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/april.jpg') }}" alt="April" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/april.jpg') }}" alt="April" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/axa.png') }}" alt="axa" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/axa.png') }}" alt="axa" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/eurodommage.png') }}" alt="Eurodommage" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/eurodommage.png') }}" alt="Eurodommage" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/sollyzar.png') }}" alt="Sollyzar" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/sollyzar.png') }}" alt="Sollyzar" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/zephir.png') }}" alt="Zephir" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/zephir.png') }}" alt="Zephir" loading="lazy">
 						</div>
 						<!-- Duplication pour boucle infinie -->
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/allianz.png') }}" alt="Allianz" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/allianz.png') }}" alt="Allianz" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/april.jpg') }}" alt="April" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/april.jpg') }}" alt="April" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/axa.png') }}" alt="axa" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/axa.png') }}" alt="axa" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/eurodommage.png') }}" alt="Eurodommage" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/eurodommage.png') }}" alt="Eurodommage" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/sollyzar.png') }}" alt="Sollyzar" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/sollyzar.png') }}" alt="Sollyzar" loading="lazy">
 						</div>
 						<div class="partenaires-logo-item">
-							<img src="{{ asset('images/partenaire/zephir.png') }}" alt="Zephir" loading="lazy">
+							<img src="{{ asset('public/images/partenaire/zephir.png') }}" alt="Zephir" loading="lazy">
 						</div>
 					</div>
 				</div>
 			</div>
 
 			{# Section statistiques #}
-			<div class="mt-8 py-8 mb-2 w-full" id="stats-strip">
+			<div class="mt-6 py-2 mb-2 w-full" id="stats-strip"> 
 				<h2 class="text-2xl lg:text-3xl font-bold text-gradient mb-4 text-center">Chiffres clés</h2>
 
 				<div class="flex items-center justify-center">
@@ -704,7 +704,7 @@
 
 
 			{# Section Avis Clients #}
-			<div class="mt-10 py-8 mb-2 w-full" id="avis-clients">
+			<div class="mt-6 py-2 mb-2 w-full" id="avis-clients">
 
 				<h2 class="text-2xl lg:text-3xl font-bold text-gradient mb-2 text-center">Avis de nos clients</h2>
 				<p class="text-center text-gray-500 mb-6 text-sm">Ce que disent nos assurés
@@ -942,6 +942,8 @@ target.scrollIntoView({behavior: 'smooth', block: 'start'});
       }
     });
   </script>
+
+  
 
 <script type="application/ld+json">
 {

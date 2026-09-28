@@ -1,0 +1,644 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assurance tracteur routier | Protection complète pour votre tracteur{% endblock %}
+
+{% block description %}<meta name="description" content="Assurance tracteur routier : garanties obligatoires et complémentaires pour l'ensemble du parc. Comparez les offres adaptées à votre activité logistique.">{% endblock %}
+
+{% block canonical %}<link rel="canonical" href="https://assurance-vehicule-pro.fr/assurance-tracteur-routier">{% endblock %}
+
+{% block og_title %}Assurance tracteur routier – Garanties et obligations légales{% endblock %}
+
+{% block og_description %}Tout savoir sur l'assurance tracteur routier : garanties obligatoires, couvertures complémentaires, obligations légales et devis comparatif pour transporteurs.{% endblock %}
+
+{% block og_url %}<meta property="og:url" content="https://assurance-vehicule-pro.fr/assurance-tracteur-routier">{% endblock %}
+
+{% block og_image %}<meta property="og:image" content="https://assurance-vehicule-pro.fr/public/images/assurance-tracteur-routier.jpg{% endblock %}
+{% block body %}
+<!-- Hero Section -->
+<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
+    <div class="hidden lg:flex absolute top-2 left-2 lg:top-5 lg:left-5 floating-animation">
+        <i class="fas fa-truck-loading text-blue-600 text-2xl lg:text-4xl opacity-30"></i>
+    </div>
+    <div class="hidden lg:flex absolute bottom-2 right-2 lg:bottom-5 lg:right-5 floating-animation" style="animation-delay: -2s;">
+        <i class="fas fa-shipping-fast text-blue-700 text-3xl lg:text-5xl opacity-25"></i>
+    </div>
+
+    <div class="w-full mx-auto px-4 lg:px-40 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-2 lg:gap-3 items-stretch">
+            
+            <!-- Image Section -->
+            <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
+                <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
+                        <img src="{{ asset('public/images/assurance-tracteur-routier.jpg') }}" alt="assurance tracteur routier" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="order-1 lg:order-2 slide-in-right flex-1 lg:flex-[3]">
+                <div class="bg-surface shadow-2xl p-3 lg:p-4 card-hover border-l border-gray-100 h-full rounded-xl lg:rounded-3xl">
+                    <div class="text-center mb-2 lg:mb-3">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg- rounded-xl mx-auto mb-2 flex items-center justify-center">
+                            <i class="fas fa-calculator text-lg lg:text-2xl text-accent"></i>
+                        </div>
+                        <h2 class="text-sm lg:text-xl font-bold text-gradient mb-2 leading-tight">Complétez ce formulaire pour obtenir un devis tracteur routier</h2>
+                    </div>
+
+					{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3', 'data-turbo': 'false'}}) }}
+
+					<!-- Raison sociale -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-building text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.raison) }}
+						</div>
+						{{ form_errors(form.raison) }}
+					</div>
+                    
+                    <!-- Demarage d'activité -->
+                    <div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-briefcase text-accentchamp text-sm"></i>
+							</span>
+							<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
+							<option value="" selected="selected">Demarage d'activité </option>
+							<option value="">OUI</option>
+							<option value="">NON</option>
+							</select>
+						</div>
+						
+					</div>
+					<!-- Activité -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-briefcase text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.activite) }}
+						</div>
+						{{ form_errors(form.activite) }}
+					</div>
+
+					<!-- Véhicule assuré -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-shield-alt text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.assurer) }}
+						</div>
+						{{ form_errors(form.assurer) }}
+					</div>
+
+					<!-- Code Postal -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-map-marker-alt text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.codePostale) }}
+						</div>
+						{{ form_errors(form.codePostale) }}
+					</div>
+                    <!-- Nom -->
+                    <div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-user text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.nom) }}
+						</div>
+						{{ form_errors(form.nom) }}
+					</div>
+
+					<!-- Prénom -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-user-tag text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.lastname) }}
+						</div>
+						{{ form_errors(form.lastname) }}
+					</div>
+
+
+					<!-- Email -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-envelope text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.email) }}
+						</div>
+						{{ form_errors(form.email) }}
+					</div>
+
+					<!-- Téléphone -->
+					<div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-phone text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.tele) }}
+						</div>
+						{{ form_errors(form.tele) }}
+					</div>
+
+					<!-- Consent -->
+					<div class="bg-white rounded-lg border border-blue-200 p-1.5 mt-2">
+						<span class="text-xs text-gray-600 leading-tight block text-justify">
+							En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adaptées à votre recherche.
+						</span>
+					</div>
+
+					<!-- Bouton -->
+					<button type="submit" class="w-full bg-accent text-white font-bold py-3 px-4 rounded-lg text-sm lg:text-base pulse-animation shadow-lg hover:shadow-2xl transition-all duration-300 mt-3">
+						<i class="fas fa-calculator mr-2"></i>
+						Comparer 
+					</button>
+
+					{{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- H1 Section -->
+<section class="py-8 lg:py-16 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl lg:text-5xl font-bold text-gradient mb-6 text-center">Assurance tracteur routier</h1>
+            <p class="text-gray-700 text-sm lg:text-base leading-relaxed text-center max-w-4xl mx-auto mt-6 chapeau">
+                Assurance tracteur routier désigne le contrat d'assurance couvrant tout véhicule tracteur de poids lourd utilisé dans le cadre du transport routier de marchandises, avec une obligation légale de souscription avant toute mise en circulation. Ce type de véhicule, dont la masse totale autorisée en charge (PTAC) dépasse 3,5 tonnes, est soumis à des règles spécifiques distinctes des véhicules légers. L'article L211-1 du Code des assurances impose à tout propriétaire ou exploitant d'en garantir la responsabilité civile sans condition de kilométrage ni de fréquence d'utilisation.
+            </p>
+            <div class="text-center mt-6">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl text-sm lg:text-base">
+                    <i class="fas fa-calculator mr-2"></i>
+                    Obtenir une couverture adaptée à votre tracteur routier
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section I -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Pourquoi l'assurance tracteur routier est-elle obligatoire en France ?</h2>
+                <p class="text-gray-600 mt-4">Le cadre légal et les sanctions en cas de non-conformité</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Le cadre légal spécifique au transport routier de marchandises</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        L'assurance tracteur routier est rendue obligatoire par l'article L211-1 du Code des assurances, qui impose une garantie responsabilité civile à tout véhicule à moteur circulant sur la voie publique, sans exception pour les professionnels du transport. Cette obligation s'applique dès la première mise en circulation et couvre les dommages corporels et matériels causés aux tiers, qu'il s'agisse d'autres conducteurs, de piétons ou de riverains. Selon les informations publiées sur service-public.fr, circuler sans assurance constitue un délit passible d'une amende forfaitaire de 500 euros, majorée en cas de récidive, et peut entraîner la confiscation du véhicule.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. Les sanctions encourues en cas de défaut d'assurance tracteur routier</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        L'absence d'assurance sur un tracteur routier expose l'exploitant à des conséquences financières et opérationnelles immédiates. L'article L324-2 du Code de la route prévoit une amende pouvant atteindre 3 750 euros, assortie de peines complémentaires telles que la suspension du permis de conduire pour une durée maximale de trois ans. Le Fichier des Véhicules Assurés (FVA), géré par l'Agence Nationale de Traitement Automatisé des Infractions (ANTAI), permet aux forces de l'ordre de contrôler en temps réel la situation assurance de chaque immatriculation.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Pour une flotte de plusieurs tracteurs, l'absence d'un seul contrat peut déclencher un contrôle global de l'ensemble du parc par les autorités compétentes. Le transporteur routier de marchandises (TRM) est encadré non seulement par le Code des assurances, mais aussi par le Code des transports, notamment son article L3221-1 qui réglemente l'accès à la profession. Tout exploitant doit être inscrit au registre des transporteurs tenu par la DREETS, ce qui conditionne la validité du contrat d'assurance professionnel.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Comparer les garanties obligatoires pour votre tracteur routier
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section II -->
+<section class="py-8 lg:py-20 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Quelles garanties couvrent réellement un tracteur routier en activité logistique ?</h2>
+                <p class="text-gray-600 mt-4">Garanties obligatoires et complémentaires pour les transporteurs</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-light rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Les garanties complémentaires indispensables pour un tracteur routier professionnel</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Un contrat d'assurance tracteur routier se compose d'une garantie obligatoire et d'un ensemble de garanties complémentaires dont la pertinence dépend directement du type d'activité logistique exercée. La responsabilité civile constitue le socle minimal imposé par la loi, mais elle ne couvre pas les dommages subis par votre propre véhicule ni les marchandises transportées.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Les garanties complémentaires les plus fréquemment souscrites comprennent la garantie dommages tous accidents, la garantie vol et incendie, la garantie bris de glace adaptée aux pare-brises panoramiques des poids lourds modernes, et la garantie assistance panne avec remorquage. Imaginons un transporteur dont le tracteur tombe en panne sur autoroute avec une semi-remorque chargée : sans garantie assistance poids lourd incluant le remorquage de l'ensemble articulé, les frais de dépannage peuvent représenter plusieurs milliers d'euros selon la distance et le prestataire. Le choix de ces garanties doit être aligné sur le rayon d'action du véhicule, national ou international.
+                    </p>
+                </div>
+
+                <div class="bg-light rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. L'assurance marchandises transportées, une garantie distincte à ne pas confondre</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        L'assurance marchandises transportées est une couverture distincte de l'assurance du tracteur routier lui-même. Elle protège la valeur des biens transportés en cas de sinistre (accident, vol, avarie), et relève d'un régime contractuel encadré par la Convention CMR pour les flux internationaux, ou par la lettre de voiture nationale pour les flux domestiques. L'article L133-1 du Code de commerce encadre la responsabilité du transporteur envers l'expéditeur.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Prenons le cas hypothétique d'un transporteur acheminant des équipements électroniques à haute valeur : sans assurance marchandises transportées spécifique, sa responsabilité est limitée aux plafonds légaux, potentiellement très inférieurs à la valeur réelle de la cargaison. La garantie marchandises transportées, également appelée "facultés terrestres", doit être souscrite expressément car elle n'est pas incluse automatiquement dans la RC transport.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-boxes mr-2"></i>
+                    Évaluer les garanties complémentaires pour votre tracteur routier
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section III -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Comment sont calculées les cotisations d'assurance pour un tracteur routier ?</h2>
+                <p class="text-gray-600 mt-4">Les critères techniques et comportementaux du tarif</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Les critères techniques qui influencent le tarif</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Le calcul des cotisations d'assurance pour un tracteur routier repose sur plusieurs critères techniques et comportementaux propres à l'activité de transport. Chaque assureur dispose de sa propre grille tarifaire, soumise au contrôle de l'ACPR. Aucun tarif légalement fixé n'existe pour ce type de contrat, ce qui rend la comparaison de plusieurs offres indispensable.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Les principaux critères retenus par les assureurs sont le PTAC du véhicule, sa puissance en chevaux, son année de mise en service, le type de carburant (diesel, GNV, électrique), le rayon géographique d'activité (régional, national, européen) et la nature des marchandises transportées (générales, matières dangereuses soumises à l'accord ADR, denrées périssables). L'expérience du conducteur principal est également prise en compte via le coefficient de bonus-malus professionnel régi par l'article A335-9-1 du Code des assurances.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. L'impact du coefficient bonus-malus</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Le coefficient de réduction-majoration (CRM), communément appelé bonus-malus, s'applique aux véhicules à moteur utilisés à titre professionnel selon les règles fixées à l'article A335-9 du Code des assurances. Pour un tracteur routier, ce coefficient évolue chaque année en fonction du nombre de sinistres responsables déclarés : une année sans sinistre responsable entraîne une réduction de 5 % du coefficient, tandis que chaque sinistre responsable l'augmente de 25 %.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Le coefficient plancher est fixé à 0,50, et le coefficient plafond à 3,50. Pour une entreprise de transport exploitant plusieurs tracteurs, une politique de prévention des sinistres active (formation des conducteurs, entretien préventif) représente un levier direct sur la maîtrise des cotisations à long terme. Imaginons un transporteur indépendant exploitant un tracteur récent équipé d'un système d'aide à la conduite (ADAS) : certains assureurs intègrent ces équipements de sécurité dans leur grille de majoration de garanties.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-calculator mr-2"></i>
+                    Calculer les cotisations pour votre tracteur routier
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section IV -->
+<section class="py-8 lg:py-20 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Comment gérer l'assurance tracteur routier en cas de résiliation ou de sinistre ?</h2>
+                <p class="text-gray-600 mt-4">Déclaration, procédures et conséquences</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-light rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Les procédures de déclaration de sinistre</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        La gestion d'un sinistre sur un contrat d'assurance tracteur routier obéit à des délais légaux stricts. L'article L113-2 du Code des assurances impose à l'assuré de déclarer tout sinistre dans les délais fixés au contrat, sans que ce délai ne puisse être inférieur à 5 jours ouvrés. Le non-respect de ce délai peut entraîner une déchéance de garantie si l'assureur démontre que ce retard lui a causé un préjudice.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        La déclaration de sinistre doit comporter le constat amiable ou, à défaut, un rapport de circonstances détaillé, la copie du certificat d'immatriculation, la copie du permis de conduire et, le cas échéant, les documents de transport (lettre de voiture, manifeste de chargement). En cas d'accident avec marchandises transportées, les documents CMR sont indispensables. Imaginons une entreprise logistique dont un tracteur est impliqué dans une collision sur l'A10 avec déversement partiel de la cargaison : l'ouverture simultanée du dossier sinistre RC, dommages véhicule et marchandises transportées requiert une coordination documentaire précise.
+                    </p>
+                </div>
+
+                <div class="bg-light rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. La résiliation du contrat et ses conséquences</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        La résiliation d'un contrat d'assurance tracteur routier peut intervenir à l'échéance annuelle, mais aussi à tout moment après un an de contrat en vertu de l'article L113-15-2 du Code des assurances (loi Hamon applicable aux professionnels pour certains contrats), ou en cas de sinistre, de cession du véhicule, ou de changement de situation de risque.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        En cas de résiliation par l'assureur après sinistre, l'inscription au fichier AGIRA (Association pour la Gestion des Informations sur le Risque en Assurance) peut compliquer la recherche d'un nouveau contrat. Nos experts accompagnent les transporteurs dans cette situation spécifique pour identifier les assureurs spécialisés dans les profils résiliés du secteur TRM. L'article L113-15-1 du Code des assurances encadre les conditions dans lesquelles un assureur peut refuser de couvrir un véhicule professionnel.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-file-contract mr-2"></i>
+                    Trouver le meilleur contrat pour votre tracteur routier
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section V -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 lg:mb-16">
+                <h2 class="text-2xl lg:text-5xl font-bold text-gradient mb-4 lg:mb-6">Comment obtenir le meilleur contrat d'assurance pour votre tracteur routier ?</h2>
+                <p class="text-gray-600 mt-4">Critères de sélection et gestion en flotte</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">1. Les critères de sélection d'un contrat adapté</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Obtenir le meilleur contrat d'assurance pour un tracteur routier nécessite une comparaison structurée d'au moins plusieurs offres du marché, en évaluant non seulement le niveau de cotisation mais aussi les plafonds de garantie, les franchises, les exclusions contractuelles et la qualité du service sinistre. Le marché de l'assurance poids lourds est concentré autour d'un nombre limité d'assureurs spécialisés.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Au-delà du tarif, les critères déterminants incluent : le délai de mise à disposition d'un véhicule de remplacement en cas d'immobilisation (critique pour maintenir la continuité des tournées), le périmètre géographique de la garantie assistance (France seule ou Europe), la prise en charge des frais de gardiennage de la semi-remorque en cas d'accident du tracteur, et la couverture des équipements embarqués (GPS, hayon, groupe froid). Ces éléments, souvent absents des contrats standardisés, peuvent représenter des postes de coût très significatifs en cas de sinistre grave.
+                    </p>
+                </div>
+
+                <div class="bg-surface rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl lg:text-2xl font-bold text-gradient mb-4">2. L'intérêt d'une gestion en flotte</h3>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed mb-4">
+                        Pour les entreprises exploitant plusieurs tracteurs routiers, la souscription d'un contrat flotte présente des avantages structurels par rapport à la multiplication de contrats individuels. Un contrat flotte permet une gestion administrative unifiée, une échéance unique, et généralement une mutualisation du risque entre les véhicules du parc. L'ACPR recommande aux entreprises de transport de faire réviser annuellement leur contrat flotte.
+                    </p>
+                    <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                        Imaginons une PME de transport gérant 10 tracteurs : une révision annuelle systématique permet d'éviter les situations de sous-assurance lors de l'intégration d'un nouveau véhicule acquis en cours d'année. La souscription d'une police flotte permet d'assurer l'ensemble des véhicules sous un contrat unique, avec déclaration des véhicules entrants et sortants, simplifiant ainsi la gestion administrative et garantissant qu'aucun véhicule ne circule sans couverture.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-truck-loading mr-2"></i>
+                    Obtenir votre devis assurance tracteur routier
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Devis Section (CRTA) -->
+<section class="py-8 lg:py-20 bg-gradient-to-r from-blue-200 to-blue-400 text-white text-center">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="w-12 h-12 lg:w-20 lg:h-20 bg-white/20 rounded-2xl lg:rounded-3xl mx-auto mb-6 lg:mb-8 flex items-center justify-center">
+                <i class="fas fa-calculator text-2xl lg:text-4xl text-white"></i>
+            </div>
+            <h2 class="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">Déposez votre demande de devis assurance tracteur routier</h2>
+            <p class="text-base lg:text-xl mb-6 lg:mb-8 text-white/95 leading-relaxed px-4">
+                Un devis d'assurance tracteur routier précis repose sur l'analyse de votre profil de risque exact : type de véhicule, rayon d'activité, nature des marchandises, historique de sinistralité, et structure juridique de votre entreprise. Notre équipe compare pour vous les offres des assureurs spécialisés dans le transport routier de marchandises afin de vous proposer les garanties les plus adaptées à votre activité logistique, sans angle mort contractuel.
+            </p>
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-2xl text-sm lg:text-base">
+                <i class="fas fa-arrow-up mr-2"></i>
+                Obtenez votre devis assurance tracteur routier personnalisé
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8 lg:mb-12">
+                <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-4">Questions Fréquentes — Assurance tracteur routier</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">L'assurance tracteur routier est-elle obligatoire pour circuler en France ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Oui, l'assurance tracteur routier est obligatoire. L'article L211-1 du Code des assurances impose une garantie responsabilité civile à tout véhicule à moteur avant toute mise en circulation, sans exception pour les professionnels du transport. Circuler sans assurance constitue un délit pénal selon l'article L324-2 du Code de la route, passible d'une amende pouvant atteindre 3 750 euros ainsi que de peines complémentaires telles que la suspension du permis de conduire. Selon service-public.fr, le Fichier des Véhicules Assurés (FVA) permet un contrôle automatisé en temps réel par les forces de l'ordre. Cette obligation s'applique dès la première mise en circulation, y compris pour les déplacements à vide. <em>Référence légale : article L211-1 du Code des assurances ; article L324-2 du Code de la route.</em></p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">C'est quoi exactement une assurance tracteur routier ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">L'assurance tracteur routier est un contrat couvrant les véhicules tracteurs de poids lourd (PTAC supérieur à 3,5 tonnes) utilisés pour le transport routier de marchandises, avec au minimum une garantie responsabilité civile imposée par la loi. Elle se distingue de l'assurance d'un véhicule utilitaire léger par ses garanties spécifiques au TRM : couverture de la semi-remorque attelée, garantie marchandises transportées, assistance adaptée aux ensembles articulés, et prise en charge des équipements professionnels embarqués. Elle est régie par le Code des assurances et le Code des transports. <em>Référence légale : article L211-1 du Code des assurances ; article L3221-1 du Code des transports.</em></p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Combien coûte une assurance tracteur routier ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Il n'existe pas de tarif réglementé pour l'assurance tracteur routier. Le montant de la cotisation varie selon le PTAC du véhicule, son ancienneté, le type de marchandises transportées, le rayon d'activité (national ou international) et le coefficient bonus-malus du conducteur principal, régi par l'article A335-9 du Code des assurances. Les assureurs spécialisés dans le transport routier de marchandises appliquent chacun leur propre grille tarifaire, soumise à la supervision de l'ACPR. La comparaison de plusieurs offres est indispensable pour identifier le meilleur rapport couverture-cotisation. <em>Référence : ACPR ; article A335-9 du Code des assurances.</em></p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Comment assurer un tracteur routier après une résiliation pour sinistre ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">Un transporteur résilié pour sinistre reste assurable malgré son inscription au fichier AGIRA. Plusieurs assureurs spécialisés dans les profils à risque du secteur TRM proposent des contrats adaptés à ces situations, généralement avec des franchises majorées et un suivi renforcé du dossier sinistralité. L'article L113-15-1 du Code des assurances encadre les conditions dans lesquelles un assureur peut refuser de couvrir un véhicule professionnel. En cas de refus répété, le transporteur peut saisir le Bureau Central de Tarification (BCT), organisme officiel qui peut contraindre un assureur à proposer une couverture au minimum légal. <em>Référence légale : article L113-15-1 du Code des assurances.</em></p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Comment déclarer un sinistre sur un contrat d'assurance tracteur routier ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">La déclaration d'un sinistre doit être effectuée dans les délais contractuels, sans que ceux-ci ne puissent être inférieurs à 5 jours ouvrés selon l'article L113-2 du Code des assurances. Elle doit inclure le constat amiable ou un rapport de circonstances, les documents du véhicule, les documents de transport (lettre de voiture, CMR pour les flux internationaux) et, si des marchandises sont concernées, un inventaire de la cargaison endommagée. Tout retard non justifié peut entraîner une déchéance de garantie. <em>Référence légale : article L113-2 du Code des assurances ; Convention CMR.</em></p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark faq-question-text">Quelle loi régit l'assurance tracteur routier pour un transporteur indépendant ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        <p class="lead">L'assurance tracteur routier pour un transporteur indépendant est régie principalement par l'article L211-1 du Code des assurances pour l'obligation de couverture RC, et par l'article L3221-1 du Code des transports pour l'exercice de l'activité de transporteur public routier. Un indépendant doit être inscrit au registre des transporteurs tenu par la DREETS et détenir une licence de transport intérieur. Selon service-public.fr, l'absence d'inscription au registre des transporteurs est passible de sanctions administratives et pénales. <em>Référence légale : article L211-1 du Code des assurances ; article L3221-1 du Code des transports.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "L'assurance tracteur routier est-elle obligatoire pour circuler en France ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'article L211-1 du Code des assurances impose une garantie responsabilité civile à tout véhicule à moteur avant toute mise en circulation. Circuler sans assurance constitue un délit pénal selon l'article L324-2 du Code de la route, passible d'une amende pouvant atteindre 3 750 euros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "C'est quoi exactement une assurance tracteur routier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'assurance tracteur routier est un contrat couvrant les véhicules tracteurs de poids lourd (PTAC supérieur à 3,5 tonnes) utilisés pour le transport routier de marchandises, avec au minimum une garantie responsabilité civile imposée par la loi et des garanties spécifiques au TRM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte une assurance tracteur routier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il n'existe pas de tarif réglementé. Le montant varie selon le PTAC, l'ancienneté, le type de marchandises, le rayon d'activité et le coefficient bonus-malus. Les assureurs spécialisés appliquent chacun leur propre grille tarifaire soumise à la supervision de l'ACPR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment assurer un tracteur routier après une résiliation pour sinistre ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un transporteur résilié reste assurable. Plusieurs assureurs spécialisés dans les profils à risque du secteur TRM proposent des contrats adaptés. En cas de refus répété, le transporteur peut saisir le Bureau Central de Tarification (BCT)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment déclarer un sinistre sur un contrat d'assurance tracteur routier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La déclaration doit être effectuée dans les délais contractuels, sans être inférieure à 5 jours ouvrés selon l'article L113-2 du Code des assurances. Elle doit inclure le constat amiable, les documents du véhicule et les documents de transport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle loi régit l'assurance tracteur routier pour un transporteur indépendant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'article L211-1 du Code des assurances impose l'obligation de couverture RC, et l'article L3221-1 du Code des transports réglemente l'activité de transporteur public routier. L'inscription au registre des transporteurs tenu par la DREETS est obligatoire."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Organization + Service + WebPage + Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://assurance-vehicule-pro.fr/#organization",
+      "name": "Assurance Véhicule Pro",
+      "url": "https://assurance-vehicule-pro.fr",
+      "telephone": "tel:0808660540",
+      "areaServed": "FR",
+      "address": { "@type": "PostalAddress", "addressCountry": "FR" },
+      "sameAs": [ "https://assurance-vehicule-pro.fr" ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://assurance-vehicule-pro.fr/assurance-tracteur-routier/#service",
+      "name": "Assurance tracteur routier",
+      "description": "Contrat d'assurance couvrant les véhicules tracteurs de poids lourd utilisés dans le transport routier de marchandises, incluant la garantie responsabilité civile obligatoire et les garanties complémentaires adaptées à l'activité logistique.",
+      "provider": { "@id": "https://assurance-vehicule-pro.fr/#organization" },
+      "areaServed": "FR",
+      "serviceType": "Assurance véhicule professionnel",
+      "url": "https://assurance-vehicule-pro.fr/assurance-tracteur-routier",
+      "audience": { "@type": "BusinessAudience", "audienceType": "Transporteurs routiers, exploitants de poids lourds, entreprises logistiques" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://assurance-vehicule-pro.fr/assurance-tracteur-routier/#webpage",
+      "url": "https://assurance-vehicule-pro.fr/assurance-tracteur-routier",
+      "name": "Assurance tracteur routier | Protection complète pour votre tracteur",
+      "description": "Assurance tracteur routier : garanties obligatoires et complémentaires pour l'ensemble du parc. Comparez les offres adaptées à votre activité logistique.",
+      "inLanguage": "fr-FR",
+      "isPartOf": { "@id": "https://assurance-vehicule-pro.fr/#organization" },
+      "primaryImageOfPage": "https://assurance-vehicule-pro.fr/public/images/assurance-tracteur-routier.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://assurance-vehicule-pro.fr/acceuil"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Assurance véhicule professionnel",
+          "item": "https://assurance-vehicule-pro.fr/assurance-vehicule-professionnel"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Assurance tracteur routier",
+          "item": "https://assurance-vehicule-pro.fr/assurance-tracteur-routier"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Speakable Snippet -->
+<div class="faq-snippet" style="display:none;">
+<p>L'assurance tracteur routier est obligatoire pour tout véhicule de transport routier de marchandises circulant en France, conformément à l'article L211-1 du Code des assurances. La responsabilité civile est la garantie minimale légale. Les garanties complémentaires (bris de glace, vol, dommages) sont facultatives mais fortement recommandées. Selon service-public.fr, tout véhicule à moteur doit être couvert par une assurance responsabilité civile avant toute mise en circulation sur la voie publique.</p>
+</div>
+
+<script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+        question.addEventListener('click', function() {
+            var answer = this.nextElementSibling;
+            var toggle = this.querySelector('.faq-toggle');
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                toggle.textContent = '-';
+            } else {
+                answer.classList.add('hidden');
+                toggle.textContent = '+';
+            }
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -3,10 +3,10 @@
 {% block title %}Assurance Poids Lourd Professionnel | Transporteurs & BTP{% endblock %}
 {% block og_title %}Assurance Poids Lourd Professionnel — Devis en Ligne{% endblock %}
 {% block og_description %}Assurance poids lourd sur-mesure pour transporteurs, BTP et logistique. RC Pro, marchandises, assistance 0 km. Devis en ligne.{% endblock %} 
-         {% block description %}<meta name="description" content="Protégez votre poids lourds pro, quelle que soit votre activité. Assurance sur-mesure pour transporteurs, BTP, logistique. Devis en ligne : RC Pro, marchandises, assistance 0km.">
+{% block description %}<meta name="description" content="Protégez votre poids lourds pro, quelle que soit votre activité. Assurance sur-mesure pour transporteurs, BTP, logistique. Devis en ligne : RC Pro, marchandises, assistance 0km.">
 		{% endblock %}
 
- 
+  {% block og_image %}{{ app.request.schemeAndHttpHost }}/images/poids-lourd.jpg{% endblock %}
 
 {% block body %}
 	<h1 class="sr-only">Assurance Poids Lourd Professionnel — Transporteurs, BTP & Logistique</h1>
@@ -26,7 +26,7 @@
                 <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
                     <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
                         <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
-                              <img src="{{ asset('images/poids-lourd.jpg') }}" alt="Camion poids lourd sur autoroute — assurance poids lourd professionnel Aksam" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" fetchpriority="high"/>
+                              <img src="{{ asset('public/images/poids-lourd.jpg') }}" alt="Camion poids lourd sur autoroute — assurance poids lourd professionnel Aksam" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" fetchpriority="high"/>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                             {# <div class="w-12 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto rounded-full"></div> #}
                         </div>
  
-						{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3'}}) }}
+{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3', 'data-turbo': 'false'}}) }}
 
 					
 						

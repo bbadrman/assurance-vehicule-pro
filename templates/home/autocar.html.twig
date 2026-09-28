@@ -1,0 +1,501 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assurance pour autocar : devis et tarifs en ligne{% endblock %}
+{% block description %}<meta name="description" content="Trouvez la meilleure assurance pour autocar adaptée à votre activité. Comparez les garanties, obtenez un devis personnalisé et protégez votre flotte rapidement.">{% endblock %}
+
+{% block og_title %}Assurance pour autocar : comparez les offres et obtenez votre devis{% endblock %}
+{% block og_description %}Assurance pour autocar professionnelle : garanties adaptées, tarifs compétitifs et devis en ligne rapide. Nos experts vous accompagnent pour trouver la couverture idéale.{% endblock %}
+{% block og_image %}{{ app.request.schemeAndHttpHost }}/images/autocar.jpg{% endblock %}
+ 
+{% block canonical %}<link rel="canonical" href="https://assurance-vehicule-pro.fr/assurance-pour-autocar">{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block breadcrumb_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://assurance-vehicule-pro.fr/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Assurance véhicule pro",
+            "item": "https://assurance-vehicule-pro.fr/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Assurance pour autocar",
+            "item": "https://assurance-vehicule-pro.fr/autocar"
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block faq_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Quel est le prix moyen d'une assurance pour autocar en France ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Le prix moyen d'une assurance pour autocar en France se situe entre 3 000 et 12 000 euros par an selon le profil du véhicule et son usage. Un autocar de tourisme longue distance de 55 places avec couverture tous risques et garantie passagers se situe généralement autour de 7 000 à 10 000 euros annuels. L'ancienneté du véhicule, le kilométrage annuel et le profil des conducteurs font varier cette fourchette de manière significative. Un historique sans sinistre sur cinq ans peut faire baisser la prime de 15 à 25 %."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "L'assurance pour autocar est-elle obligatoire pour les transporteurs professionnels ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oui, l'assurance pour autocar est une obligation légale absolue pour tout transporteur professionnel en France. L'article L. 3112-1 du Code des transports impose à tout exploitant de transport public routier de voyageurs de justifier d'une assurance couvrant sa responsabilité civile envers les passagers et les tiers. Exercer sans cette couverture expose l'exploitant à une suspension immédiate de son autorisation d'exploitation et à des poursuites pénales."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment obtenir un devis assurance autocar rapidement ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pour obtenir un devis assurance pour autocar rapidement, il suffit de transmettre les informations essentielles sur votre véhicule et votre activité. Nos experts traitent les demandes en tenant compte du certificat d'immatriculation, de l'usage déclaré, de la liste des conducteurs et de votre historique de sinistralité."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Est-ce qu'un auto-entrepreneur peut assurer un autocar pour du transport de voyageurs ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Un auto-entrepreneur peut assurer un autocar à condition de disposer d'une licence de transport voyageurs valide et d'un permis D en cours de validité. Le statut juridique n'est pas un obstacle à la souscription, mais certains assureurs exigent une structure en société pour les contrats couvrant des flottes ou des trajets internationaux."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Peut-on assurer un autocar après une résiliation pour non-paiement ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Il est possible d'assurer un autocar après une résiliation pour non-paiement, mais le marché standard se ferme dans ce cas. Des assureurs spécialisés en risques aggravés acceptent ces profils moyennant une prime majorée, souvent de 30 à 50 % au-dessus de la tarification standard, et avec des franchises plus élevées."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".faq-answer", "h1", ".intro-answer"]
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="py-0 lg:py-2 bg-gradient-to-br from-light via-surfaceHover to-light relative overflow-hidden">
+    <div class="hidden lg:flex absolute top-2 left-2 lg:top-5 lg:left-5 floating-animation">
+        <i class="fas fa-bus text-blue-600 text-2xl lg:text-4xl opacity-30"></i>
+    </div>
+    <div class="hidden lg:flex absolute bottom-2 right-2 lg:bottom-5 lg:right-5 floating-animation" style="animation-delay: -2s;">
+        <i class="fas fa-shuttle-van text-blue-700 text-3xl lg:text-5xl opacity-25"></i>
+    </div>
+
+    <div class="w-full mx-auto px-4 lg:px-40 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-2 lg:gap-3 items-stretch">
+            
+            <!-- Image Section -->
+            <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
+                <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
+<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
+                            <img src="{{ asset('public/images/autocar.jpg') }}" alt="assurance autocar" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
+                        </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="order-1 lg:order-2 slide-in-right flex-1 lg:flex-[3]">
+                <div class="bg-surface shadow-2xl p-3 lg:p-4 card-hover border-l border-gray-100 h-full rounded-xl lg:rounded-3xl">
+                    <div class="text-center mb-2 lg:mb-3">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg- rounded-xl mx-auto mb-2 flex items-center justify-center">
+                             
+                              <i class="fas fa-calculator text-lg lg:text-2xl text-accent"></i>
+                        </div>
+                        <h2 class="text-sm lg:text-xl font-bold text-gradient mb-2 leading-tight">Complétez ce formulaire pour obtenir un devis autocar</h2>
+                    </div>
+  
+{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3', 'data-turbo': 'false'}}) }}
+
+			
+				<!-- Raison sociale -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-building text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.raison) }}
+					</div>
+					{{ form_errors(form.raison) }}
+				</div>
+                     
+                    <!-- Demarage d'activité -->
+                <div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-briefcase text-accentchamp text-sm"></i>
+						</span>
+						<select id="transport_type" name="type" required="required" class="flex-1 px-3 py-2 border border-gray-200 rounded-r-lg bg-light focus:bg-surface transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" style="appearance: auto; -webkit-appearance: menulist;">
+						<option value="" selected="selected">Demarage d'activité </option>
+						<option value="">OUI</option>
+						<option value="">NON</option>
+						</select>
+					</div>
+					
+				</div>
+				<!-- Activité -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-briefcase text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.activite) }}
+					</div>
+					{{ form_errors(form.activite) }}
+				</div>
+
+				<!-- Véhicule assuré -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-shield-alt text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.assurer) }}
+					</div>
+					{{ form_errors(form.assurer) }}
+				</div>
+
+				<!-- Code Postal -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-map-marker-alt text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.codePostale) }}
+					</div>
+					{{ form_errors(form.codePostale) }}
+				</div>
+                    <!-- Nom -->
+                    <div class="form-group">
+						<div class="flex">
+							<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+								<i class="fas fa-user text-accent text-sm"></i>
+							</span>
+							{{ form_widget(form.nom) }}
+						</div>
+						{{ form_errors(form.nom) }}
+					</div>
+
+				<!-- Prénom -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-user-tag text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.lastname) }}
+					</div>
+					{{ form_errors(form.lastname) }}
+				</div>
+
+
+				<!-- Email -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-envelope text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.email) }}
+					</div>
+					{{ form_errors(form.email) }}
+				</div>
+
+				<!-- Téléphone -->
+				<div class="form-group">
+					<div class="flex">
+						<span class="inline-flex items-center px-2 py-4 bg-gray-50 border border-r-0 border-gray-200 rounded-l-lg text-gray-600">
+							<i class="fas fa-phone text-accent text-sm"></i>
+						</span>
+						{{ form_widget(form.tele) }}
+					</div>
+					{{ form_errors(form.tele) }}
+				</div>
+
+				<!-- Consent -->
+				<div class="bg-white rounded-lg border border-blue-200 p-1.5 mt-2">
+					<span class="text-xs text-gray-600 leading-tight block text-justify">
+						En cliquant sur "Comparer", vous acceptez de transmettre vos informations à AKSAM ASSURANCES, qui accepte de les utiliser conformément à sa politique de confidentialité dans le but de vous fournir des propositions de devis d'assurance adaptées à votre recherche.
+					</span>
+				</div>
+
+				<!-- Bouton -->
+				<button type="submit" class="w-full bg-accent text-white font-bold py-3 px-4 rounded-lg text-sm lg:text-base pulse-animation shadow-lg hover:shadow-2xl transition-all duration-300 mt-3">
+					<i class="fas fa-calculator mr-2"></i>
+					Comparer 
+				</button>
+
+				{{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Intro Section -->
+<section class="py-8 lg:py-16 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl lg:text-5xl font-bold text-gradient mb-6">Assurance pour autocar</h1>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Transporter des passagers à bord d'un autocar engage une responsabilité considérable. Qu'il s'agisse de lignes régulières, de circuits touristiques ou de transport scolaire, chaque trajet implique une couverture d'assurance à la hauteur des risques réels. En France, l'obligation légale est stricte, les sinistres coûtent cher, et les compagnies d'assurance évaluent ces contrats avec des critères bien précis.
+            </p>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed mt-4">
+                Nos experts accompagnent les professionnels du transport collectif pour trouver le contrat le plus adapté à leur activité, à leur flotte et à leur budget.
+            </p>
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all mt-6 text-sm lg:text-base">
+                Obtenez votre devis assurance pour autocar
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- I. Prix assurance autocar -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-6">I. Prix assurance autocar</h2>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Le prix d'une assurance pour autocar dépend de plusieurs variables concrètes que les assureurs examinent systématiquement. La capacité du véhicule constitue le premier critère : un autocar de 30 places ne génère pas le même risque qu'un appareil de 70 places doté de soutes à bagages. L'usage joue également un rôle majeur : transport scolaire, tourisme longue distance, navettes aéroport ou lignes interurbaines régulières correspondent à des profils de risque distincts.
+            </p>
+
+            <h3 class="text-xl lg:text-2xl font-bold text-dark mt-8 mb-3">1. Les facteurs qui déterminent la prime</h3>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Un autocar neuf de 55 places affecté à des voyages touristiques en Europe génère une prime annuelle qui se situe généralement entre 5 000 et 12 000 euros toutes taxes comprises pour une couverture tous risques. Pour un autocar plus ancien, affecté au transport scolaire sur courtes distances, la fourchette descend entre 3 000 et 6 000 euros. Ces montants varient selon le kilométrage annuel déclaré, le nombre de conducteurs au contrat et leur historique de sinistralité.
+            </p>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed mt-4">
+                L'ancienneté du permis D, le coefficient bonus-malus du ou des conducteurs et l'existence d'un antécédent de résiliation figurent parmi les éléments systématiquement scrutés lors de la souscription. Un opérateur qui dispose d'une flotte de plusieurs véhicules peut négocier un contrat flotte, souvent plus avantageux qu'une somme de contrats individuels.
+            </p>
+
+            <h3 class="text-xl lg:text-2xl font-bold text-dark mt-8 mb-3">2. Garanties de base et options</h3>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                La responsabilité civile constitue le socle légal minimum imposé par l'article L. 211-1 du Code des assurances. Elle couvre les dommages causés aux tiers, passagers inclus. Au-delà de ce minimum légal, plusieurs garanties complémentaires s'avèrent indispensables dans le transport collectif professionnel : la protection des voyageurs (couverture des préjudices corporels subis à bord), la garantie dommages tous accidents pour le véhicule lui-même, l'assistance et le remorquage, ainsi que la protection juridique en cas de litige avec un tiers ou un voyageur.
+            </p>
+
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all mt-6 text-sm lg:text-base">
+                Comparez les prix assurance autocar
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- II. Comparatif des assurances pour autocar -->
+<section class="py-8 lg:py-20 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-6">II. Comparatif des assurances pour autocar</h2>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Comparer les assurances pour autocar ne se résume pas à aligner des chiffres de primes. Deux contrats affichant des tarifs proches peuvent offrir des niveaux de protection radicalement différents selon la rédaction des clauses d'exclusion, les plafonds d'indemnisation ou les délais de prise en charge en cas d'immobilisation du véhicule.
+            </p>
+
+            <h3 class="text-xl lg:text-2xl font-bold text-dark mt-8 mb-3">1. Ce que révèle vraiment un comparatif</h3>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Un opérateur de transport touristique qui immobilise son autocar pendant trois semaines suite à un sinistre perd des revenus considérables. La garantie de remplacement de véhicule, souvent présentée comme une option, devient dans ce cas une nécessité économique. Certains contrats prévoient un véhicule de substitution sous 24 heures, d'autres dans un délai de 72 heures, d'autres encore l'excluent totalement au-delà d'un certain âge du véhicule assuré.
+            </p>
+
+            <h3 class="text-xl lg:text-2xl font-bold text-dark mt-8 mb-3">2. Points de vigilance dans la comparaison</h3>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Selon les informations disponibles sur service-public.fr, tout exploitant d'autocars assurant du transport public routier de personnes est soumis à l'article L. 3112-1 du Code des transports, qui impose une assurance couvrant la responsabilité civile du transporteur à l'égard des voyageurs et des tiers. Cette obligation légale constitue donc le plancher absolu de toute comparaison.
+            </p>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed mt-4">
+                Au-delà du plancher légal, voici les quatre axes d'analyse prioritaires dans un comparatif sérieux :
+            </p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-accent flex-shrink-0 mt-1"></i>
+                    <span>Le plafond de garantie pour les dommages corporels aux passagers (certains contrats plafonnent à 2 millions d'euros par sinistre, d'autres sont illimités)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-accent flex-shrink-0 mt-1"></i>
+                    <span>La couverture géographique effective, notamment pour les circuits à l'étranger (Europe, hors Europe)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-accent flex-shrink-0 mt-1"></i>
+                    <span>Les franchises applicables en cas de dommages matériels et leur caractère rachetable</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-accent flex-shrink-0 mt-1"></i>
+                    <span>Les conditions de résiliation et les délais de préavis</span>
+                </li>
+            </ul>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed mt-4">
+                Nos experts analysent ces paramètres pour chaque profil afin d'identifier l'offre qui correspond réellement à votre situation, pas seulement la moins chère sur le papier.
+            </p>
+
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all mt-6 text-sm lg:text-base">
+                Évaluez votre comparatif des assurances pour autocar
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- III. Assurance autocar en ligne -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-6">III. Assurance autocar en ligne</h2>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Souscrire une assurance autocar en ligne est désormais possible pour une grande partie des profils professionnels. Les plateformes digitales permettent d'obtenir une première estimation tarifaire en quelques minutes, à condition de disposer des informations exactes sur le véhicule et son utilisation.
+            </p>
+
+            <h3 class="text-xl lg:text-2xl font-bold text-dark mt-8 mb-3">1. Ce qu'il faut préparer avant de simuler en ligne</h3>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Pour obtenir un devis fiable en ligne, il faut réunir plusieurs éléments précis : le certificat d'immatriculation du véhicule, la capacité maximale en places assises, le type d'usage principal (scolaire, touristique, régulier, occasionnel), le kilométrage annuel estimé, la liste des conducteurs avec leurs permis D et leur historique de sinistralité sur les cinq dernières années. L'absence d'un seul de ces éléments conduit à une estimation peu fiable.
+            </p>
+
+            <h3 class="text-xl lg:text-2xl font-bold text-dark mt-8 mb-3">2. Les limites du tout-digital</h3>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Pour les autocars de grande capacité, les flottes de plusieurs véhicules ou les profils présentant un historique de sinistres, la souscription en ligne seule atteint ses limites. Un outil de simulation en ligne peut indiquer une fourchette, mais l'ajustement fin du contrat — exclusions, franchises, garanties optionnelles, territorialité — nécessite un échange avec un expert qui connaît le marché des assureurs spécialisés en transport collectif.
+            </p>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed mt-4">
+                Nos experts interviennent précisément à ce stade : ils utilisent les données collectées en ligne pour négocier directement auprès des assureurs les plus compétitifs sur ce segment, en s'appuyant sur une connaissance précise des pratiques tarifaires du marché.
+            </p>
+
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all mt-6 text-sm lg:text-base">
+                Souscrivez votre assurance autocar en ligne
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-8 lg:py-20 bg-light">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8 lg:mb-12">
+                <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-4">IV. FAQ — Assurance pour autocar</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Quel est le prix moyen d'une assurance pour autocar en France ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Le prix moyen d'une assurance pour autocar en France se situe entre 3 000 et 12 000 euros par an selon le profil du véhicule et son usage. Un autocar de tourisme longue distance de 55 places avec couverture tous risques et garantie passagers se situe généralement autour de 7 000 à 10 000 euros annuels. L'ancienneté du véhicule, le kilométrage annuel et le profil des conducteurs font varier cette fourchette de manière significative. Un historique sans sinistre sur cinq ans peut faire baisser la prime de 15 à 25 %.
+                        <a href="#contactForm" class="block mt-2 text-accent font-semibold">Simulez le coût de votre assurance pour autocar</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">L'assurance pour autocar est-elle obligatoire pour les transporteurs professionnels ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Oui, l'assurance pour autocar est une obligation légale absolue pour tout transporteur professionnel en France. L'article L. 3112-1 du Code des transports, dont les modalités d'application sont accessibles sur service-public.fr, impose à tout exploitant de transport public routier de voyageurs de justifier d'une assurance couvrant sa responsabilité civile envers les passagers et les tiers. Exercer sans cette couverture expose l'exploitant à une suspension immédiate de son autorisation d'exploitation et à des poursuites pénales. La responsabilité civile seule ne suffit pas pour une activité complète.
+                        <a href="#contactForm" class="block mt-2 text-accent font-semibold">Vérifiez votre conformité assurance pour autocar</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Comment obtenir un devis assurance autocar rapidement ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Pour obtenir un devis assurance pour autocar rapidement, il suffit de transmettre les informations essentielles sur votre véhicule et votre activité. Nos experts traitent les demandes en tenant compte du certificat d'immatriculation, de l'usage déclaré, de la liste des conducteurs et de votre historique de sinistralité. Une réponse chiffrée et personnalisée est possible dès que ces données sont complètes. Évitez les estimations génériques qui ne tiennent pas compte des spécificités de votre activité ; elles aboutissent souvent à des mauvaises surprises au moment du sinistre.
+                        <a href="#contactForm" class="block mt-2 text-accent font-semibold">Obtenez rapidement votre devis assurance autocar</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Est-ce qu'un auto-entrepreneur peut assurer un autocar pour du transport de voyageurs ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Un auto-entrepreneur peut assurer un autocar à condition de disposer d'une licence de transport voyageurs valide et d'un permis D en cours de validité. Le statut juridique n'est pas un obstacle à la souscription, mais certains assureurs exigent une structure en société pour les contrats couvrant des flottes ou des trajets internationaux. Pour une activité occasionnelle de transport touristique sous statut indépendant, des contrats spécifiques existent avec des primes adaptées à un kilométrage plus réduit. Nos experts connaissent les assureurs acceptant ce profil.
+                        <a href="#contactForm" class="block mt-2 text-accent font-semibold">Découvrez les offres assurance autocar pour auto-entrepreneur</a>
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-xl overflow-hidden shadow-md">
+                    <div class="faq-question p-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-dark">Peut-on assurer un autocar après une résiliation pour non-paiement ?</span>
+                        <span class="faq-toggle text-2xl text-accent">+</span>
+                    </div>
+                    <div class="faq-answer px-4 pb-4 text-gray-600 hidden">
+                        Il est possible d'assurer un autocar après une résiliation pour non-paiement, mais le marché standard se ferme dans ce cas. Des assureurs spécialisés en risques aggravés acceptent ces profils moyennant une prime majorée, souvent de 30 à 50 % au-dessus de la tarification standard, et avec des franchises plus élevées. Le fichier des résiliations (AGIRA) est consulté systématiquement par les assureurs lors de toute nouvelle souscription. Il est conseillé de régulariser la situation ancienne avant de chercher un nouveau contrat pour maximiser les chances d'obtenir des conditions acceptables.
+                        <a href="#contactForm" class="block mt-2 text-accent font-semibold">Comparez les assurances autocar après résiliation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- V. Devis assurance pour autocar -->
+<section class="py-8 lg:py-16 bg-surface">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl lg:text-4xl font-bold text-gradient mb-6">V. Devis assurance pour autocar</h2>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Chaque activité de transport en autocar présente des caractéristiques uniques : type de clientèle, zones géographiques couvertes, fréquence d'utilisation, état et âge du parc. Un devis assurance pour autocar réellement adapté ne peut pas se construire sur des hypothèses génériques. Nos experts analysent votre situation concrète, identifient les garanties indispensables et négocient auprès des assureurs qui maîtrisent ce segment spécifique. Le résultat : un contrat calibré à votre réalité opérationnelle, sans couvertures inutiles ni angles morts qui vous exposeraient en cas de sinistre.
+            </p>
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-all mt-6 text-sm lg:text-base">
+                Obtenez votre devis assurance pour autocar
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="py-8 lg:py-20 bg-gradient-to-r from-blue-200 to-blue-400">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="w-10 h-10 lg:w-16 lg:h-16 bg-white/20 rounded-xl mx-auto mb-4 lg:mb-6 flex items-center justify-center">
+                <i class="fas fa-bus text-lg lg:text-3xl text-white"></i>
+            </div>
+            <h2 class="text-xl lg:text-4xl font-bold mb-4 lg:mb-6 text-white">Obtenez votre tarif personnalisé</h2>
+            <p class="text-sm lg:text-xl mb-6 lg:mb-8 text-white/90 leading-relaxed">
+                Ne laissez pas une couverture inadaptée freiner votre entreprise. Obtenez une étude gratuite et un devis compétitif, 100% adapté à votre réalité métier.
+            </p>
+            <a href="#contactForm" class="inline-block bg-accent text-white font-bold py-3 lg:py-4 px-6 lg:px-10 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-2xl text-sm lg:text-base">
+                <i class="fas fa-arrow-up mr-2"></i>
+                Demander mon Devis Autocar Pro
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+{% endblock %}
