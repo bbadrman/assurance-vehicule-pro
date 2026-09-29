@@ -2,7 +2,12 @@
 
 {% block title %}Assurance pour autocar : devis et tarifs en ligne{% endblock %}
 {% block description %}<meta name="description" content="Trouvez la meilleure assurance pour autocar adaptée à votre activité. Comparez les garanties, obtenez un devis personnalisé et protégez votre flotte rapidement.">{% endblock %}
-{% block canonical %}<link rel="canonical" href="https://assurance-vehicule-pro.fr/assurance-pour-autocar">{% endblock %}
+
+{% block og_title %}Assurance pour autocar : comparez les offres et obtenez votre devis{% endblock %}
+{% block og_description %}Assurance pour autocar professionnelle : garanties adaptées, tarifs compétitifs et devis en ligne rapide. Nos experts vous accompagnent pour trouver la couverture idéale.{% endblock %}
+{% block og_image %}{{ app.request.schemeAndHttpHost }}/images/autocar.jpg{% endblock %}
+ 
+{% block canonical %}<link rel="canonical" href="https://assurance-vehicule-pro.fr/autocar">{% endblock %}
 
 {% block body %}
 <!-- Hero Section -->
@@ -21,7 +26,7 @@
             <div class="order-2 lg:order-1 slide-in-left flex-1 lg:flex-[7]">
                 <div class="relative h-full min-h-[150px] lg:min-h-[400px]">
 <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 shadow-2xl overflow-hidden rounded-xl lg:rounded-3xl">
-                            <img src="{{ asset('public/images/poid-lourd.png') }}" alt="assurance autocar" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
+                            <img src="{{ asset('public/images/autocar.jpg') }}" alt="assurance autocar" class="w-full h-full rounded-xl lg:rounded-3xl shadow-2xl" loading="lazy" />
                         </div>
                 </div>
             </div>
@@ -37,7 +42,7 @@
                         <h2 class="text-sm lg:text-xl font-bold text-gradient mb-2 leading-tight">Complétez ce formulaire pour obtenir un devis autocar</h2>
                     </div>
   
-				{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3'}}) }}
+{{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'space-y-2 lg:space-y-3', 'data-turbo': 'false'}}) }}
 
 			
 				<!-- Raison sociale -->
@@ -443,38 +448,4 @@
         });
     });
 </script>
-{% endblock %}
-
-
-{% block test %}
-
-autocar  
-{% endblock %}
-
-{% block faq_schema %}
-		<script type="application/ld+json">
-			{
-			            "@context": "http://schema.orautocad",
-			            "@type": "LocalBusiness",
-			            "name": "Aksam Assurance",
-			            "image": "https://www.assurance-vehicule-pro.fr/assets/img/favicon.png",
-			            "telephone": "01 82 83 48 10",
-			            "address": {
-			                "@type": "PostalAddress",
-			                "streetAddress": "10 rue de Penthièvre",
-			                "addressCountry": "FR",
-			                "addressLocality": "PARIS",
-			                "postalCode": "75008"
-			            },
-			            "url": "https://www.assurance-vehicule-pro.fr",
-			            "priceRange": "€€",
-			            "openingHours": "Mo-Fr 09:00-18:00",
-			            "contactPoint": {
-			                "@type": "ContactPoint",
-			                "telephone": "+33 1 82 83 48 00",
-			                "contactType": "Customer Service",
-			                "availableLanguage": ["French", "English"]
-			            }
-			        }
-		</script>
 {% endblock %}

@@ -430,6 +430,9 @@
         .faq {
             background: var(--white);
         }
+        .hidden {
+    display: none;
+}
 
         .faq-container {
             max-width: 900px;

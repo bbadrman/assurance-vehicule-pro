@@ -293,7 +293,7 @@ window[disableStr] = true;
 			{% block importmap %}
 				{{ importmap('app') }}
 			{% endblock %}
-			<script src="{{ asset('public/js/app.js') }}"></script>
+			<script src="{{ asset('js/app.js') }}"></script>
 
 		{% endblock %}
 
@@ -318,9 +318,15 @@ $("#cookieChoiceInfo").remove();
 
 }
 		</script>
+
+{% block test %}
+
+base   
+{% endblock %}
+	{% block faq_schema %}
 		<script type="application/ld+json">
 			{
-			            "@context": "http://schema.org",
+			            "@context": "http://schema.orgggggg",
 			            "@type": "LocalBusiness",
 			            "name": "Aksam Assurance",
 			            "image": "https://www.assurance-vehicule-pro.fr/assets/img/favicon.png",
@@ -343,7 +349,7 @@ $("#cookieChoiceInfo").remove();
 			            }
 			        }
 		</script>
-
+{% endblock %}
 
 	</body>
 </html>
