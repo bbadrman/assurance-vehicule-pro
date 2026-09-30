@@ -1,38 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        
+        <title>
+            {% block title %}Accueil{% endblock %}
+        </title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <meta name="description" content="Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.">
-        <title>Assurance Véhicule Pro | Devis en Ligne pour Pros, Artisans & PME</title>
+        <meta name="author" content="Aksam Assurance">
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('public/images/favicon.png') }}">
+
+        <link rel="apple-touch-icon" type="icon" href="{{ asset('public/images/logo.png') }}">
+
+        {% block description %}
+            <meta name="description" content="Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.">
+        {% endblock %}
+
+        {% block canonical %}<link rel="canonical" href="{{ app.request.schemeAndHttpHost }}{{ app.request.pathInfo }}">{% endblock %}
+        <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
+        <meta http-equiv="content-language" content="fr">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="fr_FR">
+        <meta property="og:site_name" content="Aksam Assurance">
+        <meta property="og:url" content="{{ app.request.uri }}">
+        <meta property="og:title" content="{% block og_title %}Assurance Véhicule Professionnel | Aksam Assurance{% endblock %}">
+        <meta property="og:description" content="{% block og_description %}Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.{% endblock %}">
+        <meta property="og:image" content="{% block og_image %}{{ app.request.schemeAndHttpHost }}/images/assurance-vehicule-pro.jpg{% endblock %}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{% block twitter_title %}Assurance Véhicule Professionnel | Aksam Assurance{% endblock %}">
+        <meta name="twitter:description" content="{% block twitter_description %}Devis en ligne pour pros, artisans & PME. +20 compagnies partenaires.{% endblock %}">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
-       {% block stylesheets %}
 
-			{# <link rel="stylesheet" href="{{ asset('/css/app.css') }}">  #}
-		{% endblock %}
+        {% block stylesheets %}
+            <style>
+                .form-group ul,
+                .form-group ul li {
+                    color: #ef4444;
+                    font-size: 0.875rem;
+                }
 
-         
+                .form-group ul {
+                    list-style: none;
+                    padding: 0;
+                    margin-top: 0.25rem;
+                }
+            </style>
+        {% endblock %}
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- Tailwind CSS -->
+        <link rel="stylesheet" href="{{ asset('public/css/tailwind.min.css') }}">
+
+        {# -------- Google Tag Manager -------- #} 
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-KSQ8BV7');
+        </script>
+        {# -------- Fin GTM -------- #}
+
+        <!-- Script de gestion du consentement -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('consent', 'default', {
+                ad_storage: 'denied',
+                analytics_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied'
+            });
+
+            function aksamAcceptCookies() {
+                var expiryDate = new Date();
+                expiryDate.setMonth(expiryDate.getMonth() + 1);
+                document.cookie = 'aksamPerformance=1; path=/; expires=' + expiryDate.toUTCString();
+
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    analytics_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted'
+                });
+
+                dataLayer.push({
+                    event: 'cookie_consent_update'
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                if (document.cookie.indexOf('aksamPerformance=1') >= 0) {
+                    gtag('consent', 'update', {
+                        ad_storage: 'granted',
+                        analytics_storage: 'granted',
+                        ad_user_data: 'granted',
+                        ad_personalization: 'granted'
+                    });
+
+                    dataLayer.push({
+                        event: 'cookie_consent_update'
+                    });
+                }
+            });
+        </script>
     </head>
-    <body>
+
+    <body class="bg-light font-sans">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSQ8BV7" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+
+        {% block header %}
+            {% include '/partiels/header.html.twig' %}
+        {% endblock %}
+
         {% block body %}{% endblock %}
- 
-        {% block header %} 
-			{% include '/partiels/header.html.twig' %}
-		{% endblock %}
 
-        {% block footer %} 
-			{% include '/partiels/footer.html.twig' %}
-		{% endblock %}
+        {% block footer %}
+            {% include '/partiels/footer.html.twig' %}
+        {% endblock %}
 
-		{% block javascripts %}
-         {% block importmap %}{{ importmap('app') }}{% endblock %}
-			 <script src="{{ asset('/js/app.js') }}"></script>
-             
-		{% endblock %}
+        {% block javascripts %}
+            {% block importmap %}
+                {{ importmap('app') }}
+            {% endblock %}
+            <script src="{{ asset('public/js/app.js') }}"></script>
+        {% endblock %}
+
+        <script>
+            document.getElementById("userPref").addEventListener("click", validationUserCookie, false);
+
+            function validationUserCookie() {
+                if (document.getElementById("cookieAccepte").checked === true) {
+                    createCookiePerformance(1);
+                } else {
+                    createCookiePerformance(0);
+                }
+            }
+
+            function createCookiePerformance(value) {
+                var expiryDate = new Date();
+                var cookieName = 'aksamPerformance';
+                expiryDate.setMonth(expiryDate.getMonth() + 1);
+                document.cookie = cookieName + '=' + value + '; path=/; expires=' + expiryDate.toGMTString();
+                $("#cookieChoiceInfo").remove();
+            }
+        </script>
+
+        <!-- Calculer par rapport nombre prospects -->
+        <script>
+            (function () {
+                function animateCounters() {
+                    document.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
+                        var target = parseInt(el.getAttribute('data-target'), 10);
+                        if (isNaN(target) || target === 0) {
+                            el.textContent = '0';
+                            return;
+                        }
+                        var duration = 1600;
+                        var start = null;
+                        function step(ts) {
+                            if (!start) start = ts;
+                            var progress = Math.min((ts - start) / duration, 1);
+                            var ease = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = Math.floor(ease * target).toLocaleString('fr-FR');
+                            if (progress < 1) requestAnimationFrame(step);
+                            else el.textContent = target.toLocaleString('fr-FR');
+                        }
+                        requestAnimationFrame(step);
+                    });
+                }
+                if ('IntersectionObserver' in window) {
+                    var obs = new IntersectionObserver(function (entries, o) {
+                        entries.forEach(function (e) {
+                            if (e.isIntersecting) {
+                                animateCounters();
+                                o.disconnect();
+                            }
+                        });
+                    }, {threshold: 0.3});
+                    var strip = document.getElementById('stats-strip');
+                    if (strip) obs.observe(strip);
+                } else {
+                    document.addEventListener('DOMContentLoaded', animateCounters);
+                }
+            })();
+        </script>
+
+        <script>
+            (function() {
+                var track = document.getElementById('avisTrack');
+                var dotsEl = document.getElementById('avisDots');
+                var cards = track ? track.querySelectorAll('.avis-card') : [];
+                var total = cards.length;
+                var current = 0;
+                var perView = 3;
+
+                function getPerView() {
+                    if (window.innerWidth < 640) return 1;
+                    if (window.innerWidth < 1024) return 2;
+                    return 3;
+                }
+
+                function maxIndex() { return Math.max(0, total - perView); }
+
+                function buildDots() {
+                    dotsEl.innerHTML = '';
+                    var pages = maxIndex() + 1;
+                    for (var i = 0; i < pages; i++) {
+                        var d = document.createElement('button');
+                        d.className = 'avis-dot' + (i === current ? ' active' : '');
+                        d.setAttribute('aria-label', 'Page ' + (i+1));
+                        (function(idx){ d.onclick = function(){ goTo(idx); }; })(i);
+                        dotsEl.appendChild(d);
+                    }
+                }
+
+                function goTo(idx) {
+                    perView = getPerView();
+                    current = Math.max(0, Math.min(idx, maxIndex()));
+                    var cardWidth = cards[0] ? cards[0].offsetWidth + 24 : 0;
+                    track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+                    dotsEl.querySelectorAll('.avis-dot').forEach(function(d, i) {
+                        d.classList.toggle('active', i === current);
+                    });
+                }
+
+                window.avisNav = function(dir) { goTo(current + dir); };
+
+                function init() {
+                    perView = getPerView();
+                    buildDots();
+                    goTo(0);
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
+                } else {
+                    init();
+                }
+
+                var resizeTimer;
+                window.addEventListener('resize', function() {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(function() { init(); }, 150);
+                });
+
+                setInterval(function() {
+                    perView = getPerView();
+                    goTo(current >= maxIndex() ? 0 : current + 1);
+                }, 5000);
+            })();
+        </script>
+
+        {# Default Schema for Homepage or pages without custom json_ld #}
+        {% block json_ld %}
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "InsuranceAgency",
+                  "@id": "https://www.assurance-vehicule-pro.fr/#organization",
+                  "name": "Aksam Assurance",
+                  "image": "https://www.assurance-vehicule-pro.fr/images/favicon.png",
+                  "telephone": "+33182834800",
+                  "email": "contact@aksam-assurances.fr",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "10 rue de Penthièvre",
+                    "addressLocality": "Paris",
+                    "postalCode": "75008",
+                    "addressCountry": "FR"
+                  },
+                  "url": "https://www.assurance-vehicule-pro.fr",
+                  "openingHours": "Mo-Fr 09:00-18:00",
+                  "areaServed": "FR",
+                  "description": "Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs."
+                }
+              ]
+            }
+            </script>
+        {% endblock %}
+
+        {# Empty fallback blocks #}
+        {% block breadcrumb_schema %}{% endblock %}
+        {% block faq_schema %}{% endblock %}
 
     </body>
 </html>

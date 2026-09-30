@@ -1,0 +1,8 @@
+[17-Oct-2025 09:39:32 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 7.2.34. in /home/assuifaj/assurance-vehicule-pro.fr/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/assuifaj/assurance-vehicule-pro.fr/vendor/composer/autoload_real.php(25): require()
+#1 /home/assuifaj/assurance-vehicule-pro.fr/vendor/autoload.php(22): ComposerAutoloaderInitaf3a971b86a4585c7c3bf9fe517e48ae::getLoader()
+#2 /home/assuifaj/assurance-vehicule-pro.fr/vendor/autoload_runtime.php(5): require_once('/home/assuifaj/...')
+#3 /home/assuifaj/assurance-vehicule-pro.fr/public/index.php(5): require_once('/home/assuifaj/...')
+#4 {main}
+  thrown in /home/assuifaj/assurance-vehicule-pro.fr/vendor/composer/platform_check.php on line 22

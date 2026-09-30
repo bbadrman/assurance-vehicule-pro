@@ -1,0 +1,20 @@
+{
+  "name": "assurance-vehicule-pro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build:css": "node node_modules/tailwindcss/lib/cli.js -c tailwind.config.js -i assets/styles/tailwind.css -o public/css/tailwind.min.css --minify",
+    "watch:css": "node node_modules/tailwindcss/lib/cli.js -c tailwind.config.js -i assets/styles/tailwind.css -o public/css/tailwind.min.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

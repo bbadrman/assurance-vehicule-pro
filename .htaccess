@@ -1,0 +1,40 @@
+DirectoryIndex index.php
+
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+    # Redirection non-www vers www (évite le contenu dupliqué)
+    # RewriteCond %{HTTP_HOST} ^assurance-vehicule-pro\.fr$ [NC]
+    RewriteCond %{HTTPS} =off
+    RewriteRule ^(.*)$ https://www.assurance-vehicule-pro.fr/$1 [R=301,L]
+
+    # Détermination automatique du répertoire de base
+    RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
+    RewriteRule .* - [E=BASE:%1]
+    
+    # Restauration de l'en-tête HTTP_AUTHORIZATION
+    RewriteCond %{HTTP:Authorization} .+
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
+    
+    # Suppression définitive de index.php des URLs (301)
+    RewriteCond %{ENV:REDIRECT_STATUS} =""
+    RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+    
+    # Servir les fichiers existants directement
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule .? - [L]
+    
+    # Redirection vers le contrôleur frontal Symfony
+    RewriteRule ^ %{ENV:BASE}/index.php [L]
+</IfModule>
+
+ 
+   
+    
+    
+    
+    

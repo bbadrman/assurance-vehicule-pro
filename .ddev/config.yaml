@@ -11,7 +11,8 @@ database:
     version: "10.11"
 use_dns_when_possible: true
 composer_version: "2"
-web_environment: []
+web_environment:
+  - DEFAULT_URI=https://assurance-vehicule-pro.ddev.site
 corepack_enable: false
 
 # Key features of DDEV's config.yaml:
@@ -278,7 +279,7 @@ corepack_enable: false
 # hooks:
 #   post-start: []
 # or
-# web_environment: []
+# web_environment:
 # or
 # additional_hostnames: []
 # can have their intended affect. 'override_config' affects only behavior of the
