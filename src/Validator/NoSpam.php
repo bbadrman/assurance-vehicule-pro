@@ -13,11 +13,11 @@ class NoSpam extends Constraint
     public const SPAM_EMOJI = 'spam-emoji';
     public const SPAM_SQL_INJECTION = 'spam-sql-injection';
 
-    public string $message = 'Contenu non autorisé.';
-    public string $messageUrl = 'Les liens et URLs ne sont pas autorisés.';
-    public string $messagePattern = 'Contenu suspect détecté.';
-    public string $messageEmoji = 'Les emojis ne sont pas autorises dans ce champ.';
-    public string $messageSqlInjection = 'Des caractères ou un format suspects ont été détectés.';
+    public string $message = 'Contenu non autorisÃ©.';
+    public string $messageUrl = 'Les liens et URLs ne sont pas autorisÃ©s.';
+    public string $messagePattern = 'Contenu suspect dÃ©tectÃ©.';
+    public string $messageEmoji = 'Les emojis ne sont pas autorisÃ©s dans ce champ.';
+    public string $messageSqlInjection = 'Des caracteres ou un format suspects ont Ã©tÃ© dÃ©tectes.';
 
     public string $mode = 'strict';
     public bool $alphaOnly = false;

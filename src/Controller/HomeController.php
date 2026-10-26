@@ -18,6 +18,13 @@ final class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(Request $request, EntityManagerInterface $entityManager, LoggerInterface $logger): Response
     {
+
+        $nombreAddProspects    = $entityManager->getRepository(Vehicule::class)->count([]);
+        $nombreProspects = $nombreAddProspects + 5500;
+        $nombreTarifications = (int) round($nombreProspects * 0.90);
+        $nombreSouscriptions = (int) round($nombreProspects * 0.37);
+
+
         $vehicule = new Vehicule();
         $form = $this->createForm(VehiculeType::class, $vehicule);
         $form->handleRequest($request);
@@ -95,9 +102,10 @@ final class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
-            'nombreProspects' => 5000,
-            'nombreTarifications' => 3500,
-            'nombreSouscriptions' => 1200,
+              
+             'nombreProspects' => $nombreProspects,
+             'nombreTarifications' => $nombreTarifications,
+             'nombreSouscriptions' => $nombreSouscriptions
         ]);
     }
 
@@ -283,7 +291,7 @@ final class HomeController extends AbstractController
         return $phone;
     }
 
-    #[Route('/assurance-reponse', name: 'app_reponse')]
+    #[Route('/reponse', name: 'app_reponse')]
     public function reponse(): Response
     {
         return $this->render('home/reponse.html.twig', [
@@ -341,7 +349,7 @@ final class HomeController extends AbstractController
                     'typeProspect'  => "2",
                     'source'        => "3",
                     'activites'     => "3",
-                    'url'           => "24",
+                    'url'           => "48",
                     'product'       => '/api/products/1',
                 ];
 
@@ -419,7 +427,7 @@ final class HomeController extends AbstractController
                     'typeProspect'  => "2",
                     'source'        => "3",
                     'activites'     => "3",
-                    'url'           => "25",
+                    'url'           => "49",
                     'product'       => '/api/products/1',
                 ];
 
@@ -495,7 +503,7 @@ final class HomeController extends AbstractController
                     'typeProspect'  => "2",
                     'source'        => "3",
                     'activites'     => "3",
-                    'url'           => "26",
+                    'url'           => "50",
                     'product'       => '/api/products/1',
                 ];
 

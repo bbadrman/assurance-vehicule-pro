@@ -52,7 +52,7 @@ class NoSpamValidator extends ConstraintValidator
         // Texte répétitif / gibberish
         $this->checkGibberish($value, $constraint);
         $this->checkRepeatedLetters($value, $constraint);
-
+        
         // SQL Injection
         $this->checkSqlInjection($value, $constraint);
 
@@ -116,6 +116,7 @@ class NoSpamValidator extends ConstraintValidator
         string $value,
         NoSpam $constraint
     ): void {
+        // Block repeated special characters but allow all numeric sequences
         if (
             preg_match(
                 '#([\$\>\|\!\.\,\;\:\-\_ ])\1{4,}#',
@@ -125,32 +126,33 @@ class NoSpamValidator extends ConstraintValidator
             $this->addViolationOnce($constraint->messagePattern);
         }
 
-        if (preg_match('#(.)\1\1#u', $value)) {
+        // Block repeated letters (aaa, bbb, etc.)
+        if (preg_match('#([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1\1#u', $value)) {
             $this->addViolationOnce($constraint->messagePattern);
         }
+        
+        // Allow all numeric sequences (1111, 2222, etc. are now allowed)
     }
 
     private function checkGibberish(
         string $value,
         NoSpam $constraint
     ): void {
-        if (!preg_match('#(.)\1{2,}#u', $value)) {
-            return;
-        }
-
+        // Allow all numeric sequences
+        // Only block alphabetic gibberish
         $letters = preg_replace(
             '#[^a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ]#u',
             '',
             $value
         );
-
-        if (
-            $letters === '' ||
-            preg_match(
-                '#^([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{3,}$#u',
-                $letters
-            )
-        ) {
+        
+       if (
+    $letters !== '' &&
+    preg_match(
+        '#^([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{3,}$#u',
+        $letters
+    )
+) {
             $this->addViolationOnce($constraint->messagePattern);
         }
     }
@@ -159,6 +161,8 @@ class NoSpamValidator extends ConstraintValidator
         string $value,
         NoSpam $constraint
     ): void {
+        // Allow all numeric sequences (including 1111)
+        // Block only repeated alphabetic characters
         if (
             preg_match(
                 '#[a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ]([a-zA-ZàâäéèêëïîôùûüÿçÀÂÄÉÈÊËÏÎÔÙÛÜŸÇ])\1{2,}#u',

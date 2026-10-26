@@ -16,8 +16,10 @@
             <meta name="description" content="Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs.">
         {% endblock %}
 
-        {% block canonical %}<link rel="canonical" href="{{ app.request.schemeAndHttpHost }}{{ app.request.pathInfo }}">{% endblock %}
-        <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
+{% block canonical %}
+    <link rel="canonical" href="https://assurance-vehicule-pro.fr{{ app.request.pathInfo }}">
+{% endblock %}
+       <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
         <meta http-equiv="content-language" content="fr">
 
         <!-- Open Graph -->
@@ -57,54 +59,9 @@
         <link rel="stylesheet" href="{{ asset('public/css/tailwind.min.css') }}">
 
         <!-- Script de gestion du consentement (doit précéder GTM pour que le consentement par défaut soit défini avant toute balise) -->
-        <script>
-            window.dataLayer = window.dataLayer || [];
+      
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-
-            gtag('consent', 'default', {
-                ad_storage: 'denied',
-                analytics_storage: 'denied',
-                ad_user_data: 'denied',
-                ad_personalization: 'denied'
-            });
-
-            function aksamAcceptCookies() {
-                var expiryDate = new Date();
-                expiryDate.setMonth(expiryDate.getMonth() + 1);
-                document.cookie = 'aksamPerformance=1; path=/; expires=' + expiryDate.toUTCString();
-
-                gtag('consent', 'update', {
-                    ad_storage: 'granted',
-                    analytics_storage: 'granted',
-                    ad_user_data: 'granted',
-                    ad_personalization: 'granted'
-                });
-
-                dataLayer.push({
-                    event: 'cookie_consent_update'
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                if (document.cookie.indexOf('aksamPerformance=1') >= 0) {
-                    gtag('consent', 'update', {
-                        ad_storage: 'granted',
-                        analytics_storage: 'granted',
-                        ad_user_data: 'granted',
-                        ad_personalization: 'granted'
-                    });
-
-                    dataLayer.push({
-                        event: 'cookie_consent_update'
-                    });
-                }
-            });
-        </script>
-
-        {# -------- Google Tag Manager -------- #}
+      {# -------- Google Tag Manager -------- #}
         <script>
             (function (w, d, s, l, i) {
                 w[l] = w[l] || [];
@@ -118,6 +75,82 @@
             })(window, document, 'script', 'dataLayer', 'GTM-KSQ8BV7');
         </script>
         {# -------- Fin GTM -------- #}
+
+        <!-- Global site tag (gtag.js) - Google Ads -->
+
+		<script type="text/plain" data-cookieconsent="marketing" async src="https://www.googletagmanager.com/gtag/js?id=AW-716366483"></script>
+		<script type="text/plain" data-cookieconsent="marketing">
+			window.dataLayer = window.dataLayer || [];
+						  function gtag(){dataLayer.push(arguments);}
+						  gtag('js', new Date());
+						
+						  gtag('config', 'AW-716366483');
+		</script>
+		<!-- End Global site tag (gtag.js) - Google Ads -->
+
+
+         <!-- Cookies  -->
+		<script>
+			gaProperty = 'GTM-KSQ8BV7';
+
+// Désactive le tracking si le cookie d'acception des conditions n'est pas présent
+var disableStr = 'ga-disable-' + gaProperty;
+
+if (document.cookie.indexOf('displayCookieConsent=y') < 0) {
+window[disableStr] = true;
+}
+		</script>
+		<!-- End Cookies  -->
+
+
+
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+dataLayer.push(arguments);
+}
+
+gtag('consent', 'default', {
+'ad_storage': 'denied',
+'analytics_storage': 'denied',
+'ad_user_data': 'denied',
+'ad_personalization': 'denied',
+'wait_for_update': 500 // Optionnel : attendre la mise à jour avant d'envoyer les données.
+});
+
+function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for (var i = 0; i < ca.length; i++) {
+var c = ca[i];
+while (c.charAt(0) == ' ') {
+c = c.substring(1);
+}
+if (c.indexOf(name) == 0) {
+return c.substring(name.length, c.length);
+}
+}
+return "";
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+if (document.cookie.indexOf('displayCookieConsent=y') >= 0) {
+gtag('consent', 'update', {
+'ad_storage': 'granted',
+'analytics_storage': 'granted',
+'ad_user_data': 'granted',
+'ad_personalization': 'granted'
+});
+}
+});
+		</script>
+
+        
+        
+
+      
     </head>
 
     <body class="bg-light font-sans">
@@ -277,9 +310,9 @@
               "@graph": [
                 {
                   "@type": "InsuranceAgency",
-                  "@id": "https://www.assurance-vehicule-pro.fr/#organization",
+                  "@id": "https://assurance-vehicule-pro.fr/#organization",
                   "name": "Aksam Assurance",
-                  "image": "https://www.assurance-vehicule-pro.fr/images/favicon.png",
+                  "image": "https://assurance-vehicule-pro.fr/images/favicon.png",
                   "telephone": "+33182834800",
                   "email": "contact@aksam-assurances.fr",
                   "address": {
@@ -289,7 +322,7 @@
                     "postalCode": "75008",
                     "addressCountry": "FR"
                   },
-                  "url": "https://www.assurance-vehicule-pro.fr",
+                  "url": "https://assurance-vehicule-pro.fr/",
                   "openingHours": "Mo-Fr 09:00-18:00",
                   "areaServed": "FR",
                   "description": "Protégez votre outil de travail avec une assurance véhicule pro sur-mesure. Obtenez votre devis en 2 min pour utilitaire, voiture de société ou flotte. Garanties adaptées et tarifs compétitifs."
